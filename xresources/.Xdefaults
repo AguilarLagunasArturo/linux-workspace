@@ -1,0 +1,89 @@
+!! Color Scheme
+
+! depth
+*.depth:		32
+
+! special
+*.foreground:   #ccfbe5
+*.background:   [96]#000000
+*.cursorColor:  #ccfbe5
+*.transparent:	false
+
+! black
+*.color0:       #5ec299
+*.color8:       #5ec299
+
+! red
+*.color1:       #00b3a2
+*.color9:       #3baa98
+
+! green
+*.color2:       #00a2ad
+*.color10:      #269192
+
+! yellow
+*.color3:       #0090b8
+*.color11:      #267884
+
+! blue
+*.color4:       #007dbd
+*.color12:      #2c5f70
+
+! magenta
+*.color5:       #0067b9
+*.color13:      #2f4858
+
+! cyan
+*.color6:       #019baa
+*.color14:      #53cad9
+
+! white
+*.color7:       #dbe1e2
+*.color15:      #f7f9ff
+
+!! GUI
+
+! Text & Spacing
+URxvt.font:					xft:RobotoMono Nerd Font:pixelsize=14
+URxvt.letterSpace:			0
+URxvt.lineSpace:			0
+URxvt.geometry:				106x28
+URxvt.internalBorder:		24
+
+! Scroll bar
+URxvt.scrollBar:			false
+URxvt.scrollBar_right:		false
+
+!! Config
+
+! ISO off
+URxvt.iso14755:				false
+
+! Scrolling
+URxvt*scrollTtyOutput:		false
+URxvt*scrollWithBuffer:		true
+URxvt*scrollTtyKeypress:	true
+
+! Open & Highlight URL
+URxvt*perl-ext-common:		default,matcher
+URxvt*urlLauncher:			/usr/bin/xdg-open
+URxvt*matcher.button:		1
+URxvt*colorUL:				cyan
+URxvt*underlineColor:		cyan
+
+!! Keybindings
+
+! Shift
+! Selecting conflict
+URxvt*keysym.S-Up:			\033[1;2A
+URxvt*keysym.S-Down:		\033[1;2B
+URxvt*keysym.S-Right:		\033[1;2C
+URxvt*keysym.S-Left:		\033[1;2D
+
+! Shift+Control
+! Selecting conflict
+URxvt*keysym.S-C-Up:		\033[1;6A
+URxvt*keysym.S-C-Down:		\033[1;6B
+URxvt*keysym.S-C-Right:		\033[1;6C
+URxvt*keysym.S-C-Left:		\033[1;6D
+
