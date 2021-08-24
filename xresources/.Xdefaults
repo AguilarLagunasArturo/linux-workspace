@@ -5,7 +5,7 @@
 
 ! special
 *.foreground:   #ccfbe5
-*.background:   [96]#000000
+*.background:   [80]#000000
 *.cursorColor:  #ccfbe5
 *.transparent:	false
 
@@ -44,10 +44,10 @@
 !! GUI
 
 ! Text & Spacing
-URxvt.font:					xft:RobotoMono Nerd Font:pixelsize=14
+URxvt.font:					xft:RobotoMono Nerd Font:pixelsize=12
 URxvt.letterSpace:			0
 URxvt.lineSpace:			0
-URxvt.geometry:				106x28
+URxvt.geometry:				124x32
 URxvt.internalBorder:		24
 
 ! Scroll bar

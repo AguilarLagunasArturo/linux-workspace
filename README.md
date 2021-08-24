@@ -6,8 +6,11 @@ sudo apt update;
 sudo apt upgrade -y;
 sudo apt install git stow;
 
-mkdir Github;
-git clone 'dotfiles';
+git clone https://github.com/AguilarLagunasArturo/linux-workspace.git;
+cd linux-workspace;
+# rm README.md; TODO: test and resolve conflicts
+
+stow -Svt ~ *;
 ```
 
 ## List of content
@@ -16,23 +19,20 @@ git clone 'dotfiles';
 - tutorials
 
 # System configuration
-These are the greatest config files of all time.
-## Theming
-- __config__ `($HOME/.config)`  
-    Customised settings for various programs.
-- __icons__`($HOME/.icons)`  
-    Cursor themes.
-- __fonts__ `($HOME/.local/share/fonts)`  
-    Some fonts I like.
-- __dotfiles__ `($HOME)`  
-    Customised settings for system utilities.
+Optional system configurations (*manual*).
 ## Shortcuts
 |Shortcut|Description|Command|
 |:-|:-|:-|
 |TODO|TODO|TODO|
 ## Tutorials
-### Install language support
+### Stow commands
+```bash
+stow --adopt --nvt ~ <stow-folder>; # Adds new config files to stow directory
+stow --nSvt ~ <stow-folder>;        # Symlink config files to $HOME directory
+stow --nDvt ~ <stow-folder>;        # Removes symlinks from $HOME directory
 ```
+### Install language support
+```bash
 sudo nano /etc/locale.gen;  # Uncomment lines
 sudo locale-gen;            # Install uncommented languages
 ```

@@ -3,5 +3,5 @@ set constantshow
 set autoindent
 # set linenumbers
 # set nohelp
-# set tabstospaces
+set tabstospaces
 # set boldtext
