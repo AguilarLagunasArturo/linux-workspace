@@ -12,6 +12,7 @@
     "category": {
       "terminal": [
         "git",
+        "stow",
         "python3-pip",
         "rxvt",
         "tree",
@@ -48,7 +49,8 @@
         "vlc",
         "transmission",
         "obs-studio",
-        "code-oss"
+        "code-oss",
+        "hydrapaper"
       ]
     }
   },

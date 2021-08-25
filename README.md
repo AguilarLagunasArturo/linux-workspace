@@ -21,15 +21,23 @@ stow -Svt ~ *;
 # System configuration
 Optional system configurations (*manual*).
 ## Shortcuts
-|Shortcut|Description|Command|
+|Name|Shortcut|Command|
 |:-|:-|:-|
-|TODO|TODO|TODO|
+|US Keyboard layout|Super + Ctrl + U|setxkbmap us|
+|ES Keyboard layout|Super + Ctrl + E|setxkbmap es|
+|Launch rofi window|Super + Tab|rofi -show window -theme /home/aal/.config/rofi/themes/main.rasi|
+|Launch rofi applet|Super + A|rofi -show drun -theme /home/aal/.config/rofi/themes/main.rasi|
+|Launch terminal|Ctrl + Alt + T|gnome-terminal|
 ## Tutorials
 ### Stow commands
 ```bash
 stow --adopt --nvt ~ <stow-folder>; # Adds new config files to stow directory
 stow --nSvt ~ <stow-folder>;        # Symlink config files to $HOME directory
 stow --nDvt ~ <stow-folder>;        # Removes symlinks from $HOME directory
+```
+### Read manpages
+```bash
+man -P "less -p 'CONFIGURATION SETTINGS'" <program-name>
 ```
 ### Install language support
 ```bash
@@ -54,3 +62,16 @@ git config --global credential.helper 'cache --timeout 1200'
 ```bash
 # TODO
 ```
+### Change main terminal emulator
+```bash
+# TODO
+```
+### Change grub screen
+```bash
+# TODO
+```
+### Test utilities
+- bat
+- gdu
+- tmux
+- urxvt
