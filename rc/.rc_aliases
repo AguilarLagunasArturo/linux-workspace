@@ -1,7 +1,0 @@
-# ALIASES
-
-alias copy='xclip -select c'
-alias dpexels='python ~/Github/pexels-image-downloader/download.py'
-
-# freeCAD launch
-# alias freeCAD='LIBGL_DRI3_DISABLE=true freecad'
