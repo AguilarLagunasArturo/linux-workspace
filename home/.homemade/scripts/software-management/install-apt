@@ -1,0 +1,44 @@
+#!/bin/bash
+# Author:	Arturo Aguilar Lagunas
+# Description:	Install packages from apt-packages
+
+# Info
+echo "Installing packages from .apt-packages file"
+echo ""
+
+# Variables
+packages=$(<apt-packages)
+declare -a installed
+declare -a not_installed
+
+# Check which packages are installed
+for package in $packages
+do
+	status=$((dpkg -s $package 2>&1) | grep \^Status:\ install\ ok\ installed\$)
+	if [[ $status ==  "Status: install ok installed" ]]
+	then
+		# Add to installed packages
+		installed+=($package)
+		echo "Already installed: $package"
+	else
+		# Add to not installed packages
+		not_installed+=($package)
+	fi
+done
+
+# Installing packages
+for package in ${not_installed[@]}
+do
+	echo ""
+	echo "Installing: $package"
+	apt install $package -y
+done
+
+
+# Notes
+echo ""
+echo "Notes:"
+echo "      - If latex not working try: sudo apt install texlive-full"
+echo "      - sudo apt autoremove && sudo apt clean to remove dependencies that are no longer needed"
+echo "      - Tested in Ubuntu 18.04 LTS"
+echo "Done"

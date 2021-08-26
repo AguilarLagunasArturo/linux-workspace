@@ -39,6 +39,10 @@ stow --nDvt ~ <stow-folder>;        # Removes symlinks from $HOME directory
 ```bash
 man -P "less -p 'CONFIGURATION SETTINGS'" <program-name>
 ```
+### Load Xresources
+```bash
+xrdb ~/.Xresources
+```
 ### Install language support
 ```bash
 sudo nano /etc/locale.gen;  # Uncomment lines

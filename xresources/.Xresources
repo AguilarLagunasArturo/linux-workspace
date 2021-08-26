@@ -1,47 +1,49 @@
 !! Color Scheme
 
-! depth
-*.depth:		32
-
 ! special
-*.foreground:   #ccfbe5
-*.background:   [80]#000000
-*.cursorColor:  #ccfbe5
-*.transparent:	false
+*.foreground:   #ecebe8
+*.background:   [80]#121214
+*.cursorColor:  #ecebe8
 
 ! black
-*.color0:       #5ec299
-*.color8:       #5ec299
+*.color0:       #668053
+*.color8:       #6da16c
 
 ! red
-*.color1:       #00b3a2
-*.color9:       #3baa98
+*.color1:       #d8b57b
+*.color9:       #e3be6e
 
 ! green
 *.color2:       #00a2ad
 *.color10:      #269192
 
 ! yellow
-*.color3:       #0090b8
-*.color11:      #267884
+*.color3:       #943b4f
+*.color11:      #862b3e
 
 ! blue
-*.color4:       #007dbd
-*.color12:      #2c5f70
+*.color4:       #6198b1
+*.color12:      #5dbed3
 
 ! magenta
-*.color5:       #0067b9
-*.color13:      #2f4858
+*.color5:       #b27756
+*.color13:      #b36b44
 
 ! cyan
-*.color6:       #019baa
-*.color14:      #53cad9
+*.color6:       #53d9d0
+*.color14:      #68cdbd
 
 ! white
-*.color7:       #dbe1e2
+*.color7:       #e4e9ea
 *.color15:      #f7f9ff
 
-!! GUI
+!! Transparency
+
+! depth
+*.depth:		32
+*.transparent:	false
+
+!! URxvt
 
 ! Text & Spacing
 URxvt.font:					xft:RobotoMono Nerd Font:pixelsize=12
@@ -86,4 +88,3 @@ URxvt*keysym.S-C-Up:		\033[1;6A
 URxvt*keysym.S-C-Down:		\033[1;6B
 URxvt*keysym.S-C-Right:		\033[1;6C
 URxvt*keysym.S-C-Left:		\033[1;6D
-
