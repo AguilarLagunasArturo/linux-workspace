@@ -1,5 +1,7 @@
 # Linux workspace (debian based distros - 2021)
-This is the greatest management of all time. (*Note: _home/.homemade_ for my custom resources/projects*)
+This is the greatest management of all time.
+## Notes:
+- _home/.homemade_ directory for my custom resources/projects
 ## Setup
 ```bash
 sudo apt update;

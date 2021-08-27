@@ -1,40 +1,40 @@
 !! Color Scheme
 
 ! special
-*.foreground:   #ecebe8
-*.background:   [80]#121214
-*.cursorColor:  #ecebe8
+*.foreground:   #e9f2ee
+*.background:   [80]#000000
+*.cursorColor:  #e9f2ee
 
 ! black
-*.color0:       #668053
-*.color8:       #6da16c
+*.color0:       #5ec299
+*.color8:       #5ec299
 
 ! red
-*.color1:       #d8b57b
-*.color9:       #e3be6e
+*.color1:       #00b3a2
+*.color9:       #3baa98
 
 ! green
 *.color2:       #00a2ad
 *.color10:      #269192
 
 ! yellow
-*.color3:       #943b4f
-*.color11:      #862b3e
+*.color3:       #0090b8
+*.color11:      #267884
 
 ! blue
-*.color4:       #6198b1
-*.color12:      #5dbed3
+*.color4:       #007dbd
+*.color12:      #2c5f70
 
 ! magenta
-*.color5:       #b27756
-*.color13:      #b36b44
+*.color5:       #0067b9
+*.color13:      #2f4858
 
 ! cyan
-*.color6:       #53d9d0
-*.color14:      #68cdbd
+*.color6:       #019baa
+*.color14:      #53cad9
 
 ! white
-*.color7:       #e4e9ea
+*.color7:       #dbe1e2
 *.color15:      #f7f9ff
 
 !! Transparency

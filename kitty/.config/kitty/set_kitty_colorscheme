@@ -4,38 +4,80 @@ import sys
 import re
 import os
 
-''' 
+schemes_path = os.path.join(os.environ.get('HOME'), '.homemade/color_schemes/')
+conf_file = os.path.join(os.environ.get('HOME'), '.config/kitty/kitty.conf')
+
+'''
 TODO: ADD IF NECESSARY
         mark1_background #98d3cb
         mark2_background #f2dcd3
         mark3_background #f274bc
 '''
 
-schemes_path = os.path.join(os.environ.get('HOME'), '.homemade/color_schemes/')
-conf_file = 'kitty.conf'
 assossiations = {
     '*.foreground': [
-        'cursor', 
-        'foreground', 
+        'foreground',
+        'cursor',
         'selection_background'
     ],
     '*.background': [
-        'cursor_text_color', 
-        'background', 
+        'background',
+        'cursor_text_color',
         'selection_foreground'
     ],
+    '*.color0': [
+        'color0'
+    ],
+    '*.color1': [
+        'color1'
+    ],
+    '*.color2': [
+        'color2'
+    ],
+    '*.color3': [
+        'color3'
+    ],
+    '*.color4': [
+        'color4'
+    ],
+    '*.color5': [
+        'color5'
+    ],
+    '*.color6': [
+        'color6'
+    ],
+    '*.color7': [
+        'color7',
+        'active_border_color'
+    ],
+    '*.color8': [
+        'color8'
+    ],
     '*.color9': [
+        'color9',
         'url_color',
         'bell_border_color'
     ],
-    '*.color7': [
-        'active_border_color'
+    '*.color10': [
+        'color10'
+    ],
+    '*.color11': [
+        'color11'
+    ],
+    '*.color12': [
+        'color12'
+    ],
+    '*.color13': [
+        'color13'
+    ],
+    '*.color14': [
+        'color14'
     ],
     '*.color15': [
+        'color15',
         'inactive_border_color'
     ]
 }
-
 
 if len(sys.argv) != 2:
     print('Usage: {} <xresources-color-scheme>'.format(sys.argv[0]))
@@ -48,43 +90,25 @@ if len(sys.argv) != 2:
     exit()
 
 with open(sys.argv[1], 'r') as f:
-    lines = f.read().split('\n')
+    xresources = f.read()
 
 with open(conf_file, 'r') as f:
     kitty_conf = f.read()
 
-# print(kitty_conf)
-
-for l in lines: # xresourses lines
-    ''' colors 0 -> 15 '''
-    if re.compile('^\*\.color.* \#\S*$').match(l):
-        crg = '^{}'.format(l.split(' ')[0][2:-1])
-        for ll in kitty_conf.split('\n'): # kitty lines
-            r = re.compile(crg).match(ll)
-            if r:
-                new = l.replace('.', '').replace('*', '').replace(':', '')
-                old = ll
-                print('{} -> {}'.format(old, new))
-                kitty_conf = kitty_conf.replace(old, new)
-                break
-    ''' assossiations '''
-    for item in assossiations.items():
-        crg = '^\{}\{}{}'.format(item[0][0], item[0][1], item[0][2:])
-        #print(crg)
+''' assossiations '''
+for item in assossiations.items():
+    for l in xresources.split('\n'): # xresourses lines
+        crg = '^\{}\{}{}:'.format(item[0][0], item[0][1], item[0][2:])
         if re.compile(crg).match(l):
             new = l[-7:]
             for destiny in assossiations[item[0]]:
                 for ll in kitty_conf.split('\n'): # kitty lines
                     crg1 = '^{}'.format(destiny)
-                    crg2 = '#......$'.format(destiny)
-                    if re.search(crg1, ll) and re.search(crg1, ll):
+                    crg2 = '#......$'
+                    if re.search(crg1, ll) and re.search(crg2, ll):
                         print('{} -> {}    {}'.format(ll, destiny, new))
                         kitty_conf = kitty_conf.replace(ll, '{}    {}'.format(destiny, new))
                         break
 
-    
-
 with open(conf_file, 'w') as f:
     f.write(kitty_conf)
-
-# cat kitty.conf | grep '.* #\S\{6\}$
