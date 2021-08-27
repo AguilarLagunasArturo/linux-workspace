@@ -16,6 +16,7 @@
         "python3-pip",
         "rxvt",
         "kitty",
+        "tmux",
         "tree",
         "fortune-mod",
         "cowsay",
