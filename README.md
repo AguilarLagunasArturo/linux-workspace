@@ -1,7 +1,12 @@
 # Linux workspace (debian based distros - 2021)
 This is the greatest management of all time.
-## Notes:
-- _home/.homemade_ directory for my custom resources/projects
+## Screenshots
+|Info|Preview|
+|:-|:-|
+|Desktop|![Desktop](home/.homemade/linux_rice/ss-desktop.png)|
+|Conky|![Desktop](home/.homemade/linux_rice/ss-conky.png)|
+## Notes
+_home/.homemade_ directory for my custom resources/projects
 ## Setup
 ```bash
 sudo apt update;
