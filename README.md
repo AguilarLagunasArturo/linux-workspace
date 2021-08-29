@@ -3,22 +3,28 @@ This is the greatest management of all time.
 ## Screenshots
 |Info|Preview|
 |:-|:-|
-|Desktop|![Desktop](home/.homemade/linux_rice/ss-desktop.png)|
-|Conky|![Desktop](home/.homemade/linux_rice/ss-conky.png)|
+|Desktop|![Desktop](home/.homemade/rice/ss-desktop.png)|
+|Conky|![Desktop](home/.homemade/rice/ss-conky.png)|
 ## Notes
 _home/.homemade_ directory for my custom resources/projects
 ## Setup
 ```bash
+# Update and install dependencies
 sudo apt update;
 sudo apt upgrade -y;
 sudo apt install git stow;
 
+# Clone repo
 mkdir Github; cd Github;
 git clone https://github.com/AguilarLagunasArturo/linux-workspace.git;
-cd linux-workspace;
-# rm README.md; TODO: test and resolve conflicts
 
+# Change directory and remove files
+cd linux-workspace;
+rm README.md;
+
+# Create symlinks in the System
 stow -Svt ~ *;
+git fetch;
 ```
 ## List of content
 - scripts
@@ -69,15 +75,11 @@ sudo systemctl enable --now snapd apparmor;
 ```bash
 git config --global credential.helper 'cache --timeout 1200'
 ```
-### Chage sound effects
+### Change main terminal emulator
 ```bash
-# TODO
+sudo update-alternatives --config x-terminal-emulator
 ```
 ### Create custom menus
-```bash
-# TODO
-```
-### Change main terminal emulator
 ```bash
 # TODO
 ```
