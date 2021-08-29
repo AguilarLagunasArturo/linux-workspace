@@ -1,10 +1,10 @@
 # Linux workspace (debian based distros - 2021)
 This is the greatest management of all time.
 ## Screenshots
-|Info|Preview|
-|:-|:-|
-|Desktop|![Desktop](home/.homemade/rice/ss-desktop.png)|
-|Conky|![Desktop](home/.homemade/rice/ss-conky.png)|
+|Preview|
+|:-|
+|![Desktop](home/.homemade/rice/ss-conky.png)|
+|![Desktop](home/.homemade/rice/ss-desktop.png)|
 ## Notes
 _home/.homemade_ directory for my custom resources/projects
 ## Setup
