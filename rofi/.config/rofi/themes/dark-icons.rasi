@@ -9,8 +9,9 @@
 configuration {
   font: "RobotoMono Nerd Font 12";
   drun-display-format: "{icon}  {name} [<span weight='light' size='small'><i>({categories})</i></span>]";
-  window-format: "{icon}  {c}  {t}";
-  modi: "window,drun";
+  window-format: "{icon}  {w}  {c}  {t}";
+  modi: "window,drun,ssh";
+  display-ssh: "";
   display-drun: "";
   display-window: "";
   show-icons: true;

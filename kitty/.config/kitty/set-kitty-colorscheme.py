@@ -4,7 +4,7 @@ import sys
 import re
 import os
 
-schemes_path = os.path.join(os.environ.get('HOME'), '.homemade/color_schemes/')
+schemes_path = os.path.join(os.environ.get('HOME'), '.homemade/color-schemes/')
 conf_file = os.path.join(os.environ.get('HOME'), '.config/kitty/kitty.conf')
 
 '''

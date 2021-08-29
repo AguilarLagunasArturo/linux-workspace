@@ -20,4 +20,6 @@ alias dpexels='python ~/Github/pexels-image-downloader/download.py'
 # convert <img.format1> <img.format2>
 
 # -- AUTORUN --
-neofetch
+# neofetch                                                      # Default
+# neofetch --backend w3m --loop yes --xoffset 24 --yoffset 2    # Kitty + w3m
+# neofetch --backend w3m                                        # Urxtv + w3m

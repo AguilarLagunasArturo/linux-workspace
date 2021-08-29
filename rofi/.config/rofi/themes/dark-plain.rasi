@@ -1,6 +1,6 @@
 /*
     Author:       Arturo Aguilar Lagunas
-    Description:  Rofi dark theme, rounded borders, icons
+    Description:  Rofi dark theme, rounded borders
     Date:         28/08/2021
 */
 
@@ -8,12 +8,12 @@
 
 configuration {
   font: "RobotoMono Nerd Font 12";
-  drun-display-format: "{icon}  {name} [<span weight='light' size='small'><i>({categories})</i></span>]";
-  window-format: "{icon}  {c}  {t}";
-  modi: "window,drun";
+  drun-display-format: "{name} [<span weight='light' size='small'><i>({categories})</i></span>]";
+  window-format: "{w}  {c}  {t}";
+  modi: "window,drun,ssh";
+  display-ssh: "";
   display-drun: "";
   display-window: "";
-  show-icons: true;
 }
 
 /* All */

@@ -30,11 +30,11 @@ Optional system configurations (*manual*).
 ## Shortcuts
 |Name|Shortcut|Command|
 |:-|:-|:-|
-|US Keyboard layout|Super + Ctrl + U|setxkbmap us|
-|ES Keyboard layout|Super + Ctrl + E|setxkbmap es|
-|Launch rofi window|Super + Tab|rofi -show window -theme /home/aal/.config/rofi/themes/main.rasi|
-|Launch rofi applet|Super + A|rofi -show drun -theme /home/aal/.config/rofi/themes/main.rasi|
-|Launch terminal|Ctrl + Alt + T|gnome-terminal|
+|US Keyboard layout|Super + Ctrl + U|`setxkbmap us`|
+|ES Keyboard layout|Super + Ctrl + E|`setxkbmap es`|
+|Launch rofi window|Super + Tab|`rofi -show window -theme $HOME/.config/rofi/themes/main.rasi`|
+|Launch rofi applet|Super + A|`rofi -show drun -theme $HOME/.config/rofi/themes/main.rasi`|
+|Launch terminal|Ctrl + Alt + T|`gnome-terminal`|
 ## Tutorials
 ### Stow commands
 ```bash
