@@ -26,11 +26,6 @@ rm README.md;
 stow -Svt ~ *;
 git fetch;
 ```
-## List of content
-- scripts
-- shortcuts
-- tutorials
-
 # System configuration
 Optional system configurations (*manual*).
 ## Shortcuts
