@@ -27,7 +27,7 @@ stow -Svt ~ *;
 git fetch;
 ```
 # System configuration
-Optional system configurations (*manual*).
+Stuff I have to configure manually.
 ## Shortcuts
 |Name|Shortcut|Command|
 |:-|:-|:-|
@@ -90,5 +90,3 @@ sudo update-alternatives --config x-terminal-emulator
 ### Test utilities
 - bat
 - gdu
-- tmux
-- urxvt
