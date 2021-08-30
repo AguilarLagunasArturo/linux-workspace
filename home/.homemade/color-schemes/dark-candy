@@ -4,12 +4,12 @@
 *.cursorColor:  #c4c9d5
 
 ! black
-*.color0:       #596a86
-*.color8:       #6a90c6
+*.color0:       #c97882
+*.color8:       #e76374
 
 ! red
-*.color1:       #999a76
-*.color9:       #a18f5b
+*.color1:       #bfa072
+*.color9:       #c79b58
 
 ! green
 *.color2:       #7baf8f
@@ -20,17 +20,17 @@
 *.color11:      #5ba05e
 
 ! blue
-*.color4:       #ac9065
-*.color12:      #c79b58
+*.color4:       #769ace
+*.color12:      #6a90c6
 
 ! magenta
-*.color5:       #808ca1
+*.color5:       #a0c7c5
 *.color13:      #82b1af
 
 ! cyan
-*.color6:       #acb4c5
-*.color14:      #84a5d8
+*.color6:       #9e8edb
+*.color14:      #9682e3
 
 ! white
-*.color7:       #e0e2e9
-*.color15:      #e2a9e0
+*.color7:       #dadce2
+*.color15:      #d6dbea
