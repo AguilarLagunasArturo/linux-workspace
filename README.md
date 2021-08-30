@@ -50,7 +50,10 @@ stow --nDvt ~ <stow-folder>;        # Removes symlinks from $HOME directory
 ```
 ### Read manpages
 ```bash
-man -P "less -p 'CONFIGURATION SETTINGS'" <program-name>
+# Case: 0
+man <program-name>;
+# Case: 1
+man -P "less -p 'CONFIGURATION SETTINGS'" <program-name>;
 ```
 ### Load Xresources
 ```bash
