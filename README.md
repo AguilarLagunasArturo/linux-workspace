@@ -38,9 +38,11 @@ Optional system configurations (*manual*).
 |:-|:-|:-|
 |US Keyboard layout|Super + Ctrl + U|`setxkbmap us`|
 |ES Keyboard layout|Super + Ctrl + E|`setxkbmap es`|
+|Reset conky|Super + Ctrl + C|`$HOME/.config/conky/./launch.sh`|
+|Kill process|Super + Ctrl + X|`xkill`|
 |Launch rofi window|Super + Tab|`rofi -show window -theme $HOME/.config/rofi/themes/main.rasi`|
 |Launch rofi applet|Super + A|`rofi -show drun -theme $HOME/.config/rofi/themes/main.rasi`|
-|Launch terminal|Ctrl + Alt + T|`gnome-terminal`|
+|Launch terminal|Ctrl + Alt + T|`kitty`|
 ## Tutorials
 ### Stow commands
 ```bash
