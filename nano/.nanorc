@@ -1,7 +1,15 @@
-set tabsize 4
-set constantshow
 set autoindent
-# set linenumbers
-# set nohelp
+set nonewlines
+set positionlog
+set constantshow
+set tabsize 4
 set tabstospaces
+set linenumbers
+set softwrap
+# set whitespace "->"
+# set smooth
 # set boldtext
+# set numbercolor "normal,normal"
+# set titlecolor "normal,normal"
+# set mouse
+# set nohelp
