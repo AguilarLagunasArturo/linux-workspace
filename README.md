@@ -94,7 +94,7 @@ sudo systemctl enable --now snapd apparmor
 ```bash
 git config --global credential.helper 'cache --timeout 1200'
 ```
-### Reset Pulseaudio
+### Reset PulseAudio
 ```bash
 pulseaudio -k && sudo alsa force-reload
 ```
