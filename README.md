@@ -19,7 +19,7 @@ mkdir Github
 cd Github
 git clone https://github.com/AguilarLagunasArturo/linux-workspace.git
 
-# Change directory and remove files
+# Change directory and remove unneeded files
 cd linux-workspace
 rm README.md
 
@@ -28,7 +28,7 @@ stow -Svt ~ *
 git fetch
 ```
 # System configuration
-Stuff I have to configure manually.
+Stuff I have to do manually.
 ## Shortcuts
 |Name|Shortcut|Command|
 |:-|:-|:-|
@@ -37,7 +37,7 @@ Stuff I have to configure manually.
 |Reset conky|Super + Ctrl + C|`$HOME/.config/conky/./launch.sh`|
 |Kill process|Super + Ctrl + X|`xkill`|
 |Launch rofi window|Super + Tab|`rofi -show window -theme $HOME/.config/rofi/themes/main.rasi`|
-|Launch rofi applet|Super + A|`rofi -show drun -theme $HOME/.config/rofi/themes/main.rasi`|
+|Launch rofi drun|Super + A|`rofi -show drun -theme $HOME/.config/rofi/themes/main.rasi`|
 |Launch terminal|Ctrl + Alt + T|`kitty`|
 ## Tutorials
 ### Usefull stow commands
