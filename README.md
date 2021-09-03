@@ -61,6 +61,10 @@ xrdb ~/.Xresources
 ```bash
 sudo update-alternatives --config x-terminal-emulator
 ```
+### Get application name
+```bash
+xprop WM_CLASS
+```
 ### ImageMagick allow Image to PDF
 ```bash
 sudo nano /etc/ImageMagick-6/policy.xml
@@ -75,7 +79,6 @@ sudo nano /etc/ImageMagick-6/policy.xml
 ```xml
   <policy domain="coder" rights="read | write" pattern="PDF" /> <!-- TO THIS -->
 ```
-
 ### Install language support
 ```bash
 sudo nano /etc/locale.gen  # Uncomment lines
@@ -91,6 +94,23 @@ sudo systemctl enable --now snapd apparmor
 ```bash
 git config --global credential.helper 'cache --timeout 1200'
 ```
+### Reset Pulseaudio
+```bash
+pulseaudio -k && sudo alsa force-reload
+```
+### Video conversion
+```bash
+# .mkv -> .avi
+ffmpeg -i "input.mkv" -f avi -c:v mpeg4 -b:v 4000k -c:a libmp3lame -b:a 320k "out.avi"
+# .mkv -> .avi (dual audio -> single audio)
+ffmpeg -i "input.mkv" -map 0:v -map 0:a:1 -f avi -c:v mpeg4 -b:v 4000k -c:a libmp3lame -b:a 320k "out.avi"
+
+# speed change
+ffmpeg -i input.mp4 -filter:v "setpts=0.005*PTS" output.mp4
+
+# crop video
+ffmpeg -i input.mp4 -filter:v "crop:1920:1080:100:50" output.mp4
+```
 ### Create custom menus
 ```bash
 # TODO
@@ -102,5 +122,8 @@ git config --global credential.helper 'cache --timeout 1200'
 ### Test utilities
 - bat
 - gdu
+- dmenu
+- polybar
+- bspwn / qtile / openbox
 ### TODO
 - test setup
