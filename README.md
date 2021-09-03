@@ -102,6 +102,7 @@ pulseaudio -k && sudo alsa force-reload
 ```bash
 # .mkv -> .avi
 ffmpeg -i "input.mkv" -f avi -c:v mpeg4 -b:v 4000k -c:a libmp3lame -b:a 320k "out.avi"
+
 # .mkv -> .avi (dual audio -> single audio)
 ffmpeg -i "input.mkv" -map 0:v -map 0:a:1 -f avi -c:v mpeg4 -b:v 4000k -c:a libmp3lame -b:a 320k "out.avi"
 
