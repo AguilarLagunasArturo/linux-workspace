@@ -120,6 +120,13 @@ xinput list-props <device id>
 # Set property
 xinput set-prop <device id> <property id> <state 1/0>
 ```
+### Set wallpapers
+```bash
+# using feh
+feh --bg-fill <img>
+# using hydrapaper
+hydrapaper -c <img>
+```
 ### Video conversion
 ```bash
 # .mkv -> .avi
