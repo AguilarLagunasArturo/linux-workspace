@@ -34,7 +34,8 @@
         "ranger",
         "dconf-editor",
         "texlive-base",
-        "colortest"
+        "colortest",
+        "xinput"
       ],
       "gui": [
         "papirus-icon-theme",
@@ -53,7 +54,9 @@
         "transmission",
         "obs-studio",
         "code-oss",
-        "hydrapaper"
+        "hydrapaper",
+        "nitrogen",
+        "lxappearance"
       ]
     }
   },

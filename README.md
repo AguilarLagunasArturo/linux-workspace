@@ -23,7 +23,7 @@ git clone https://github.com/AguilarLagunasArturo/linux-workspace.git
 cd linux-workspace
 rm README.md
 
-# Create symlinks in the system
+# Create symlinks in the system and restore deleted files
 stow -Svt ~ *
 git fetch
 ```
@@ -98,6 +98,28 @@ git config --global credential.helper 'cache --timeout 1200'
 ```bash
 pulseaudio -k && sudo alsa force-reload
 ```
+### Manage monitors
+```bash
+# List monitors
+xrandr
+
+# Configure position
+xrandr --output HDMI-0 --left-of eDP --auto
+```
+### Change hardware properties
+```bash
+# Install xinput
+sudo apt install xinput
+
+# List devices
+xinput list
+
+# Lits device properties
+xinput list-props <device id>
+
+# Set property
+xinput set-prop <device id> <property id> <state 1/0>
+```
 ### Video conversion
 ```bash
 # .mkv -> .avi
@@ -121,6 +143,7 @@ ffmpeg -i input.mp4 -filter:v "crop:1920:1080:100:50" output.mp4
 # TODO
 ```
 ### Test utilities
+- mv -i / rm -i
 - bat
 - gdu
 - dmenu
