@@ -241,6 +241,8 @@ exec xinput set-prop "SynPS/2 Synaptics TouchPad" 291 1
 # Dual monitor
 exec xrandr --output HDMI-0 --left-of eDP --auto
 # Wallpaper
-exec feh --bg-fill /home/aal/Pictures/wallpapers/desktop/nami-ussop.jpeg
+exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/nami-ussop.jpeg
+# Compositor
+exec picom
 
 # }}}

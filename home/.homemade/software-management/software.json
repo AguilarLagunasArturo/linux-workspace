@@ -35,7 +35,10 @@
         "dconf-editor",
         "texlive-base",
         "colortest",
-        "xinput"
+        "xinput",
+        "i3-gaps",
+        "picom",
+        "feh"
       ],
       "gui": [
         "papirus-icon-theme",
