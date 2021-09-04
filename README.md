@@ -21,7 +21,7 @@ git clone https://github.com/AguilarLagunasArturo/linux-workspace.git
 
 # Change directory and remove unneeded files
 cd linux-workspace
-rm README.md
+rm -r krita README.md
 
 # Create symlinks in the system and restore deleted files
 stow -Svt ~ *
