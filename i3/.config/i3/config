@@ -49,7 +49,7 @@ floating_modifier $sup
 bindsym $sup+Return exec kitty
 
 # kill focused window
-bindsym $sup+Shift+q kill
+bindsym $sup+q kill
 
 # start program launcher (rofi, dmenu)
 bindsym $sup+d exec --no-startup-id dmenu_run
@@ -146,7 +146,7 @@ bindsym $sup+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $sup+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $sup+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $sup+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -187,7 +187,7 @@ title_align center
 
 # Borders (normal|none|pixel)
 default_border pixel 0
-default_floating_border 0
+default_floating_border pixel 0
 
 # Sticky windows
 for_window [instance=Conky] sticky enable
