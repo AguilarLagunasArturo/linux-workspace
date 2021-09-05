@@ -6,7 +6,7 @@ This is the greatest management of all time.
 |![Desktop](home/.homemade/rice/ss-conky.png)|
 |![Desktop](home/.homemade/rice/ss-desktop.png)|
 ## Notes
-_home/.homemade_ directory for my custom resources/projects
+_home/.homemade_ is a directory for my custom resources, scrips and projects.
 ## Setup
 ```bash
 # Update and install dependencies

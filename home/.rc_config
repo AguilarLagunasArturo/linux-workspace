@@ -1,9 +1,13 @@
+# -- ADD SOURCE TO CURRENT SHELL --
+# source ~/.rc_config
+# ---------------------------------
+
 # -- EXPORTS --
 export PI=3.141592
 
 # -- ALIASES --
 alias copy='xclip -select c'
-alias dpexels='python ~/Github/pexels-image-downloader/download.py'
+alias pexels='python ~/Github/pexels-image-downloader/download.py'
 # alias freeCAD='LIBGL_DRI3_DISABLE=true freecad'
 
 # -- COMMANDS --

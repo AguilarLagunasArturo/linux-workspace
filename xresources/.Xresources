@@ -47,14 +47,15 @@ URxvt*keysym.S-C-Left:		\033[1;6D
 !! Transparency
 
 ! depth
-*.depth:		32
-*.transparent:	false
+urxvt*.depth:		32
+urxvt*.transparent:	false
+urxvt*.background: [80]#000000
 
 !! Color Scheme
 
 ! special
 *.foreground:   #e9f2ee
-*.background:   [80]#000000
+*.background:   #000000
 *.cursorColor:  #e9f2ee
 
 ! black
