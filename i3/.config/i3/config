@@ -35,7 +35,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# set variables
+# Setting variables
 set $sup Mod4
 # set $up Up
 # set $down Down
@@ -86,10 +86,10 @@ bindsym $sup+w layout tabbed
 bindsym $sup+e layout toggle split
 
 # toggle tiling / floating
-bindsym $sup+Shift+space floating toggle
+bindsym $sup+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $sup+space focus mode_toggle
+# bindsym $sup+space focus mode_toggle
 
 # focus the parent container
 # bindsym $sup+a focus parent
@@ -179,6 +179,12 @@ bar {
 
 # Custom settings: {{{
 
+# Moving workspaces to different screen
+bindsym $sup+Shift+Ctrl+Right move workspace to output right
+bindsym $sup+Shift+Ctrl+Left move workspace to output left
+bindsym $sup+Shift+Ctrl+Up move workspace to output up
+bindsym $sup+Shift+Ctrl+Down move workspace to output down
+
 # Default layout (default|tabbed|stacking)
 workspace_layout tabbed
 
@@ -186,11 +192,16 @@ workspace_layout tabbed
 title_align center
 
 # Borders (normal|none|pixel)
-default_border pixel 0
-default_floating_border pixel 0
+smart_borders on
+default_border pixel 2
+default_floating_border pixel 2
 
 # Sticky windows
 for_window [instance=Conky] sticky enable
+
+# gaps
+smart_gaps on
+gaps inner 12
 
 # }}}
 
@@ -218,14 +229,14 @@ bindsym $sup+Ctrl+c exec $HOME/.config/conky/./launch.sh
 bindsym $sup+Ctrl+u exec setxkbmap us
 bindsym $sup+Ctrl+e exec setxkbmap es
 # Kill process
-bindsym $sup+Ctrl+x exec xkill
+bindsym $sup+Ctrl+x exec --no-startup-id kitty -e xkill
 # Reset wallpaper
-bindsym $sup+Ctrl+w exec feh --bg-fill /home/aal/Pictures/wallpapers/desktop/nami-ussop.jpeg
+bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/current/bg.png
 # Refresh Dual monitor
-exec xrandr --output HDMI-0 --left-of eDP --auto; feh --bg-fill /home/aal/Pictures/wallpapers/desktop/nami-ussop.jpeg
+bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto; exec $HOME/Pictures/wallpapers/desktop/current/bg.png
 # Refresh Single monitor
-# Volume up
-# Volume down
+# Brightness up
+# Brightness down
 
 # }}}
 
@@ -241,8 +252,8 @@ exec xinput set-prop "SynPS/2 Synaptics TouchPad" 291 1
 # Dual monitor
 exec xrandr --output HDMI-0 --left-of eDP --auto
 # Wallpaper
-exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/nami-ussop.jpeg
+exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/current/bg.png
 # Compositor
 exec picom
-
+# exec picom -experimental-backends
 # }}}

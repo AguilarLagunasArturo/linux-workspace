@@ -92,7 +92,7 @@
       "source": "https://www.apachefriends.org/download.html"
     },
     "Scilab": {
-      "source": ""
+      "source": "https://www.scilab.org/"
     },
     "rofi": {
       "source": "https://github.com/davatorium/rofi"
@@ -102,6 +102,15 @@
     },
     "qtile": {
       "source": "http://www.qtile.org/"
+    },
+    "i3-gnome": {
+      "source": "https://github.com/i3-gnome/i3-gnome"
+    },
+    "i3-gaps": {
+      "source": "https://github.com/Airblader/i3"
+    },
+    "i3": {
+      "source": "https://github.com/i3/i3"
     }
   },
   "pip": {
