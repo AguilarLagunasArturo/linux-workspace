@@ -111,6 +111,12 @@
     },
     "i3": {
       "source": "https://github.com/i3/i3"
+    },
+    "Fluent-gtk-theme": {
+      "source": "https://github.com/vinceliuice/Fluent-gtk-theme"
+    },
+    "Orchis-gtk-theme": {
+      "source": "https://github.com/vinceliuice/Orchis-theme"
     }
   },
   "pip": {

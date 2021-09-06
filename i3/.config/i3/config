@@ -30,8 +30,8 @@ exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && pactl set-sink-mute @DEFAULT_SINK@ off && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && pactl set-sink-mute @DEFAULT_SINK@ off && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -77,13 +77,11 @@ bindsym $sup+h split h
 # split in vertical orientation
 bindsym $sup+v split v
 
+# split toggle (horizontal / vertical)
+bindsym $sup+t layout toggle tabbed split
+
 # enter fullscreen mode for the focused container
 bindsym $sup+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $sup+s layout stacking
-bindsym $sup+w layout tabbed
-bindsym $sup+e layout toggle split
 
 # toggle tiling / floating
 bindsym $sup+space floating toggle
@@ -158,10 +156,10 @@ mode "resize" {
         # Pressing down will grow the window’s height.
 
         # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
+        bindsym Left        resize shrink width 10 px or 1 ppt
+        bindsym Down        resize grow height 10 px or 1 ppt
+        bindsym Up          resize shrink height 10 px or 1 ppt
+        bindsym Right       resize grow width 10 px or 1 ppt
 
         # back to normal: Enter or Escape or $sup+r
         bindsym Return mode "default"
@@ -185,36 +183,50 @@ bindsym $sup+Shift+Ctrl+Left move workspace to output left
 bindsym $sup+Shift+Ctrl+Up move workspace to output up
 bindsym $sup+Shift+Ctrl+Down move workspace to output down
 
-# Default layout (default|tabbed|stacking)
-workspace_layout tabbed
-
 # Window titles (title_align left|center|right)
 title_align center
 
 # Borders (normal|none|pixel)
 smart_borders on
-default_border pixel 2
-default_floating_border pixel 2
-
-# Sticky windows
-for_window [instance=Conky] sticky enable
+for_window [class=".*"] border pixel 2
+# default_border pixel 2
+# default_floating_border pixel 2
 
 # gaps
 smart_gaps on
-gaps inner 12
+gaps inner 0
+gaps outer 0
+
+# floating max size
+floating_maximum_size 1320 x 700
+
+# default layout (default|tabbed|stacking)
+workspace_layout tabbed
+
+# workspaces settings
+for_window [ workspace="2" ] layout default
+
+# window settings
+for_window [ instance=Conky ] sticky enable
+for_window [ instance="urxvt" ] floating enable
+for_window [ instance="urxvt" ] resize set 1300 580
+for_window [ instance="gnome-terminal-server" ] floating enable
+for_window [ instance="gnome-terminal-server" ] resize set 960 560
+for_window [ floating ] move absolute position center
 
 # }}}
 
 # Color: {{{
+# set_from_resource $bg i3wm.backgroud #000000
 
 # class                 border  bg      text    indicator child_border
-client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused          #323232 #323232 #ffffff #2e9ef4   #285577
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
-client.background       #ffffff
+client.background       #000000
 
 # }}}
 
@@ -235,9 +247,10 @@ bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/current
 # Refresh Dual monitor
 bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto; exec $HOME/Pictures/wallpapers/desktop/current/bg.png
 # Refresh Single monitor
-# Brightness up
 # Brightness down
-
+bindsym $sup+k exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-down
+# Brightness up
+bindsym $sup+l exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-up
 # }}}
 
 # Custom autorun: {{{
@@ -254,6 +267,8 @@ exec xrandr --output HDMI-0 --left-of eDP --auto
 # Wallpaper
 exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/current/bg.png
 # Compositor
-exec picom
+# exec xcompmgr -c
+# exec --no-startup-id picom
 # exec picom -experimental-backends
+
 # }}}

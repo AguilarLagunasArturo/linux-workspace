@@ -1,5 +1,5 @@
 set autoindent
-set nonewlines
+# set nonewlines
 set positionlog
 set constantshow
 set tabsize 4
