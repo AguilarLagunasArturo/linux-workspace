@@ -28,13 +28,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-# Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && pactl set-sink-mute @DEFAULT_SINK@ off && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && pactl set-sink-mute @DEFAULT_SINK@ off && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
-
 # Setting variables
 set $sup Mod4
 # set $up Up
@@ -232,6 +225,12 @@ client.background       #000000
 
 # Custom keybindings: {{{
 
+# Use pactl to adjust volume in PulseAudio
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && pactl set-sink-mute @DEFAULT_SINK@ off && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && pactl set-sink-mute @DEFAULT_SINK@ off && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 # Rofi
 bindsym $sup+Tab exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show window
 bindsym $sup+a exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show drun
@@ -240,17 +239,26 @@ bindsym $sup+Ctrl+c exec $HOME/.config/conky/./launch.sh
 # Keyboard layout
 bindsym $sup+Ctrl+u exec setxkbmap us
 bindsym $sup+Ctrl+e exec setxkbmap es
-# Kill process
+# Force kill process
 bindsym $sup+Ctrl+x exec --no-startup-id kitty -e xkill
+# Brightness down
+bindsym $sup+k exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-control -d
+bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-control -d
+# Brightness up
+bindsym $sup+l exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-control -u
+bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-control -u
+# Screenshot
+bindsym --release $sup+Print exec $HOME/.homemade/bin/imagemagick-import-screenshot
+bindsym --release $sup+Shift+Print exec sleep 5 && $HOME/.homemade/bin/imagemagick-import-screenshot
+
+# TODO
 # Reset wallpaper
 bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/current/bg.png
 # Refresh Dual monitor
 bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto; exec $HOME/Pictures/wallpapers/desktop/current/bg.png
 # Refresh Single monitor
-# Brightness down
-bindsym $sup+k exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-down
-# Brightness up
-bindsym $sup+l exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-up
+
+
 # }}}
 
 # Custom autorun: {{{

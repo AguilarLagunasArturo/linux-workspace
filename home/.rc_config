@@ -6,8 +6,9 @@
 export PI=3.141592
 
 # -- ALIASES --
-alias copy='xclip -select c'
+alias copy='xclip -selection clipboard'
 alias pexels='python ~/Github/pexels-image-downloader/download.py'
+alias lbin='ls -l ~/.homemade/bin/'
 # alias freeCAD='LIBGL_DRI3_DISABLE=true freecad'
 
 # -- COMMANDS --

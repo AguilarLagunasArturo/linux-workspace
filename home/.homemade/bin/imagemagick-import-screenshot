@@ -1,0 +1,29 @@
+#! /usr/bin/env bash
+
+# this function is called when Ctrl-C is sent
+function trap_ctrlc ()
+{
+    # calcel screenshot
+    echo " No screenshot"
+
+    # exit shell script with error code 2
+    # if omitted, shell script will continue execution
+    exit 2
+}
+
+# initialise trap to call trap_ctrlc function
+# when signal 2 (SIGINT) is received
+trap "trap_ctrlc" 2
+
+# save directory
+ss_path=$HOME/Pictures/screenshots/
+# create save directory
+mkdir -p $ss_path
+# get screenshot name
+ss_name=$ss_path$(date +ss-%m-%d-%y-at-%H-%M-%S).png
+# take screenshot
+import $ss_name
+# copy to clipboard
+xclip -selection clipboard -t image/png $ss_name
+# image name
+echo $ss_name
