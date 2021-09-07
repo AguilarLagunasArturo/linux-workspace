@@ -132,6 +132,18 @@ bindsym $sup+Shift+8 move container to workspace number $ws8
 bindsym $sup+Shift+9 move container to workspace number $ws9
 bindsym $sup+Shift+0 move container to workspace number $ws10
 
+# move focused container to workspace
+bindsym $sup+Shift+Ctrl+1 move container to workspace number $ws1; workspace number $ws1
+bindsym $sup+Shift+Ctrl+2 move container to workspace number $ws2; workspace number $ws2
+bindsym $sup+Shift+Ctrl+3 move container to workspace number $ws3; workspace number $ws3
+bindsym $sup+Shift+Ctrl+4 move container to workspace number $ws4; workspace number $ws4
+bindsym $sup+Shift+Ctrl+5 move container to workspace number $ws5; workspace number $ws5
+bindsym $sup+Shift+Ctrl+6 move container to workspace number $ws6; workspace number $ws6
+bindsym $sup+Shift+Ctrl+7 move container to workspace number $ws7; workspace number $ws7
+bindsym $sup+Shift+Ctrl+8 move container to workspace number $ws8; workspace number $ws8
+bindsym $sup+Shift+Ctrl+9 move container to workspace number $ws9; workspace number $ws9
+bindsym $sup+Shift+Ctrl+0 move container to workspace number $ws10; workspace number $ws10
+
 # reload the configuration file
 bindsym $sup+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -187,8 +199,8 @@ for_window [class=".*"] border pixel 2
 
 # gaps
 smart_gaps on
-gaps inner 8
-gaps outer 12
+gaps inner 12
+gaps outer 8
 
 # floating max size
 floating_maximum_size 1320 x 700
@@ -210,10 +222,11 @@ for_window [ instance="gnome-terminal-server" ] resize set 960 560
 # }}}
 
 # Color: {{{
-# set_from_resource $bg i3wm.backgroud #000000
+
+set_from_resource $color_border color2 #f19c53
 
 # class                 border  bg      text    indicator child_border
-client.focused          #323232 #323232 #ffffff #2e9ef4   #285577
+client.focused          #323232 #323232 #ffffff #2e9ef4   $color_border
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -276,6 +289,6 @@ exec xrandr --output HDMI-0 --left-of eDP --auto
 exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/current/bg.png
 # Compositor
 exec --no-startup-id picom
-# exec picom -experimental-backends
+# exec --no-startup-id picom -experimental-backends
 
 # }}}
