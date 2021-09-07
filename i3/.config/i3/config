@@ -187,8 +187,8 @@ for_window [class=".*"] border pixel 2
 
 # gaps
 smart_gaps on
-gaps inner 0
-gaps outer 0
+gaps inner 8
+gaps outer 12
 
 # floating max size
 floating_maximum_size 1320 x 700
