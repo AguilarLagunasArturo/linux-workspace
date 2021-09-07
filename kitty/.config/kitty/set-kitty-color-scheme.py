@@ -80,9 +80,9 @@ for item in assossiations.items():
                     crg1 = '^{}'.format(destiny)
                     crg2 = '#......$'
                     if re.search(crg1, ll) and re.search(crg2, ll):
-                        print('{} -> {}    {}'.format(ll, destiny, new))
                         kitty_conf = kitty_conf.replace(ll, '{}    {}'.format(destiny, new))
                         break
 
+print('Kitty color scheme: {}'.format( os.path.split(sys.argv[1])[1] ))
 with open(conf_file, 'w') as f:
     f.write(kitty_conf)

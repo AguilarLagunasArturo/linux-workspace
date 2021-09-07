@@ -54,38 +54,38 @@ urxvt*.background: [80]#000000
 !! Color Scheme
 
 ! special
-*.foreground:   #e9f2ee
-*.background:   #000000
-*.cursorColor:  #e9f2ee
+*.foreground:   #d0c4c7
+*.background:   #060404
+*.cursorColor:  #d0c4c7
 
 ! black
-*.color0:       #5ec299
-*.color8:       #5ec299
+*.color0:       #281b1b
+*.color8:       #5b3d3d
 
 ! red
-*.color1:       #00b3a2
-*.color9:       #3baa98
+*.color1:       #b71914
+*.color9:       #b0201c
 
 ! green
-*.color2:       #00a2ad
-*.color10:      #269192
+*.color2:       #f19c53
+*.color10:      #ff9a44
 
 ! yellow
-*.color3:       #0090b8
-*.color11:      #267884
+*.color3:       #e5d5c3
+*.color11:      #f7eadb
 
 ! blue
-*.color4:       #007dbd
-*.color12:      #2c5f70
+*.color4:       #c64e2f
+*.color12:      #d54c29
 
 ! magenta
-*.color5:       #0067b9
-*.color13:      #2f4858
+*.color5:       #cb7272
+*.color13:      #e36a6a
 
 ! cyan
-*.color6:       #019baa
-*.color14:      #53cad9
+*.color6:       #c6a995
+*.color14:      #dab297
 
 ! white
-*.color7:       #dbe1e2
-*.color15:      #f7f9ff
+*.color7:       #ede0b4
+*.color15:      #f8e8b1

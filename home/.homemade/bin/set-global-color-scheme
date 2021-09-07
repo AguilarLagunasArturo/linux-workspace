@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+schemes_path=$HOME/.config/xresources/color-schemes/
+
+# Color schemes:
+
+if [[ ! -n $1 ]]; then
+    echo -e "Usage: $0 <xresources-color-scheme>\n\nColor schemes:"
+    for f in $schemes_path*; do
+        echo -e "\t"$f
+    done
+else
+    $HOME/.config/xresources/set-xresources-color-scheme.sh $1
+    $HOME/.config/kitty/set-kitty-color-scheme.py $1
+fi

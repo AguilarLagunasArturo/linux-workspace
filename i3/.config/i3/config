@@ -202,10 +202,10 @@ for_window [ workspace="2" ] layout default
 # window settings
 for_window [ instance=Conky ] sticky enable
 for_window [ instance="urxvt" ] floating enable
-for_window [ instance="urxvt" ] resize set 1300 580
+for_window [ instance="urxvt" ] resize set 1300 540
 for_window [ instance="gnome-terminal-server" ] floating enable
 for_window [ instance="gnome-terminal-server" ] resize set 960 560
-for_window [ floating ] move absolute position center
+# for_window [ floating ] move absolute position center
 
 # }}}
 
@@ -275,8 +275,7 @@ exec xrandr --output HDMI-0 --left-of eDP --auto
 # Wallpaper
 exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/current/bg.png
 # Compositor
-# exec xcompmgr -c
-# exec --no-startup-id picom
+exec --no-startup-id picom
 # exec picom -experimental-backends
 
 # }}}
