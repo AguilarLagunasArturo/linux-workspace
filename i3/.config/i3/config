@@ -177,7 +177,7 @@ bindsym $sup+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        # status_command i3status
 }
 
 # Custom settings: {{{
@@ -213,20 +213,20 @@ for_window [ workspace="2" ] layout default
 
 # window settings
 for_window [ instance=Conky ] sticky enable
-for_window [ instance="urxvt" ] floating enable
-for_window [ instance="urxvt" ] resize set 1300 540
 for_window [ instance="gnome-terminal-server" ] floating enable
-for_window [ instance="gnome-terminal-server" ] resize set 960 560
+# for_window [ floating ] move position center
 # for_window [ floating ] move absolute position center
 
 # }}}
 
 # Color: {{{
 
-set_from_resource $color_border color2 #f19c53
+# set xresources colors
+set_from_resource $border color2 #2e9ef4
+set_from_resource $border_prev color4 #4676be
 
 # class                 border  bg      text    indicator child_border
-client.focused          #323232 #323232 #ffffff #2e9ef4   $color_border
+client.focused          #323232 #323232 #ffffff $border_prev   $border
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -255,11 +255,11 @@ bindsym $sup+Ctrl+e exec setxkbmap es
 # Force kill process
 bindsym $sup+Ctrl+x exec --no-startup-id kitty -e xkill
 # Brightness down
-bindsym $sup+k exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-control -d
-bindsym XF86MonBrightnessDown exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-control -d
+bindsym $sup+k exec $HOME/.homemade/bin/hp-notebook-brightness-control -d
+bindsym XF86MonBrightnessDown exec $HOME/.homemade/bin/hp-notebook-brightness-control -d
 # Brightness up
-bindsym $sup+l exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-control -u
-bindsym XF86MonBrightnessUp exec --no-startup-id $HOME/.homemade/bin/hp-notebook-brightness-control -u
+bindsym $sup+l exec $HOME/.homemade/bin/hp-notebook-brightness-control -u
+bindsym XF86MonBrightnessUp exec $HOME/.homemade/bin/hp-notebook-brightness-control -u
 # Screenshot
 bindsym --release $sup+Print exec $HOME/.homemade/bin/imagemagick-import-screenshot
 bindsym --release $sup+Shift+Print exec sleep 5 && $HOME/.homemade/bin/imagemagick-import-screenshot

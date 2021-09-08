@@ -1,2 +1,2 @@
 #! /usr/bin/env bash
-chown aal:aal /sys/class/backlight/radeon_bl0/brightness
+chown aal:aal -R /sys/class/backlight/radeon_bl0/brightness

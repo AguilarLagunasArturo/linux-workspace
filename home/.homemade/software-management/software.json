@@ -33,7 +33,8 @@
         "adb",
         "ranger",
         "dconf-editor",
-        "texlive-base",
+        "texlive-full",
+        "latexmk",
         "colortest",
         "xinput",
         "i3-gaps",
@@ -59,7 +60,9 @@
         "code-oss",
         "hydrapaper",
         "nitrogen",
-        "lxappearance"
+        "lxappearance",
+        "okular",
+        "xournal"
       ]
     }
   },
