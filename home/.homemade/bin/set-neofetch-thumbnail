@@ -1,0 +1,18 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Thu 09 Sep 2021 01:27:32 AM CDT
+# Description:	Set neofetch thumbnail
+
+set -e
+
+thumbnail=$HOME/.config/neofetch/thumbnail/thumbnail.png
+cache_path=$HOME/.cache/thumbnails/neofetch
+
+if [[ ! -n $1 ]]; then
+    echo -e "Usage: $0 <path-to-thumnail>"
+else
+    convert $1 $thumbnail
+    rm $cache_path/*
+    echo -e "$1 -> $thumbnail"
+fi
