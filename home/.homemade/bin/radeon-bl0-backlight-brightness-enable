@@ -3,4 +3,4 @@
 # Author:       Arturo Aguilar Lagunas
 # Description:  Get permission to change radeon_bl0 brightness
 
-chown aal:aal -R /sys/class/backlight/radeon_bl0/brightness
+sudo chown aal:aal -R /sys/class/backlight/radeon_bl0/brightness

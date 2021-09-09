@@ -9,7 +9,7 @@ toff_l=800
 
 set -e
 
-usage="Usage:\t$0 [OPTION]\nOptions:\t\n\t-u\tVolume up\n\t-d\tVolume down-m\tVolume mute-M\tMicrophone mute"
+usage="Usage:\t$0 [OPTION]\nOptions:\t\n\t-u\tVolume up\n\t-d\tVolume down\n\t-m\tVolume mute\n\t-M\tMicrophone mute"
 
 if [[ ! -n $1 ]]; then
     echo -e $usage

@@ -1,0 +1,10 @@
+{
+    "wallpapers_tail":"$HOME/Pictures/wallpapers/",
+    "xresources_tail":"$HOME/.config/xresources/themes/",
+    "themes": {
+        "rengoku": {
+            "wallpaper_head": ["anime/demon-slayer/file.png"],
+            "thumbnail_head": ["anime/demon-slayer/file.png"]
+        }
+    }
+}
