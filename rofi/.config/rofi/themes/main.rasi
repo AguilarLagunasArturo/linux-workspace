@@ -7,9 +7,10 @@
 /* Settings */
 
 configuration {
-  font: "RobotoMono Nerd Font 12";
+  /* font: "RobotoMono Nerd Font 12"; */
+  font: "Hack Nerd Font 12";
   drun-display-format: "{icon}  {name} [<span weight='light' size='small'><i>({categories})</i></span>]";
-  window-format: "{icon}  {c}  {t}";
+  window-format: "{icon}  WS-{w}  {c}  {t}";
   modi: "window,drun";
   display-drun: "";
   display-window: "";

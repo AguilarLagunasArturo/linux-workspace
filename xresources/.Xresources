@@ -1,7 +1,12 @@
 !! URxvt
 
 ! Text & Spacing
-URxvt.font:					xft:RobotoMono Nerd Font:pixelsize=12
+! URxvt.font:xft:             RobotoMono Nerd Font:pixelsize=12:antialias=true
+! URxvt.boldFont:xft:         RobotoMono Nerd Font:bold:pixelsize=12:antialias=true
+! URxvt.font:xft:             JetBrainsMono NF:pixelsize=12:antialias=true
+! URxvt.boldFont:xft:         JetBrainsMono NF:bold:pixelsize=12:antialias=true
+URxvt.font:xft:             Hack NF:pixelsize=12:antialias=true
+! URxvt.boldFont:xft:         Hack NF:bold:pixelsize=12:antialias=true
 URxvt.letterSpace:			0
 URxvt.lineSpace:			0
 URxvt.geometry:				124x32
@@ -10,11 +15,12 @@ URxvt.internalBorder:		24
 ! Scroll bar
 URxvt.scrollBar:			false
 URxvt.scrollBar_right:		false
+URxvt.cursorBlink:          true
 
 !! Config
 
 ! ISO off
-URxvt.iso14755:				false
+URxvt.iso14755:				true
 
 ! Scrolling
 URxvt*scrollTtyOutput:		false
@@ -49,43 +55,43 @@ URxvt*keysym.S-C-Left:		\033[1;6D
 ! depth
 urxvt*.depth:		32
 urxvt*.transparent:	false
-urxvt*.background: [80]#000000
+urxvt*.background: [80]#121214
 
 !! Color Scheme
 
 ! special
-*.foreground:   #ecebe8
-*.background:   #121214
-*.cursorColor:  #ecebe8
+*.foreground:   #d0c4c7
+*.background:   #060404
+*.cursorColor:  #d0c4c7
 
 ! black
-*.color0:       #668053
-*.color8:       #6da16c
+*.color0:       #281b1b
+*.color8:       #5b3d3d
 
 ! red
-*.color1:       #d8b57b
-*.color9:       #e3be6e
+*.color1:       #b71914
+*.color9:       #b0201c
 
 ! green
-*.color2:       #00a2ad
-*.color10:      #269192
+*.color2:       #f19c53
+*.color10:      #ff9a44
 
 ! yellow
-*.color3:       #943b4f
-*.color11:      #862b3e
+*.color3:       #e5d5c3
+*.color11:      #f7eadb
 
 ! blue
-*.color4:       #6198b1
-*.color12:      #5dbed3
+*.color4:       #c64e2f
+*.color12:      #d54c29
 
 ! magenta
-*.color5:       #b27756
-*.color13:      #b36b44
+*.color5:       #cb7272
+*.color13:      #e36a6a
 
 ! cyan
-*.color6:       #53d9d0
-*.color14:      #68cdbd
+*.color6:       #c6a995
+*.color14:      #dab297
 
 ! white
-*.color7:       #e4e9ea
-*.color15:      #f7f9ff
+*.color7:       #ede0b4
+*.color15:      #f8e8b1
