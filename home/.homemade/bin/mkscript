@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Description:  Quick script snippet
+
+set -e
+
+header="#! /usr/bin/env bash\n\n# Author:\t\tArturo Aguilar Lagunas\n# Date:\t\t\t"$(date)"\n# Description:\t<>"
+
+if [[ ! -n $1 ]]; then
+    echo -e "Usage $0 <filename>"
+else
+    touch $1
+    echo -e $header >> $1
+    chmod +x $1
+    nano $1
+fi;
