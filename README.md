@@ -3,8 +3,8 @@ This is the greatest management of all time.
 ## Screenshots
 |Preview|
 |:-|
-|![Desktop](home/.homemade/rice/ss-conky.png)|
-|![Desktop](home/.homemade/rice/ss-desktop.png)|
+|![Desktop](home/.homemade/rice/screenshots/ss-conky.png)|
+|![Desktop](home/.homemade/rice/screenshots/ss-desktop.png)|
 ## Notes
 _home/.homemade_ is a directory for my custom resources, scrips and projects.
 ## Setup
