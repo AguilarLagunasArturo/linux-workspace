@@ -38,6 +38,9 @@
         "colortest",
         "xinput",
         "i3-gaps",
+        "libnotify-bin",
+        "dunst",
+        "acpi",
         "picom",
         "feh"
       ],

@@ -177,7 +177,7 @@ bindsym $sup+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        # status_command i3status
+        status_command i3status
 }
 
 # Custom settings: {{{
@@ -238,37 +238,41 @@ client.background       #000000
 
 # Custom keybindings: {{{
 
+# Toggle bar state
+bindsym $sup+b bar mode toggle
 # Use pactl to adjust volume in PulseAudio
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && pactl set-sink-mute @DEFAULT_SINK@ off && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && pactl set-sink-mute @DEFAULT_SINK@ off && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.homemade/bin/pactl-pulseaudio-volume-control -u && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.homemade/bin/pactl-pulseaudio-volume-control -d && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id $HOME/.homemade/bin/pactl-pulseaudio-volume-control -m && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id $HOME/.homemade/bin/pactl-pulseaudio-volume-control -M && $refresh_i3status
 # Rofi
 bindsym $sup+Tab exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show window
 bindsym $sup+a exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show drun
 # Reset conky
-bindsym $sup+Ctrl+c exec $HOME/.config/conky/./launch.sh
+bindsym $sup+Ctrl+c exec $HOME/.config/conky/launch.sh
 # Keyboard layout
 bindsym $sup+Ctrl+u exec setxkbmap us
 bindsym $sup+Ctrl+e exec setxkbmap es
 # Force kill process
-bindsym $sup+Ctrl+x exec --no-startup-id kitty -e xkill
+bindsym --release $sup+Ctrl+x exec --no-startup-id xkill
 # Brightness down
-bindsym $sup+k exec $HOME/.homemade/bin/hp-notebook-brightness-control -d
-bindsym XF86MonBrightnessDown exec $HOME/.homemade/bin/hp-notebook-brightness-control -d
+bindsym $sup+k exec $HOME/.homemade/bin/radeon-bl0-backlight-brightness-control -d
+bindsym --release XF86MonBrightnessDown exec $HOME/.homemade/bin/radeon-bl0-backlight-brightness-control -d
 # Brightness up
-bindsym $sup+l exec $HOME/.homemade/bin/hp-notebook-brightness-control -u
-bindsym XF86MonBrightnessUp exec $HOME/.homemade/bin/hp-notebook-brightness-control -u
+bindsym $sup+l exec $HOME/.homemade/bin/radeon-bl0-backlight-brightness-control -u
+bindsym --release XF86MonBrightnessUp exec $HOME/.homemade/bin/radeon-bl0-backlight-brightness-control -u
 # Screenshot
-bindsym --release $sup+Print exec $HOME/.homemade/bin/imagemagick-import-screenshot
+bindsym --release $sup+Print exec $HOME/.homemade/bin/take-screenshot-w-imagemagick-import
 bindsym --release $sup+Shift+Print exec sleep 5 && $HOME/.homemade/bin/imagemagick-import-screenshot
 
 # TODO
 # Reset wallpaper
-bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/current/bg.png
+bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/.homemade/rice/current-wallpaper/m0.jpg
 # Refresh Dual monitor
-bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto; exec $HOME/Pictures/wallpapers/desktop/current/bg.png
+bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto
+bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off
+
 # Refresh Single monitor
 
 
@@ -286,7 +290,7 @@ exec xinput set-prop "SynPS/2 Synaptics TouchPad" 291 1
 # Dual monitor
 exec xrandr --output HDMI-0 --left-of eDP --auto
 # Wallpaper
-exec feh --bg-fill $HOME/Pictures/wallpapers/desktop/current/bg.png
+exec feh --bg-fill $HOME/.homemade/rice/current-wallpaper/m0.jpg
 # Compositor
 exec --no-startup-id picom
 # exec --no-startup-id picom -experimental-backends
