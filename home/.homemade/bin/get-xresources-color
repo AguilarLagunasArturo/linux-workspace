@@ -1,2 +1,12 @@
 #! /usr/bin/env bash
-echo $(cat $HOME/.Xresources | grep -i "\*\.$1: *" | grep -oP '#......$')
+
+# Author:       Arturo Aguilar Lagunas
+# Description:  Get xresources hex color
+
+usage="Usage: $0 <color0, color1, ... , color15>"
+
+if [[ ! -n $1 ]]; then
+    echo -e $usage
+else
+    echo $(cat $HOME/.Xresources | grep -i "\*\.$1: *" | grep -oP '#......$')
+fi;

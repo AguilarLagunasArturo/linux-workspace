@@ -1,0 +1,33 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Description:  Control PulseAudio with pactl
+
+step=2
+toff=580
+toff_l=800
+
+set -e
+
+usage="Usage:\t$0 [OPTION]\nOptions:\t\n\t-u\tVolume up\n\t-d\tVolume down-m\tVolume mute-M\tMicrophone mute"
+
+if [[ ! -n $1 ]]; then
+    echo -e $usage
+else
+    volume=$(pactl list sinks | grep '^[[:space:]]Volume:' | tail -n 1 | grep -o '[0-9]*%' | tail -n 1 | grep -o '[0-9]*')
+    if [[ $1 == -u ]]; then
+        pactl set-sink-volume @DEFAULT_SINK@ +2% && pactl set-sink-mute @DEFAULT_SINK@ off
+        notify-send "Volume +" "$volume%" -t $toff
+    elif [[ $1 == -d ]]; then
+        pactl set-sink-volume @DEFAULT_SINK@ -2% && pactl set-sink-mute @DEFAULT_SINK@ off
+        notify-send "Volume -" "$volume%" -t $toff
+    elif [[ $1 == -m ]]; then
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
+        notify-send "Volume" "Toggle mute" -t $toff_l
+    elif [[ $1 == -M ]]; then
+        pactl set-source-mute @DEFAULT_SOURCE@ toggle
+        notify-send "Microphone" "Toggle mute" -t $toff_l
+    else
+        echo -e $usage
+    fi;
+fi;

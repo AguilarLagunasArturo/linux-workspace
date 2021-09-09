@@ -1,8 +1,13 @@
 #! /usr/bin/env bash
 
-schemes_path=$HOME/.config/xresources/color-schemes/
+# Author:       Arturo Aguilar Lagunas
+# Description:  Set color scheme globally with xresources file
+#                   - xresources (urxvt)
+#                   - kitty
+#                   - i3wm
+#                   - wallpaper
 
-# Color schemes:
+schemes_path=$HOME/.config/xresources/color-schemes/
 
 if [[ ! -n $1 ]]; then
     echo -e "Usage: $0 <xresources-color-scheme>\n\nColor schemes:"
@@ -15,9 +20,8 @@ else
     # kitty
     $HOME/.config/kitty/set-kitty-color-scheme.py $1
     # i3-gaps-wm
-    # i3-msg restart
-    i3-msg reload
+    i3-msg reload # i3-msg restart
     # wallpapers
-    # Reload
-    kitty & disown
+
+    # Reload kitty & disown
 fi
