@@ -13,8 +13,7 @@ function popup {
     fi;
 }
 
-
 set -e
 
-while true; do popup & sleep 60; done
+while true; do popup & sleep 4m; done
 

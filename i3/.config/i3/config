@@ -42,7 +42,7 @@ floating_modifier $sup
 bindsym $sup+Return exec kitty
 
 # kill focused window
-bindsym $sup+q kill
+bindsym $sup+Shift+q kill
 
 # start program launcher (rofi, dmenu)
 bindsym $sup+d exec --no-startup-id dmenu_run
@@ -186,9 +186,9 @@ bar {
             # separator   $color7
 
             # <colorclass> <border> <background> <text>
-            focused_workspace  $color10 $bg      $color2
+            focused_workspace  $color10 $bg      $color10
             # focused_workspace  $bg      $color10 $bg
-            active_workspace   $color2  $bg      $color10
+            active_workspace   $color2  $bg      $color2
             inactive_workspace $bg      $bg      $fg
             urgent_workspace   $color1  $bg      $color1
             # binding_mode       #2f343a #900000 #ffffff
@@ -282,7 +282,7 @@ bindsym XF86AudioMicMute exec --no-startup-id $HOME/.homemade/bin/pactl-pulseaud
 bindsym $sup+Tab exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show window
 bindsym $sup+a exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show drun
 # Reset conky
-bindsym $sup+Ctrl+c exec $HOME/.config/conky/launch.sh
+# bindsym $sup+Ctrl+c exec $HOME/.config/conky/launch.sh
 # Keyboard layout
 bindsym $sup+Ctrl+u exec setxkbmap us
 bindsym $sup+Ctrl+e exec setxkbmap es

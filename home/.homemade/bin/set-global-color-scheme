@@ -19,8 +19,12 @@ else
     $HOME/.config/xresources/set-xresources-color-scheme.sh $1
     # kitty
     $HOME/.config/kitty/set-kitty-color-scheme.py $1
+    # i3status
+    $HOME/.config/i3status/set-i3status-color-scheme.sh
     # i3-gaps-wm
-    i3-msg reload # i3-msg restart
+    i3-msg reload
+    sleep 1
+    i3-msg restart
     # wallpapers
 
     # Reload kitty & disown
