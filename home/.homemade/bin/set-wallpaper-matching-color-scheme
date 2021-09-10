@@ -1,0 +1,44 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Fri 10 Sep 2021 12:47:24 PM CDT
+# Description:	Set wallpaper matching the current color scheme
+
+schemes_json=$HOME/.homemade/rice/themes.json
+theme="rengoku"
+
+#for l in $(jq -r ".themes.$theme.wallpaper" $schemes_json | grep -oP '[^[\]",]*'); do
+#    echo -e $l
+#done
+
+set -e
+
+declare -a wallpapers=()
+declare -a thumbnails=()
+
+for l in $(jq -r ".themes.$theme.wallpaper" $schemes_json | grep -oP '[^[\]",]*'); do
+    wallpapers+=($( echo $l ))
+done
+
+for l in $(jq -r ".themes.$theme.thumbnail" $schemes_json | grep -oP '[^[\]",]*'); do
+    thumbnails+=($( echo $l ))
+done
+
+#jq -r ".themes.$theme.wallpaper" $schemes_json | grep -noP '[^[\]",]*' | while read -r line ; do
+#   wallpapers[1]="0"
+#   wallpapers[0]="0"
+#   i=$(($i+1))
+#   echo $line
+#done;
+
+echo -e ${wallpapers[@]}
+echo -e ${thumbnails[@]}
+
+#thumbnail=$(jq -r ".themes.$theme.thumbnail" $schemes_json | grep -oP '[^[\]"]*')
+
+
+#wallpaper=$(jq -r ".themes.$theme.wallpaper" $schemes_json | grep -oP '[^[\],"]*')
+#thumbnail=$(jq -r ".themes.$theme.thumbnail" $schemes_json | grep -oP '[^[\],"]*')
+
+#echo -e $wallpaper | tail -n 1
+#echo -e $thumbnail
