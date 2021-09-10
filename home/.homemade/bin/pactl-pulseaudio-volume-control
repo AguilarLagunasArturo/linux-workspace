@@ -16,9 +16,11 @@ if [[ ! -n $1 ]]; then
 else
     volume=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n 1 | grep -o '[0-9]*%' | tail -n 1 | grep -o '[0-9]*')
     if [[ $1 == -u ]]; then
+        volume=$( expr $volume + 2 )
         pactl set-sink-volume @DEFAULT_SINK@ +2% && pactl set-sink-mute @DEFAULT_SINK@ off
         notify-send "Volume +" "$volume%" -t $toff
     elif [[ $1 == -d ]]; then
+        volume=$( expr $volume - 2 )
         pactl set-sink-volume @DEFAULT_SINK@ -2% && pactl set-sink-mute @DEFAULT_SINK@ off
         notify-send "Volume -" "$volume%" -t $toff
     elif [[ $1 == -m ]]; then

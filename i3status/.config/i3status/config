@@ -8,10 +8,12 @@
 
 general {
         colors = true
-        color_good = "#00FF00"
-        color_degraded = "#F00F0F"
-        color_bad = "#FF0000"
-        color_separator = "#00FF00"
+        # Color 10
+        color_good = "#ff9a44"
+        # Color 13
+        color_degraded = "#e36a6a"
+        # Color 9
+        color_bad = "#b0201c"
         interval = 1
 }
 
@@ -26,13 +28,13 @@ order += "battery all"
 order += "tztime local"
 
 wireless _first_ {
-        format_up = "\   %quality %essid %ip"
-        format_down = "\   "
+        format_up = "\  %quality %essid %ip "
+        format_down = "\ 睊 "
 }
 
 ethernet _first_ {
         format_up = "\   %speed %ip"
-        format_down = "\  "
+        format_down = ""
 }
 
 battery all {
@@ -44,7 +46,7 @@ disk "/" {
 }
 
 load {
-        format = "\ load  %1min\% "
+        format = "\ load  %1min "
 }
 
 memory {
@@ -54,7 +56,8 @@ memory {
 }
 
 tztime local {
-        format = "\  %d/%b/%Y | %H:%M:%S   "
+        format = "\  %d/%m/%Y | %H:%M:%S   "
+        # format = "\  %d/%b/%Y | %H:%M:%S   "
 }
 
 volume master {
