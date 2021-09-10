@@ -13,6 +13,7 @@ if [[ ! -n $1 ]]; then
     echo -e "Usage: $0 <path-to-thumnail>"
 else
     convert $1 $thumbnail
-    rm $cache_path/*
     echo -e "$1 -> $thumbnail"
+    rm $cache_path/*
+    echo "neofetch cache cleaned"
 fi

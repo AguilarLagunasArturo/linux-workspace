@@ -4,41 +4,35 @@
 # Date:			Fri 10 Sep 2021 12:47:24 PM CDT
 # Description:	Set wallpaper matching the current color scheme
 
+schemes_path=$HOME/.config/xresources/color-schemes/
 schemes_json=$HOME/.homemade/rice/themes.json
-theme="rengoku"
-
-#for l in $(jq -r ".themes.$theme.wallpaper" $schemes_json | grep -oP '[^[\]",]*'); do
-#    echo -e $l
-#done
 
 set -e
 
-declare -a wallpapers=()
-declare -a thumbnails=()
+if [[ ! -n $1 ]]; then
+    echo -e "Usage: $0 <xresources-color-scheme>\n\nColor schemes:"
+    for f in $schemes_path*; do
+        echo -e "\t"$f
+    done
+else
+    theme=$(echo $1 | grep -ioP "[^/]*$")
+    echo -e "Theme: "$theme
 
-for l in $(jq -r ".themes.$theme.wallpaper" $schemes_json | grep -oP '[^[\]",]*'); do
-    wallpapers+=($( echo $l ))
-done
+    declare -a wallpapers=()
+    declare -a thumbnails=()
 
-for l in $(jq -r ".themes.$theme.thumbnail" $schemes_json | grep -oP '[^[\]",]*'); do
-    thumbnails+=($( echo $l ))
-done
+    for l in $(jq -r ".themes.\"$theme\".wallpapers" $schemes_json | grep -oP '[^[\]",]*'); do
+        wallpapers+=($( echo $l ))
+    done
 
-#jq -r ".themes.$theme.wallpaper" $schemes_json | grep -noP '[^[\]",]*' | while read -r line ; do
-#   wallpapers[1]="0"
-#   wallpapers[0]="0"
-#   i=$(($i+1))
-#   echo $line
-#done;
+    for l in $(jq -r ".themes.\"$theme\".thumbnails" $schemes_json | grep -oP '[^[\]",]*'); do
+        thumbnails+=($( echo $l ))
+    done
 
-echo -e ${wallpapers[@]}
-echo -e ${thumbnails[@]}
+    echo -e "wallpaper: "${wallpapers[0]}
+    echo -e "thumbnail: "${thumbnails[0]}
 
-#thumbnail=$(jq -r ".themes.$theme.thumbnail" $schemes_json | grep -oP '[^[\]"]*')
+    set-wallpaper-w-feh ${wallpapers[0]}
+    set-neofetch-thumbnail ${thumbnails[0]}
 
-
-#wallpaper=$(jq -r ".themes.$theme.wallpaper" $schemes_json | grep -oP '[^[\],"]*')
-#thumbnail=$(jq -r ".themes.$theme.thumbnail" $schemes_json | grep -oP '[^[\],"]*')
-
-#echo -e $wallpaper | tail -n 1
-#echo -e $thumbnail
+fi
