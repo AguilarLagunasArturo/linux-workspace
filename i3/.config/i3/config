@@ -178,7 +178,7 @@ bindsym $sup+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-        i3bar_command i3bar --transparency
+        # i3bar_command i3bar --transparency
         colors {
             background  $bg
             statusline  $fg
@@ -186,10 +186,11 @@ bar {
             # separator   $color7
 
             # <colorclass> <border> <background> <text>
-            focused_workspace  $color2 $bg     $color2
-            active_workspace   $color0 $color8 $fg
-            inactive_workspace $color0 $color0 $fg
-            urgent_workspace   $color1 $bg     $color1
+            focused_workspace  $color10 $bg      $color2
+            # focused_workspace  $bg      $color10 $bg
+            active_workspace   $color2  $bg      $color10
+            inactive_workspace $bg      $bg      $fg
+            urgent_workspace   $color1  $bg      $color1
             # binding_mode       #2f343a #900000 #ffffff
     }
 }
@@ -236,25 +237,25 @@ for_window [ instance="gnome-terminal-server" ] floating enable
 # Color: {{{
 
 # set xresources colors
-set_from_resource $color0 color0 #2e9ef4
-set_from_resource $color1 color1 #2e9ef4
-set_from_resource $color2 color2 #2e9ef4
-set_from_resource $color3 color3 #2e9ef4
-set_from_resource $color4 color4 #4676be
-set_from_resource $color5 color5 #2e9ef4
-set_from_resource $color6 color6 #2e9ef4
-set_from_resource $color7 color7 #2e9ef4
-set_from_resource $color8 color8 #2e9ef4
-set_from_resource $color9 color9 #2e9ef4
-set_from_resource $color10 color10 #2e9ef4
-set_from_resource $color11 color11 #2e9ef4
-set_from_resource $color12 color12 #2e9ef4
-set_from_resource $color13 color13 #2e9ef4
-set_from_resource $color14 color14 #2e9ef4
-set_from_resource $color15 color15 #2e9ef4
+set_from_resource $color0 color0 #323232
+set_from_resource $color1 color1 #323232
+set_from_resource $color2 color2 #323232
+set_from_resource $color3 color3 #323232
+set_from_resource $color4 color4 #323232
+set_from_resource $color5 color5 #323232
+set_from_resource $color6 color6 #323232
+set_from_resource $color7 color7 #323232
+set_from_resource $color8 color8 #323232
+set_from_resource $color9 color9 #323232
+set_from_resource $color10 color10 #323232
+set_from_resource $color11 color11 #323232
+set_from_resource $color12 color12 #323232
+set_from_resource $color13 color13 #323232
+set_from_resource $color14 color14 #323232
+set_from_resource $color15 color15 #323232
 
-set_from_resource $bg background #2e9ef4
-set_from_resource $fg foreground #2e9ef4
+set_from_resource $bg background #ffffff
+set_from_resource $fg foreground #000000
 
 # class                 border  bg      text    indicator child_border
 client.focused          #323232 #323232 #ffffff $color4   $color2

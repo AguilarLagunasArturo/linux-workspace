@@ -8,7 +8,7 @@
 URxvt.font:xft:             Hack NF:pixelsize=12:antialias=true
 ! URxvt.boldFont:xft:         Hack NF:bold:pixelsize=12:antialias=true
 URxvt.letterSpace:			0
-URxvt.lineSpace:			4
+URxvt.lineSpace:			0
 URxvt.geometry:				124x32
 URxvt.internalBorder:		24
 
@@ -60,38 +60,38 @@ urxvt*.background: [80]#121214
 !! Color Scheme
 
 ! special
-*.foreground:   #e2e0de
-*.background:   #171316
-*.cursorColor:  #e2e0de
+*.foreground:   #d0c4c7
+*.background:   #060404
+*.cursorColor:  #d0c4c7
 
 ! black
-*.color0:       #7e4b5f
-*.color8:       #623245
+*.color0:       #281b1b
+*.color8:       #5b3d3d
 
 ! red
-*.color1:       #90a4d5
-*.color9:       #7e9ce2
+*.color1:       #b71914
+*.color9:       #b0201c
 
 ! green
-*.color2:       #a199bc
-*.color10:      #ab9dda
+*.color2:       #f19c53
+*.color10:      #ff9a44
 
 ! yellow
-*.color3:       #bc8d76
-*.color11:      #cf9376
+*.color3:       #e5d5c3
+*.color11:      #f7eadb
 
 ! blue
-*.color4:       #ae88a0
-*.color12:      #9d708c
+*.color4:       #c64e2f
+*.color12:      #d54c29
 
 ! magenta
-*.color5:       #dda9a9
-*.color13:      #d39090
+*.color5:       #cb7272
+*.color13:      #e36a6a
 
 ! cyan
-*.color6:       #40e1ce
-*.color14:      #1ac6b2
+*.color6:       #c6a995
+*.color14:      #dab297
 
 ! white
-*.color7:       #e2e0de
-*.color15:      #d3d0cc
+*.color7:       #ede0b4
+*.color15:      #f8e8b1
