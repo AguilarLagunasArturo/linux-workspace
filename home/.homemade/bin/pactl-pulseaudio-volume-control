@@ -14,7 +14,7 @@ usage="Usage:\t$0 [OPTION]\nOptions:\t\n\t-u\tVolume up\n\t-d\tVolume down\n\t-m
 if [[ ! -n $1 ]]; then
     echo -e $usage
 else
-    volume=$(pactl list sinks | grep '^[[:space:]]Volume:' | tail -n 1 | grep -o '[0-9]*%' | tail -n 1 | grep -o '[0-9]*')
+    volume=$(pactl list sinks | grep '^[[:space:]]Volume:' | head -n 1 | grep -o '[0-9]*%' | tail -n 1 | grep -o '[0-9]*')
     if [[ $1 == -u ]]; then
         pactl set-sink-volume @DEFAULT_SINK@ +2% && pactl set-sink-mute @DEFAULT_SINK@ off
         notify-send "Volume +" "$volume%" -t $toff

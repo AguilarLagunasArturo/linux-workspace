@@ -42,7 +42,8 @@
         "dunst",
         "acpi",
         "picom",
-        "feh"
+        "feh",
+        "lsd"
       ],
       "gui": [
         "papirus-icon-theme",
@@ -117,6 +118,9 @@
     },
     "i3": {
       "source": "https://github.com/i3/i3"
+    },
+    "powerlevel10k": {
+      "source": "https://github.com/romkatv/powerlevel10k"
     },
     "Fluent-gtk-theme": {
       "source": "https://github.com/vinceliuice/Fluent-gtk-theme"
