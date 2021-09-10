@@ -1,0 +1,20 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Thu 09 Sep 2021 01:47:22 AM CDT
+# Description:	Popup low battery
+
+function popup {
+    batt=$(acpi -b | grep -io "[0-9]*%" | grep -io "[0-9]*")
+    if (( $batt <= 20 )); then
+        notify-send "Low battery" "$batt%" -u critical
+    else
+        echo -e "$(date +%H:%M:%S): $batt"
+    fi;
+}
+
+
+set -e
+
+while true; do popup & sleep 60; done
+
