@@ -1,10 +1,12 @@
 {
-    "wallpapers_tail":"$HOME/Pictures/wallpapers/",
-    "xresources_tail":"$HOME/.config/xresources/themes/",
     "themes": {
         "rengoku": {
-            "wallpaper_head": ["anime/demon-slayer/file.png"],
-            "thumbnail_head": ["anime/demon-slayer/file.png"]
+            "wallpapers": [
+                "/home/aal/Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-00.jpg"
+            ],
+            "thumbnails": [
+                "/home/aal/Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-01.jpg"
+            ]
         }
     }
 }
