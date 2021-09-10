@@ -327,5 +327,7 @@ exec feh --bg-fill $HOME/.homemade/rice/current-wallpaper/m0.jpg
 # Compositor
 exec --no-startup-id picom
 # exec --no-startup-id picom -experimental-backends
+# Battery popup
+exec --no-startup-id $HOME/.homemade/bin/acpi-battery-popup-alert
 
 # }}}

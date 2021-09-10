@@ -8,5 +8,5 @@ usage="Usage: $0 <color0, color1, ... , color15>"
 if [[ ! -n $1 ]]; then
     echo -e $usage
 else
-    echo $(cat $HOME/.Xresources | grep -i "\*\.$1: *" | grep -oP '#......$')
+    echo $(cat $HOME/.Xresources | grep -i "\*\.$1: *" | grep -oP '#......$' | tail -n 1)
 fi;
