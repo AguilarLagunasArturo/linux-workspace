@@ -8,6 +8,10 @@
 
 general {
         colors = true
+        color_good = "#00FF00"
+        color_degraded = "#F00F0F"
+        color_bad = "#FF0000"
+        color_separator = "#00FF00"
         interval = 1
 }
 
@@ -17,6 +21,7 @@ order += "ethernet _first_"
 order += "disk /"
 # order += "memory"
 order += "load"
+order += "volume master"
 order += "battery all"
 order += "tztime local"
 
@@ -27,7 +32,7 @@ wireless _first_ {
 
 ethernet _first_ {
         format_up = "\   %speed %ip"
-        format_down = "\   "
+        format_down = "\  "
 }
 
 battery all {
@@ -49,5 +54,12 @@ memory {
 }
 
 tztime local {
-        format = "\  %m/%d/%Y | %H:%M:%S   "
+        format = "\  %d/%b/%Y | %H:%M:%S   "
 }
+
+volume master {
+        format = "\   %volume "
+        format_muted = "\ 婢 (%volume) "
+        device = "pulse:alsa_output.pci-0000_00_14.2.analog-stereo"
+}
+
