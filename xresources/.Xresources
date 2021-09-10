@@ -3,12 +3,12 @@
 ! Text & Spacing
 ! URxvt.font:xft:             RobotoMono Nerd Font:pixelsize=12:antialias=true
 ! URxvt.boldFont:xft:         RobotoMono Nerd Font:bold:pixelsize=12:antialias=true
-! URxvt.font:xft:             JetBrainsMono NF:pixelsize=12:antialias=true
+! URxvt.font:xft:             JetBrainsMono NF:pixelsize=14:antialias=true
 ! URxvt.boldFont:xft:         JetBrainsMono NF:bold:pixelsize=12:antialias=true
 URxvt.font:xft:             Hack NF:pixelsize=12:antialias=true
 ! URxvt.boldFont:xft:         Hack NF:bold:pixelsize=12:antialias=true
 URxvt.letterSpace:			0
-URxvt.lineSpace:			0
+URxvt.lineSpace:			4
 URxvt.geometry:				124x32
 URxvt.internalBorder:		24
 
@@ -20,7 +20,7 @@ URxvt.cursorBlink:          true
 !! Config
 
 ! ISO off
-URxvt.iso14755:				true
+URxvt.iso14755:				off
 
 ! Scrolling
 URxvt*scrollTtyOutput:		false
@@ -31,8 +31,8 @@ URxvt*scrollTtyKeypress:	true
 URxvt*perl-ext-common:		default,matcher
 URxvt*urlLauncher:			/usr/bin/xdg-open
 URxvt*matcher.button:		1
-URxvt*colorUL:				cyan
-URxvt*underlineColor:		cyan
+URxvt*colorUL:				white
+URxvt*underlineColor:		white
 
 !! Keybindings
 

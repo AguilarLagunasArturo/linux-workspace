@@ -17,14 +17,14 @@ if [[ ! -n $1 ]]; then
 else
     if [[ $1 == -u ]]; then
         new_b=$(expr $current_b + $step)
-        if [[ $new_b < $max_b ]]; then
+        if (( $new_b < $max_b )); then
             echo -e '\nNew:\t'$new_b;
             echo $new_b > /sys/class/backlight/radeon_bl0/brightness
             notify-send "Brighness up" "$new_b" -t $toff
         fi;
     elif [[ $1 == -d ]]; then
         new_b=$(expr $current_b - $step)
-        if [[ $new_b > $min_b ]]; then
+        if (( $new_b > $min_b )); then
             echo -e '\nNew:\t'$new_b;
             echo $new_b > /sys/class/backlight/radeon_bl0/brightness
             notify-send "Brighness down" "$new_b" -t $toff

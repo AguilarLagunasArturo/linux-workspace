@@ -9,7 +9,12 @@ export PATH="$PATH:$HOME/.homemade/bin"
 # -- ALIASES --
 alias copy='xclip -selection clipboard'
 alias pexels='python ~/Github/pexels-image-downloader/download.py'
-alias lbin='tree ~/.homemade/bin/'
+alias lbin='lsd --tree ~/.homemade/bin/'
+alias ll='lsd -la'
+alias lld='lsd -la --date=relative --group-dirs=first'
+alias lle='lsd -la --date=relative --sort=extension --group-dirs=first'
+alias la='lsd -a'
+alias l='lsd -l'
 # alias freeCAD='LIBGL_DRI3_DISABLE=true freecad'
 
 # -- COMMANDS --
