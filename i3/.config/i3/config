@@ -97,16 +97,16 @@ bindsym $sup+minus scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1  "
+set $ws2 "2 ﬑ "
+set $ws3 "3  "
+set $ws4 "4  "
+set $ws5 "5  "
+set $ws6 "6  "
+set $ws7 "7  "
+set $ws8 "8  "
+set $ws9 "9  "
+set $ws10 "10  "
 
 # switch to workspace
 bindsym $sup+1 workspace number $ws1
@@ -177,7 +177,13 @@ bindsym $sup+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        # workspace_buttons yes
+        strip_workspace_name no
+        strip_workspace_numbers no
+        modifier none
         status_command i3status
+        position bottom
+        separator_symbol "  "
         # i3bar_command i3bar --transparency
         colors {
             background  $bg
@@ -282,7 +288,7 @@ bindsym XF86AudioMicMute exec --no-startup-id $HOME/.homemade/bin/pactl-pulseaud
 bindsym $sup+Tab exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show window
 bindsym $sup+a exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show drun
 # Reset conky
-# bindsym $sup+Ctrl+c exec $HOME/.config/conky/launch.sh
+bindsym $sup+Ctrl+Shift+c exec $HOME/.config/conky/launch.sh
 # Keyboard layout
 bindsym $sup+Ctrl+u exec setxkbmap us
 bindsym $sup+Ctrl+e exec setxkbmap es
@@ -297,16 +303,13 @@ bindsym --release XF86MonBrightnessUp exec $HOME/.homemade/bin/radeon-bl0-backli
 # Screenshot
 bindsym --release $sup+Print exec $HOME/.homemade/bin/take-screenshot-w-imagemagick-import
 bindsym --release $sup+Shift+Print exec sleep 5 && $HOME/.homemade/bin/imagemagick-import-screenshot
-
-# TODO
+bindsym $sup+Ctrl+Print exec kazam
 # Reset wallpaper
 bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/.homemade/rice/current-wallpaper/m0.jpg
 # Refresh Dual monitor
 bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto
-bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off
-
 # Refresh Single monitor
-
+bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off
 
 # }}}
 

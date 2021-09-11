@@ -32,7 +32,7 @@ else
     echo -e "wallpaper: "${wallpapers[0]}
     echo -e "thumbnail: "${thumbnails[0]}
 
-    set-wallpaper-w-feh ${wallpapers[0]}
-    set-neofetch-thumbnail ${thumbnails[0]}
+    set-wallpaper-w-feh $HOME/${wallpapers[0]}
+    set-neofetch-thumbnail $HOME/${thumbnails[0]}
 
 fi

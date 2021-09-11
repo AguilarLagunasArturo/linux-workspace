@@ -5,8 +5,6 @@ This is the greatest management of all time.
 |:-|
 |![Desktop](home/.homemade/rice/screenshots/ss-conky.png)|
 |![Desktop](home/.homemade/rice/screenshots/ss-desktop.png)|
-## Notes
-_home/.homemade_ is a directory for my custom resources, scrips and projects.
 ## Setup
 ```bash
 # Update and install dependencies
@@ -28,17 +26,21 @@ stow -Svt ~ *
 git fetch
 ```
 # System configuration
-Stuff I have to do manually.
-## Shortcuts
-|Name|Shortcut|Command|
-|:-|:-|:-|
-|US Keyboard layout|Super + Ctrl + U|`setxkbmap us`|
-|ES Keyboard layout|Super + Ctrl + E|`setxkbmap es`|
-|Reset conky|Super + Ctrl + C|`$HOME/.config/conky/./launch.sh`|
-|Kill process|Super + Ctrl + X|`xkill`|
-|Launch rofi window|Super + Tab|`rofi -show window -theme $HOME/.config/rofi/themes/main.rasi`|
-|Launch rofi drun|Super + A|`rofi -show drun -theme $HOME/.config/rofi/themes/main.rasi`|
-|Launch terminal|Ctrl + Alt + T|`kitty`|
+|Utility|Name|
+|:-|:-|
+|Desktop enviroment|`gnome`|
+|Window manager|`i3-gaps`|
+|Bar|`i3bar`, `i3status`|
+|Compositor|`picom`|
+|Launcher|`rofi`|
+|Terminal|`kitty`, `urxvt`|
+|Notifications|`notify-send`|
+## Notes
+_home/.homemade_ is a directory for my custom resources, scrips and projects.
+## Stuff I have to do manually
+- Install third party software
+- Set up crontab
+    - Twitter bot
 ## Tutorials
 ### Usefull stow commands
 ```bash
@@ -65,8 +67,7 @@ sudo update-alternatives --config x-terminal-emulator
 ```bash
 xprop WM_CLASS
 ```
-### ImageMagick allow Image to PDF
-```bash
+### ImageMagick allow Image to PDF```bash
 sudo nano /etc/ImageMagick-6/policy.xml
 ```
 ```xml
@@ -151,20 +152,20 @@ latexmk -lualatex -pvc <file.tex>
 latexmk -pdf <file.tex>
 latexmk -lualatex <file.tex>
 ```
-### Create custom menus
+### Redirect output
 ```bash
-# TODO
+# redirects output
+nohup commmand > /dev/null 2>$1
+# redirects output and disown
+nohup commmand > /dev/null 2>$1 & disown
 ```
 ### Change grub screen
 ```bash
 # TODO
 ```
-### Test utilities
+### TODO
 - mv -i / rm -i
 - bat
 - gdu
 - dmenu
-- polybar
-- bspwn / qtile / openbox
-### TODO
 - test setup

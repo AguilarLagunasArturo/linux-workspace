@@ -1,11 +1,35 @@
 {
     "themes": {
-        "rengoku": {
+        "rengoku-text-orange": {
             "wallpapers": [
-                "/home/aal/Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-00.jpg"
+                "Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-00.jpg"
             ],
             "thumbnails": [
-                "/home/aal/Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-01.jpg"
+                "Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-01.jpg"
+            ]
+        },
+        "kocho-text-blue": {
+            "wallpapers": [
+                "Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-05.jpg"
+            ],
+            "thumbnails": [
+                "Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-03.jpg"
+            ]
+        },
+        "kocho-text-purple": {
+            "wallpapers": [
+                "Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-02.jpg"
+            ],
+            "thumbnails": [
+                "Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-04.jpg"
+            ]
+        },
+        "tomioka-text-blue": {
+            "wallpapers": [
+                "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-01.jpeg"
+            ],
+            "thumbnails": [
+                "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-00.jpg"
             ]
         }
     }

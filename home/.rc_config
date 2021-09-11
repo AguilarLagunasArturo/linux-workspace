@@ -17,6 +17,7 @@ alias la='lsd -a'
 alias l='lsd -l'
 alias lt='lsd --tree'
 alias tree='tree -a'
+alias bat='batcat'
 # alias freeCAD='LIBGL_DRI3_DISABLE=true freecad'
 
 # -- COMMANDS --
@@ -46,6 +47,6 @@ alias tree='tree -a'
 # sudo update-alternatives --config x-terminal-emulator
 
 # -- AUTORUN --
-# neofetch                                                      # Default
+neofetch                                                      # Default
 # neofetch --backend w3m --loop yes --xoffset 24 --yoffset 2    # Kitty + w3m
 # neofetch --backend w3m                                        # Urxtv + w3m

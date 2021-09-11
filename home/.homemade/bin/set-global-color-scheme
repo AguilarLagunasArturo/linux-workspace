@@ -5,6 +5,7 @@
 #                   - xresources (urxvt)
 #                   - kitty
 #                   - i3wm
+#                   - i3status
 #                   - wallpaper
 
 schemes_path=$HOME/.config/xresources/color-schemes/
@@ -26,6 +27,8 @@ else
     sleep 1
     i3-msg restart
     # wallpapers
-
+    $HOME/.homemade/bin/set-wallpaper-matching-color-scheme $1
     # Reload kitty & disown
+    sleep 1
+    kitty & disown
 fi;
