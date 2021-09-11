@@ -16,18 +16,18 @@ if [[ ! -n $1 ]]; then
         echo -e "\t"$f
     done
 else
+    # kitty
+    $HOME/.config/kitty/set-kitty-color-scheme.py $1 &
     # xresources
     $HOME/.config/xresources/set-xresources-color-scheme.sh $1
-    # kitty
-    $HOME/.config/kitty/set-kitty-color-scheme.py $1
     # i3status
-    $HOME/.config/i3status/set-i3status-color-scheme.sh
-    # i3-gaps-wm
-    i3-msg reload
-    sleep 1
-    i3-msg restart
+    $HOME/.config/i3status/set-i3status-color-scheme.sh &
     # wallpapers
-    $HOME/.homemade/bin/set-wallpaper-matching-color-scheme $1
+    $HOME/.homemade/bin/set-wallpaper-matching-color-scheme $1 &
+    # i3-gaps-wm
+    sleep 1
+    i3-msg reload
+    i3-msg restart
     # Reload kitty & disown
     sleep 1
     kitty & disown

@@ -67,7 +67,8 @@ sudo update-alternatives --config x-terminal-emulator
 ```bash
 xprop WM_CLASS
 ```
-### ImageMagick allow Image to PDF```bash
+### ImageMagick allow Image to PDF
+```bash
 sudo nano /etc/ImageMagick-6/policy.xml
 ```
 ```xml
