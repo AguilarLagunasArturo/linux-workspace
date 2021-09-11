@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Sat 11 Sep 2021 05:08:22 PM CDT
+# Description:	Control monitor brighness w/ xrand
+#               - Default monitor: eDP
+#               - HDMI-0: eDP
+
+xrandr --output eDP --brightness 1
+xrandr --output HDMI-0 --brightness 1
