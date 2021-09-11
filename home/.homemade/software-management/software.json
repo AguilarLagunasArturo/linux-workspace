@@ -43,7 +43,9 @@
         "acpi",
         "picom",
         "feh",
-        "lsd"
+        "lsd",
+        "jq",
+        "bat"
       ],
       "gui": [
         "papirus-icon-theme",
@@ -66,8 +68,7 @@
         "nitrogen",
         "lxappearance",
         "okular",
-        "xournal",
-        "jq"
+        "xournal"
       ]
     }
   },
