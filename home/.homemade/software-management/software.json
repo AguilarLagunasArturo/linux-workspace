@@ -129,6 +129,12 @@
     },
     "Orchis-gtk-theme": {
       "source": "https://github.com/vinceliuice/Orchis-theme"
+    },
+    "Nautilus-open-any-terminal": {
+      "source": "https://github.com/Stunkymonkey/nautilus-open-any-terminal"
+    },
+    "Manjaro-gtk-theme": {
+      "source": "https://github.com/freefreeno/Materia-Manjaro-Dark"
     }
   },
   "pip": {

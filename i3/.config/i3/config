@@ -222,15 +222,17 @@ for_window [class=".*"] border pixel 2
 smart_gaps on
 gaps inner 12
 gaps outer 8
+# bindsym $sup+Ctrl+Shift exec gaps inner 0
 
 # floating max size
 floating_maximum_size 1320 x 700
 
 # default layout (default|tabbed|stacking)
-workspace_layout tabbed
+workspace_layout default
 
 # workspaces settings
-for_window [ workspace="2" ] layout default
+# assign [class="Google-chrome"] $ws1
+# for_window [ workspace="1" ] layout tabbed
 
 # window settings
 for_window [ instance=Conky ] sticky enable

@@ -15,5 +15,5 @@ function popup {
 
 set -e
 
-while true; do popup & sleep 4m; done
+while true; do popup & sleep 2m; done
 
