@@ -142,6 +142,9 @@ ffmpeg -i input.mp4 -filter:v "setpts=0.005*PTS" output.mp4
 
 # crop video
 ffmpeg -i input.mp4 -filter:v "crop:1920:1080:100:50" output.mp4
+
+# Change container
+ffmpeg -i input.mkv -codec copy output.mp4
 ```
 ### Usefull LaTex commands
 ```bash
