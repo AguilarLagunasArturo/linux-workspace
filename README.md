@@ -3,8 +3,8 @@ This is the greatest management of all time.
 ## Screenshots
 |Preview|
 |:-|
-|![Desktop](home/.homemade/rice/screenshots/preview.png)|
 |![Desktop](home/.homemade/rice/screenshots/preview.gif)|
+|![Desktop](home/.homemade/rice/screenshots/preview.png)|
 ## Setup
 ```bash
 # Update and install dependencies
