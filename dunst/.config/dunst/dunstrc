@@ -1,0 +1,65 @@
+[global]
+    monitor = 0
+    follow = mouse
+    font = Nerd Font 9
+    format = "<span><b>%s %p</b></span>\n%b"
+    transparency = 2
+    geometry = "260x6-32+32"
+    corner_radius = 8
+    alignment = left
+    word_wrap = yes
+    line_height = 0
+    notification_height = 15
+    separator_height = 1
+    padding = 12
+    horizontal_padding = 12
+    frame_width = 2
+    sort = yes    
+    separator_color = frame
+
+    icon_position = left
+    max_icon_size = 24
+    # icon_path = ""
+    indicate_hidden = yes
+    shrink = no
+    idle_threshold = 0
+    markup = full
+    show_age_threshold = 30
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+    sticky_history = no
+    history_length = 4
+    always_run_script = true
+    startup_notification = false
+    verbosity = mesg
+    force_xinerama = false
+    
+    mouse_left_click = close_current
+    mouse_middle_click = close_current
+    mouse_right_click = close_all
+
+[shortcuts]
+    close = ctrl+space
+    history = ctrl+shift+space
+    context = ctrl+shift+period
+
+[urgency_low]
+    background="#202022"
+    foreground="#f5f5f5"
+    frame_color = "#232325"
+    timeout = 10
+
+[urgency_normal]
+    background="#131314"
+    foreground="#f5f5f5"
+    frame_color = "#232325"
+    timeout = 12
+
+[urgency_critical]
+    background="#de1024"
+    foreground="#f5f5f5"
+    frame_color = "#232325"
+    timeout = 0
