@@ -1,0 +1,17 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Tue 14 Sep 2021 12:42:16 AM CDT
+# Description:	Mapping wacom imput
+
+output="HDMI-0"
+
+if [[ ! -n $1 ]]; then
+    echo "Usage: $0 <output>"
+    echo -e "\t[+] Run xrandr to see available ouputs"
+else
+    for l in $(xinput | grep -i wacom | grep -ioP "id=\d*" | grep -oP "\d*"); do
+        echo -e "$l -> $output"
+        xinput map-to-output $l $output
+    done
+fi

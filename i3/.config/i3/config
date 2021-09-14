@@ -291,6 +291,7 @@ bindsym $sup+Tab exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show wind
 bindsym $sup+a exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show drun
 # Reset conky
 bindsym $sup+Ctrl+Shift+c exec $HOME/.config/conky/launch.sh
+bindsym $sup+Ctrl+c exec killall conky
 # Keyboard layout
 bindsym $sup+Ctrl+u exec setxkbmap us
 bindsym $sup+Ctrl+e exec setxkbmap es
@@ -312,6 +313,8 @@ bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/.homemade/rice/current-wallpaper/m0
 bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto
 # Refresh Single monitor
 bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off
+# Wacom
+bindsym $sup+Ctrl+Shift+w exec $HOME/.homemade/bin/map--xinput-wacom-to-xrand-output HDMI-0
 
 # }}}
 
@@ -334,5 +337,7 @@ exec --no-startup-id picom
 # exec --no-startup-id picom -experimental-backends
 # Battery popup
 exec --no-startup-id $HOME/.homemade/bin/acpi-battery-popup-alert
+# Conky
+# exec --no-startup-id $HOME/.config/conky/launch.sh
 
 # }}}
