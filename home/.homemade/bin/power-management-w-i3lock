@@ -1,0 +1,69 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Sun 12 Sep 2021 12:11:55 AM CDT
+# Description:	Lockscreen using i3lock and blured screen background
+#               inspired by csivanich on github gist id: 10914698
+# Dependencies:
+#               imagemagick
+#               i3lock
+#               scrot (optional but default)
+
+lock() {
+    # Path to temporal image
+    IMAGE=/tmp/i3lock.png
+
+    # Screenshot methods. NOTE: imagemagick is much slower
+    SCREENSHOT="scrot $IMAGE"
+    # SCREENSHOT="import -window root $IMAGE" # ~ 1.35s
+
+    # Here are some imagemagick blur types
+    # All options are here: http://www.imagemagick.org/Usage/blur/#blur_args
+    BLURTYPE="0x5" # ~ 7.52s
+    #BLURTYPE="0x2" # ~ 4.39s
+    #BLURTYPE="5x2" # ~ 3.80s
+    #BLURTYPE="2x8" # ~ 2.90s
+    #BLURTYPE="2x3" # ~ 2.92s
+
+    # Just use current background
+    #i3lock -C -i $HOME/.homemade/rice/current-wallpaper/m0.jpg
+    #i3lock -B 1.2
+
+    # Current background + blur
+    # convert $HOME/.homemade/rice/current-wallpaper/m0.jpg -blur $BLURTYPE $IMAGE
+    # i3lock -C -i $IMAGE
+    # rm $IMAGE
+
+    # Screenshot + blur
+    $SCREENSHOT
+    convert $IMAGE -blur $BLURTYPE $IMAGE
+    i3lock -i $IMAGE
+    rm $IMAGE
+
+}
+
+case "$1" in
+    lock)
+        lock
+        ;;
+    logout)
+        i3-msg exit
+        ;;
+    suspend)
+        lock && systemctl suspend
+        ;;
+    hibernate)
+        lock && systemctl hibernate
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+        exit 2
+esac
+
+exit 0

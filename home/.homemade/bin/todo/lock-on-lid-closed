@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Wed 15 Sep 2021 12:25:12 PM CDT
+# Description:	Lockscreen when laptop lid closed
+
+
+while true; do
+    state=$(cat /proc/acpi/button/lid/LID/state | grep -ioP "\w*$")
+    echo $state
+    if [[ $state == "closed" ]]; then
+        echo "Lockscreen"
+        i3lock && systemctl suspend
+        exit 0
+    else
+        echo "Do not lockscreen"
+    fi
+    sleep 1
+done

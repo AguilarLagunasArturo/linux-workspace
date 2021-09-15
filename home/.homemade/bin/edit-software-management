@@ -1,0 +1,7 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Wed 15 Sep 2021 03:22:50 PM CDT
+# Description:	Quick access to my software management
+
+nano $HOME/.homemade/software-management/software.json
