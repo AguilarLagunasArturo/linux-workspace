@@ -4,16 +4,18 @@
 # Date:			Wed 15 Sep 2021 12:25:12 PM CDT
 # Description:	Lockscreen when laptop lid closed
 
+current_state=0
 
 while true; do
     state=$(cat /proc/acpi/button/lid/LID/state | grep -ioP "\w*$")
-    echo $state
-    if [[ $state == "closed" ]]; then
+    echo -e "$state: $current_state"
+    if [[ $state == "closed" ]] && [[ $current_state == 0 ]]; then
         echo "Lockscreen"
-        i3lock && systemctl suspend
-        exit 0
-    else
+        $HOME/.homemade/bin/power-management-w-i3lock suspend
+        current_state=1
+    elif [[ $state == "open" ]]; then
         echo "Do not lockscreen"
+        current_state=0
     fi
     sleep 1
 done
