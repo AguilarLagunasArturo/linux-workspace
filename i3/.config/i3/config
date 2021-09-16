@@ -318,7 +318,8 @@ bindsym $sup+Ctrl+Shift+w exec $HOME/.homemade/bin/map--xinput-wacom-to-xrand-ou
 # Power management
 bindsym $sup+Shift+l exec $HOME/.homemade/bin/power-management-w-i3lock lock-current
 bindsym $sup+Ctrl+Shift+l exec $HOME/.homemade/bin/power-management-w-i3lock lock
-bindsym $sup+Ctrl+Shift+s exec $HOME/.homemade/bin/power-management-w-i3lock suspend
+bindsym $sup+Ctrl+Shift+r exec $HOME/.homemade/bin/power-management-w-i3lock reboot
+bindsym $sup+Ctrl+Shift+p exec $HOME/.homemade/bin/power-management-w-i3lock shutdown
 
 # }}}
 
