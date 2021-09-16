@@ -308,13 +308,17 @@ bindsym --release $sup+Print exec $HOME/.homemade/bin/take-screenshot-w-imagemag
 bindsym --release $sup+Shift+Print exec sleep 5 && $HOME/.homemade/bin/imagemagick-import-screenshot
 bindsym $sup+Ctrl+Print exec kazam
 # Reset wallpaper
-bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/.homemade/rice/current-wallpaper/m0.jpg
+bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/.homemade/rice/current-wallpaper/m0.png
 # Refresh Dual monitor
 bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto
 # Refresh Single monitor
 bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off
 # Wacom
 bindsym $sup+Ctrl+Shift+w exec $HOME/.homemade/bin/map--xinput-wacom-to-xrand-output HDMI-0
+# Power management
+bindsym $sup+Shift+l exec $HOME/.homemade/bin/power-management-w-i3lock lock-current
+bindsym $sup+Ctrl+Shift+l exec $HOME/.homemade/bin/power-management-w-i3lock lock
+bindsym $sup+Ctrl+Shift+s exec $HOME/.homemade/bin/power-management-w-i3lock suspend
 
 # }}}
 
@@ -331,12 +335,14 @@ exec xinput set-prop "SynPS/2 Synaptics TouchPad" 291 1
 # Dual monitor
 exec xrandr --output HDMI-0 --left-of eDP --auto
 # Wallpaper
-exec feh --bg-fill $HOME/.homemade/rice/current-wallpaper/m0.jpg
+exec feh --bg-fill $HOME/.homemade/rice/current-wallpaper/m0.png
 # Compositor
 exec --no-startup-id picom
 # exec --no-startup-id picom -experimental-backends
 # Battery popup
-exec --no-startup-id $HOME/.homemade/bin/acpi-battery-popup-alert
+exec --no-startup-id $HOME/.homemade/bin/daemons/acpi-battery-popup-alert
+# Lock on lid closed
+exec --no-startup-id $HOME/.homemade/bin/daemons/lock-on-lid-closed
 # Conky
 # exec --no-startup-id $HOME/.config/conky/launch.sh
 
