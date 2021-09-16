@@ -55,7 +55,7 @@ custom-i3lock() {
         --separatorcolor=$bg$full \
         --clock \
         --timestr="%H:%M:%S" \
-        --datestr="%a %d %b %Y" \
+        --datestr="%A, %b %d %Y" \
         --time-font="Hack Nerd Font" \
         --date-font="Hack Nerd Font" \
         --layout-font="Hack Nerd Font" \
