@@ -7,53 +7,106 @@
 # Dependencies:
 #               imagemagick
 #               i3lock
-#               scrot (optional but default)
+#               scrot (optional but default
+
+# Colors
+alpha='ee'
+none='ff'
+full='00'
+bg="#090909"
+
+bg_r="#4c0b0b"
+bg_g="#062316"
+bg_b=$bg
+
+red='#8d1315'
+green='#197d3a'
+blue='#111111'
+
+type='#ffffff'
+delete='#e6ebff'
+
+# Path to temporal image
+IMAGE=/tmp/i3lockscreen-bg.png
+
+# Here are some imagemagick blur types
+# All options are here: http://www.imagemagick.org/Usage/blur/#blur_args
+BLURTYPE="0x7" # ~ 7.52s
+#BLURTYPE="0x2" # ~ 4.39s
+#BLURTYPE="5x2" # ~ 3.80s
+#BLURTYPE="2x8" # ~ 2.90s
+#BLURTYPE="2x3" # ~ 2.92s
+
+custom-i3lock() {
+    i3lock -i "$1" "$2" \
+        --indicator \
+        --pass-volume-keys \
+        --pass-media-keys \
+        --pass-screen-keys \
+        --insidecolor=$bg$alpha \
+        --insidevercolor=$bg_b$alpha \
+        --insidewrongcolor=$bg_r$alpha \
+        --ringcolor=$bg$none \
+        --ringvercolor=$blue$none \
+        --ringwrongcolor=$red$none \
+        --line-uses-inside \
+        --keyhlcolor=$type$none \
+        --bshlcolor=$delete$none \
+        --separatorcolor=$bg$full \
+        --clock \
+        --timestr="%H:%M:%S" \
+        --datestr="%a %d %b %Y" \
+        --time-font="Hack Nerd Font" \
+        --date-font="Hack Nerd Font" \
+        --layout-font="Hack Nerd Font" \
+        --verif-font="Hack Nerd Font" \
+        --wrong-font="Hack Nerd Font" \
+        --greeter-font="Hack Nerd Font" \
+        --verifcolor=ffffffff \
+        --wrongcolor=ffffffff \
+        --greetercolor=ffffffff \
+        --layoutcolor=ffffffff \
+        --datecolor=ffffffff \
+        --timecolor=ffffffff \
+        --radius=164 \
+        --ring-width=16 \
+        --veriftext=" Unlocking" \
+        --wrongtext=" Wrong" \
+        --noinput=" Empty" \
+        --locktext=" Locking" \
+        --lockfailed=" Lock Failed"
+}
 
 lock() {
-    # Path to temporal image
-    IMAGE=/tmp/i3lock.png
-
-    # Screenshot methods. NOTE: imagemagick is much slower
-    SCREENSHOT="scrot $IMAGE"
-    # SCREENSHOT="import -window root $IMAGE" # ~ 1.35s
-
-    # Here are some imagemagick blur types
-    # All options are here: http://www.imagemagick.org/Usage/blur/#blur_args
-    BLURTYPE="0x5" # ~ 7.52s
-    #BLURTYPE="0x2" # ~ 4.39s
-    #BLURTYPE="5x2" # ~ 3.80s
-    #BLURTYPE="2x8" # ~ 2.90s
-    #BLURTYPE="2x3" # ~ 2.92s
-
     # Just use current background
-    #i3lock -C -i $HOME/.homemade/rice/current-wallpaper/m0.jpg
-    #i3lock -B 1.2
+    # custom-i3lock $HOME/.homemade/rice/current-wallpaper/m0.png
 
     # Current background + blur
-    # convert $HOME/.homemade/rice/current-wallpaper/m0.jpg -blur $BLURTYPE $IMAGE
-    # i3lock -C -i $IMAGE
-    # rm $IMAGE
-
-    # Screenshot + blur
-    $SCREENSHOT
-    convert $IMAGE -blur $BLURTYPE $IMAGE
-    i3lock -i $IMAGE
+    convert $HOME/.homemade/rice/current-wallpaper/m0.png -blur $BLURTYPE $IMAGE
+    custom-i3lock $IMAGE "-C"
     rm $IMAGE
+}
 
+lock_current() {
+    # Screenshot + blur
+    scrot $IMAGE
+    convert $IMAGE -blur $BLURTYPE $IMAGE
+    custom-i3lock $IMAGE
+    rm $IMAGE
 }
 
 case "$1" in
     lock)
         lock
         ;;
+    lock-current)
+        lock_current
+        ;;
     logout)
         i3-msg exit
         ;;
     suspend)
         lock && systemctl suspend
-        ;;
-    hibernate)
-        lock && systemctl hibernate
         ;;
     reboot)
         systemctl reboot

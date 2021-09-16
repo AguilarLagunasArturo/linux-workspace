@@ -6,12 +6,12 @@
 
 set -e
 
-wallpaper=$HOME/.homemade/rice/current-wallpaper/m0.jpg
+wallpaper=$HOME/.homemade/rice/current-wallpaper/m0.png
 
 if [[ ! -n $1 ]]; then
     echo -e "$0 <path-to-wallpaper>"
 else
     echo -e "$1 -> $wallpaper"
-    convert $1 $wallpaper
+    convert -resize 1920x1920 $1 $wallpaper
     feh --bg-fill $wallpaper
 fi;
