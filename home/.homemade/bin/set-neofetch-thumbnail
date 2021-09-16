@@ -12,7 +12,7 @@ cache_path=$HOME/.cache/thumbnails/neofetch
 if [[ ! -n $1 ]]; then
     echo -e "Usage: $0 <path-to-thumnail>"
 else
-    convert $1 $thumbnail
+    convert -resize 600x600 $1 $thumbnail
     echo -e "$1 -> $thumbnail"
     rm $cache_path/*
     echo "neofetch cache cleaned"
