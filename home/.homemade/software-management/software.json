@@ -148,11 +148,14 @@
     "twine": {
       "description": "Package buliding utility"
     },
-    "numpy": {
-      "description": "Maths"
-    },
     "matplotlib": {
       "description": "Plotting"
+    },
+    "requests": {
+      "description": "Make requests"
+    },
+    "requests-oauthlib": {
+      "description": "OAuth support"
     },
     "pygame": {
       "description": "Game engine"

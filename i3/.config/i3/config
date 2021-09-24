@@ -209,6 +209,10 @@ bindsym $sup+Shift+Ctrl+Left move workspace to output left
 bindsym $sup+Shift+Ctrl+Up move workspace to output up
 bindsym $sup+Shift+Ctrl+Down move workspace to output down
 
+# Focus windows
+focus_follows_mouse yes
+no_focus [ window_role="normal" ]
+
 # Window titles (title_align left|center|right)
 title_align center
 
@@ -237,6 +241,7 @@ workspace_layout default
 # window settings
 for_window [ instance=Conky ] sticky enable
 for_window [ instance="gnome-terminal-server" ] floating enable
+
 # for_window [ floating ] move position center
 # for_window [ floating ] move absolute position center
 

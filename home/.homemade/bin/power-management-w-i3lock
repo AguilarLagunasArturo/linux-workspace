@@ -39,6 +39,7 @@ BLURTYPE="0x7" # ~ 7.52s
 
 custom-i3lock() {
     i3lock -i "$1" "$2" \
+        --ignore-empty-password \
         --indicator \
         --pass-volume-keys \
         --pass-media-keys \

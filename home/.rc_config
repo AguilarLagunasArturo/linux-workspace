@@ -8,7 +8,6 @@ export PATH="$PATH:$HOME/.homemade/bin"
 
 # -- ALIASES --
 alias copy='xclip -selection clipboard'
-alias pexels='python ~/Github/pexels-image-downloader/download.py'
 alias lbin='lsd --tree ~/.homemade/bin/'
 alias ll='lsd -la'
 alias lld='lsd -la --date=relative --group-dirs=first'
@@ -18,12 +17,24 @@ alias l='lsd -l'
 alias lt='lsd --tree'
 alias tree='tree -a'
 alias bat='batcat'
+alias icat='kitty +kitten icat'
+alias idiff='kitty +kitten diff'
+# alias pexels='python ~/Github/pexels-image-downloader/download.py'
 # alias freeCAD='LIBGL_DRI3_DISABLE=true freecad'
 
 # -- COMMANDS --
 # .mkv -> .avi
 # ffmpeg -i "input.mkv" -f avi -c:v mpeg4 -b:v 4000k -c:a libmp3lame -b:a 320k "out.avi"
 # ffmpeg -i "input.mkv" -map 0:v -map 0:a:1 -f avi -c:v mpeg4 -b:v 4000k -c:a libmp3lame -b:a 320k "out.avi"
+
+# Reduce size
+# ffmpeg -i $infile -vf "scale=iw/2:ih/2" $outfile
+
+# Extract audio
+# ffmpeg -i "input-video" -q:a 0 -map a sample.mp3
+
+# Merge audio
+# ffmpeg -y -i "input-video" -i "input-audio" -map 0:0 -map 1:0 -c:v copy -preset ultrafast -async 1 "out.mp4"
 
 # speed change
 # ffmpeg -i input.mp4 -filter:v "setpts=0.005*PTS" output.mp4
