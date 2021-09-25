@@ -77,6 +77,12 @@
     "Atom": {
       "source": "https://atom.io/"
     },
+    "LightDM": {
+      "source": "sudo apt install lightdm"
+    },
+    "Slick Greeter": {
+      "source": "sudo apt install slick-greeter"
+    },
     "Android Studio": {
       "source": "https://developer.android.com/studio"
     },

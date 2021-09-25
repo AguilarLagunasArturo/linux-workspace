@@ -165,8 +165,19 @@ nohup commmand > /dev/null 2>$1 & disown
 ```
 ### Change grub screen
 ```bash
-# TODO
+# open config file
+sudo nano /etc/default/grub
 ```
+```bash
+# Edit or add this lines
+GRUB_BACKGROUND="/boot/grub/themes/your-theme/image.png"
+GRUB_THEME="/boot/grub/themes/your-theme/theme.txt"
+```
+```bash
+# update grub
+sudo update-grub
+```
+
 ### TODO
 - mv -i / rm -i
 - bat
