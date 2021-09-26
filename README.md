@@ -40,6 +40,7 @@ _home/.homemade_ is a directory for my custom resources, scrips and projects.
 ## Stuff I have to do manually
 - Install third party software
 - Set up grub theme
+- Set up lightdm/sddm theme
 - Set up crontab
     - Twitter bot
 ## Tutorials

@@ -34,14 +34,16 @@
         },
         "asuka-red-ominous": {
             "wallpapers": [
+                "Pictures/wallpapers/desktop/anime/evangelion/evangelion-eva-red-city.jpg",
                 "Pictures/wallpapers/desktop/anime/evangelion/evangelion-red-eva.jpg"
             ],
             "thumbnails": [
                 "Pictures/wallpapers/desktop/anime/evangelion/asuka-00.png"
             ]
         },
-        "nobara-blue-text": {
+        "nobara-light-blue-text": {
             "wallpapers": [
+                "Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-02.jpg",
                 "Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-00.jpg"
             ],
             "thumbnails": [

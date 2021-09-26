@@ -6,7 +6,7 @@
 
 function popup {
     batt=$(acpi -b | grep -io "[0-9]*%" | grep -io "[0-9]*")
-    if (( $batt <= 20 )); then
+    if (( $batt <= 20 )) && [ "$(acpi | grep -o 'Discharging')" = "Discharging" ]; then
         notify-send "Low battery" "$batt%" -u critical
     else
         echo -e "$(date +%H:%M:%S): $batt%"

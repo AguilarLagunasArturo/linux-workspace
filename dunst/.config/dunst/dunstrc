@@ -49,17 +49,17 @@
 [urgency_low]
     background="#202022"
     foreground="#f5f5f5"
-    frame_color = "#232325"
+    frame_color = "#18181a"
     timeout = 10
 
 [urgency_normal]
     background="#131314"
     foreground="#f5f5f5"
-    frame_color = "#232325"
+    frame_color = "#16161a"
     timeout = 12
 
 [urgency_critical]
     background="#de1024"
     foreground="#f5f5f5"
-    frame_color = "#232325"
+    frame_color = "#ad0c1c"
     timeout = 0

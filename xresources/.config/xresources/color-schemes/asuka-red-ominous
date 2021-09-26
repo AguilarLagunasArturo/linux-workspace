@@ -8,8 +8,8 @@
 *.color8:       #65162f
 
 ! red
-*.color1:       #a32438
-*.color9:       #bb2940
+*.color1:       #a73457
+*.color9:       #b93a61
 
 ! green
 *.color2:       #c34e3b
@@ -20,8 +20,8 @@
 *.color11:      #db3a3a
 
 ! blue
-*.color4:       #a73457
-*.color12:      #b93a61
+*.color4:       #a32438
+*.color12:      #bb2940
 
 ! magenta
 *.color5:       #6a3964

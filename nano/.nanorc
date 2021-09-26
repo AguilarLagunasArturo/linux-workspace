@@ -4,12 +4,14 @@ set positionlog
 set constantshow
 set tabsize 4
 set tabstospaces
-set linenumbers
+# set linenumbers
 set softwrap
+set emptyline
+set nohelp
+# set minibar
 # set whitespace "->"
 # set smooth
 # set boldtext
 # set numbercolor "normal,normal"
 # set titlecolor "normal,normal"
 # set mouse
-# set nohelp

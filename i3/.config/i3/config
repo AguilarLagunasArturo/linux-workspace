@@ -193,9 +193,9 @@ bar {
             # separator   $color7
 
             # <colorclass> <border> <background> <text>
-            focused_workspace  $color10 $bg      $color10
+            focused_workspace  $color12 $bg      $color12
             # focused_workspace  $bg      $color10 $bg
-            active_workspace   $color2  $bg      $color2
+            active_workspace   $color4  $bg      $color4
             inactive_workspace $bg      $bg      $fg
             urgent_workspace   $color1  $bg      $color1
             # binding_mode       #2f343a #900000 #ffffff
@@ -272,7 +272,7 @@ set_from_resource $bg background #ffffff
 set_from_resource $fg foreground #000000
 
 # class                 border  bg      text    indicator child_border
-client.focused          #323232 #323232 #ffffff $color4   $color2
+client.focused          #323232 #323232 #ffffff $color2   $color4
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
