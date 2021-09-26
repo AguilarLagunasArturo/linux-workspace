@@ -30,6 +30,7 @@ git fetch
 |:-|:-|
 |Desktop enviroment|`gnome`|
 |Window manager|`i3-gaps`|
+|Login screen|`sddm`, `sugar-candy`|
 |Bar|`i3bar`, `i3status`|
 |Compositor|`picom`|
 |Launcher|`rofi`|
