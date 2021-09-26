@@ -83,7 +83,7 @@ lock() {
     # custom-i3lock $HOME/.homemade/rice/current-wallpaper/m0.png
 
     # Current background + blur (pre-saved)
-    custom-i3lock $HOME/.homemade/rice/current-wallpaper/m0-blur.png
+    custom-i3lock $HOME/.homemade/rice/current-wallpaper/m0-blur.png "-C"
 
     # Current background + blur
     # convert $HOME/.homemade/rice/current-wallpaper/m0.png -blur $BLURTYPE $IMAGE

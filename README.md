@@ -39,6 +39,7 @@ git fetch
 _home/.homemade_ is a directory for my custom resources, scrips and projects.
 ## Stuff I have to do manually
 - Install third party software
+- Set up grub theme
 - Set up crontab
     - Twitter bot
 ## Tutorials
@@ -163,6 +164,14 @@ nohup commmand > /dev/null 2>$1
 # redirects output and disown
 nohup commmand > /dev/null 2>$1 & disown
 ```
+### Snap .desktop files
+```bash
+cd /var/lib/snapd/desktop/applications
+```
+### User .desktop files
+```bash
+cd /usr/share/applications
+```
 ### Change grub screen
 ```bash
 # open config file
@@ -179,7 +188,6 @@ sudo update-grub
 ```
 
 ### TODO
-- mv -i / rm -i
 - bat
 - gdu
 - dmenu

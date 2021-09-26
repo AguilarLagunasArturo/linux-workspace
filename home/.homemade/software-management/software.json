@@ -83,6 +83,15 @@
     "Slick Greeter": {
       "source": "sudo apt install slick-greeter"
     },
+    "SDDM": {
+      "source": "sudo apt install sddm"
+    },
+    "SDDM Theme Sugar Candy": {
+      "source": "https://framagit.org/MarianArlt/sddm-sugar-candy"
+    },
+    "Grub2 themes": {
+      "source": "https://github.com/vinceliuice/grub2-themes"
+    },
     "Android Studio": {
       "source": "https://developer.android.com/studio"
     },

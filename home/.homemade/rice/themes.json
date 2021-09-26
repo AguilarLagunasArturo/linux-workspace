@@ -31,6 +31,22 @@
             "thumbnails": [
                 "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-00.jpg"
             ]
+        },
+        "asuka-red-ominous": {
+            "wallpapers": [
+                "Pictures/wallpapers/desktop/anime/evangelion/evangelion-red-eva.jpg"
+            ],
+            "thumbnails": [
+                "Pictures/wallpapers/desktop/anime/evangelion/asuka-00.png"
+            ]
+        },
+        "nobara-blue-text": {
+            "wallpapers": [
+                "Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-00.jpg"
+            ],
+            "thumbnails": [
+                "Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-01.jpg"
+            ]
         }
     }
 }

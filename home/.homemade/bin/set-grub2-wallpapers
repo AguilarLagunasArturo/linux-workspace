@@ -1,0 +1,21 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Sat 25 Sep 2021 01:19:58 AM CDT
+# Description:	Set wallpapers for grub2 for whitesur theme: https://github.com/vinceliuice/grub2-themes
+
+set -e
+
+background=/boot/grub/themes/whitesur/background.jpg
+plain_background=/boot/grub/themes/whitesur/background-plain.jpg
+
+if [[ ! -n $2 ]]; then
+    echo -e "Usage: $0 <background> <plain-background>"
+else
+    echo -e "$1 -> $background"
+    sudo convert $1 $background
+    echo -e "$2 -> $plain_background"
+    sudo convert $2 $plain_background
+    echo -e "Updating grub2"
+    sudo update-grub
+fi

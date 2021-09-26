@@ -178,6 +178,7 @@ bindsym $sup+r mode "resize"
 # finds out, if available)
 bar {
         # workspace_buttons yes
+        mode hide
         strip_workspace_name no
         strip_workspace_numbers no
         modifier none

@@ -29,6 +29,6 @@ else
     i3-msg reload
     i3-msg restart
     # Reload kitty & disown
-    sleep 1
+    sleep 3
     kitty & disown
 fi;

@@ -5,6 +5,7 @@
 # -- EXPORTS --
 export PI=3.141592
 export PATH="$PATH:$HOME/.homemade/bin"
+# export PATH="$PATH:/snap/bin"
 
 # -- ALIASES --
 alias copy='xclip -selection clipboard'
@@ -19,6 +20,8 @@ alias tree='tree -a'
 alias bat='batcat'
 alias icat='kitty +kitten icat'
 alias idiff='kitty +kitten diff'
+# alias vlc='/snap/vlc/2344/usr/bin/vlc'
+alias insomnia='/snap/insomnia/151/insomnia'
 # alias pexels='python ~/Github/pexels-image-downloader/download.py'
 # alias freeCAD='LIBGL_DRI3_DISABLE=true freecad'
 
@@ -58,6 +61,12 @@ alias idiff='kitty +kitten diff'
 # sudo update-alternatives --config x-terminal-emulator
 
 # -- AUTORUN --
-# neofetch                                                      # Default
+neofetch                                                      # Default
 # neofetch --backend w3m --loop yes --xoffset 24 --yoffset 2    # Kitty + w3m
 # neofetch --backend w3m                                        # Urxtv + w3m
+
+# -- NOTES --
+# path to snap .desktop files
+# /var/lib/snapd/desktop/applications
+# path to user .desktop files
+# /usr/share/applications

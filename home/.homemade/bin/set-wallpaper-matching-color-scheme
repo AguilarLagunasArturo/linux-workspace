@@ -29,10 +29,10 @@ else
         thumbnails+=($( echo $l ))
     done
 
-    echo -e "wallpaper: "${wallpapers[0]}
     echo -e "thumbnail: "${thumbnails[0]}
-
-    set-wallpaper-w-feh $HOME/${wallpapers[0]}
     set-neofetch-thumbnail $HOME/${thumbnails[0]}
+
+    echo -e "wallpaper: "${wallpapers[0]}
+    set-wallpaper-w-feh $HOME/${wallpapers[0]}
 
 fi
