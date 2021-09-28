@@ -55,7 +55,8 @@ URxvt*keysym.S-C-Left:		\033[1;6D
 ! depth
 urxvt*.depth:		32
 urxvt*.transparent:	false
-urxvt*.background: [80]#121214
+urxvt*.background: [90]#121214
+! urxvt*.background: [90]#080a0b
 
 !! Color Scheme
 

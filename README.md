@@ -168,11 +168,25 @@ nohup commmand > /dev/null 2>$1 & disown
 ```
 ### Snap .desktop files
 ```bash
-cd /var/lib/snapd/desktop/applications
 ```
-### User .desktop files
+### Add .desktop file
+```
+[Desktop Entry]
+Type=Application
+Name=A name
+GenericName=Generic name
+Comment=A comment
+Exec=/path/to/bin
+Icon=icon-name
+Terminal=false
+Categories=Development;IDE;Programming;
+Keywords=software;programming;coding;
+```
 ```bash
+# path to user .desktop files
 cd /usr/share/applications
+# path to snap .desktop files
+cd /var/lib/snapd/desktop/applications
 ```
 ### Change grub screen
 ```bash
