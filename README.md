@@ -129,6 +129,7 @@ xinput set-prop <device id> <property id> <state 1/0>
 ```bash
 # using feh
 feh --bg-fill <img>
+
 # using hydrapaper
 hydrapaper -c <img>
 ```
@@ -179,6 +180,7 @@ nohup commmand > /dev/null 2>&1 & disown
 ```bash
 # path to user .desktop files
 cd /usr/share/applications
+
 # path to snap .desktop files
 cd /var/lib/snapd/desktop/applications
 ```
