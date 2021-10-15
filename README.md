@@ -162,9 +162,13 @@ latexmk -lualatex <file.tex>
 ### Redirect output
 ```bash
 # redirects output
-nohup commmand > /dev/null 2>$1
-# redirects output and disown
-nohup commmand > /dev/null 2>$1 & disown
+nohup commmand > /dev/null
+# redirects stderr
+nohup commmand 2>/dev/null
+# redirects all
+nohup commmand > /dev/null 2>&1
+# redirects all and disown
+nohup commmand > /dev/null 2>&1 & disown
 ```
 ### Snap .desktop files
 ```bash

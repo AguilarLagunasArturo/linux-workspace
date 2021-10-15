@@ -37,6 +37,9 @@ alias insomnia='/snap/insomnia/151/insomnia'
 # Extract audio
 # ffmpeg -i "input-video" -q:a 0 -map a sample.mp3
 
+# Remove audio
+# ffmpeg -i "input.mp4" -c copy -an "no-audio.mp4"
+
 # Merge audio
 # ffmpeg -y -i "input-video" -i "input-audio" -map 0:0 -map 1:0 -c:v copy -preset ultrafast -async 1 "out.mp4"
 
