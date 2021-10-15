@@ -167,6 +167,7 @@ nohup commmand > /dev/null
 nohup commmand 2>/dev/null
 # redirects all
 nohup commmand > /dev/null 2>&1
+nohup commmand > &>/dev/null
 # redirects all and disown
 nohup commmand > /dev/null 2>&1 & disown
 ```
