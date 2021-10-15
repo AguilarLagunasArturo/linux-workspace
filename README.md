@@ -161,20 +161,27 @@ latexmk -lualatex <file.tex>
 ```
 ### Redirect output
 ```bash
+
 # redirects output
 nohup commmand > /dev/null
+
 # redirects stderr
 nohup commmand 2>/dev/null
+
 # redirects all
 nohup commmand > /dev/null 2>&1
 nohup commmand > &>/dev/null
+
 # redirects all and disown
 nohup commmand > /dev/null 2>&1 & disown
 ```
-### Snap .desktop files
-```bash
-```
 ### Add .desktop file
+```bash
+# path to user .desktop files
+cd /usr/share/applications
+# path to snap .desktop files
+cd /var/lib/snapd/desktop/applications
+```
 ```
 [Desktop Entry]
 Type=Application
@@ -186,12 +193,6 @@ Icon=icon-name
 Terminal=false
 Categories=Development;IDE;Programming;
 Keywords=software;programming;coding;
-```
-```bash
-# path to user .desktop files
-cd /usr/share/applications
-# path to snap .desktop files
-cd /var/lib/snapd/desktop/applications
 ```
 ### Change grub screen
 ```bash
