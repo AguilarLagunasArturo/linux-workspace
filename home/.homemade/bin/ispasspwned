@@ -1,0 +1,19 @@
+#! /usr/bin/env bash
+
+# Author:		Arturo Aguilar Lagunas
+# Date:			Tue Oct 19 08:12:59 PM CDT 2021
+# Description:	Checks if your password has been pwned
+
+pwnedapi="https://api.pwnedpasswords.com/range/"
+tmpfile="pwned.tmp"
+
+if [[ ! -n $1 ]]; then
+    echo "usage: $0 <your-password>"
+else
+    hashed=$( echo -n $1 | sha1sum | awk '{ print $1 }' )
+    curl -s "$pwnedapi$( echo $hashed | cut -c -5 )" > $tmpfile
+
+    cat $tmpfile | grep -i "$( echo $hashed | cut -c 6- )"
+
+    rm $tmpfile
+fi
