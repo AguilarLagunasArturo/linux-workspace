@@ -242,6 +242,7 @@ workspace_layout default
 # window settings
 for_window [ instance=Conky ] sticky enable
 for_window [ instance="gnome-terminal-server" ] floating enable
+for_window [ instance="matplotlib" ] floating enable
 
 # for_window [ floating ] move position center
 # for_window [ floating ] move absolute position center
