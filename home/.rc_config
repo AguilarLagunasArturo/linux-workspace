@@ -31,6 +31,9 @@ alias insomnia='/snap/insomnia/151/insomnia'
 # ffmpeg -i "input.mkv" -f avi -c:v mpeg4 -b:v 4000k -c:a libmp3lame -b:a 320k "out.avi"
 # ffmpeg -i "input.mkv" -map 0:v -map 0:a:1 -f avi -c:v mpeg4 -b:v 4000k -c:a libmp3lame -b:a 320k "out.avi"
 
+# .mp4 -> .avi
+# ffmpeg -i "input.mp4" -bsf:v h264_mp4toannexb -vcodec copy -acodec copy "output.avi"
+
 # Reduce size
 # ffmpeg -i $infile -vf "scale=iw/2:ih/2" $outfile
 

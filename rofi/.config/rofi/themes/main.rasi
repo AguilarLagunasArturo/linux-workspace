@@ -9,12 +9,12 @@
 configuration {
   /* font: "RobotoMono Nerd Font 12"; */
   font: "Hack Nerd Font 12";
-  drun-display-format: "{icon}  {name} [<span weight='light' size='small'><i>({categories})</i></span>]";
-  window-format: "{icon}  WS-{w}  {c}  {t}";
+  drun-display-format: "{name} [<span weight='light' size='small'><i>({categories})</i></span>]";
+  window-format: "{w}  {c}  {t}";
   modi: "window,drun";
   display-drun: "";
   display-window: "";
-  show-icons: true;
+  show-icons: false;
 }
 
 /* All */

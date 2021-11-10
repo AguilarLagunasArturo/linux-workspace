@@ -23,7 +23,7 @@ rm -r krita README.md
 
 # Create symlinks in the system and restore deleted files
 stow -Svt ~ *
-git fetch
+git pull
 ```
 # System configuration
 |Utility|Name|
@@ -164,14 +164,14 @@ latexmk -lualatex <file.tex>
 ```bash
 
 # redirects output
-nohup commmand > /dev/null
+nohup commmand >/dev/null
 
 # redirects stderr
 nohup commmand 2>/dev/null
 
 # redirects all
-nohup commmand > /dev/null 2>&1
-nohup commmand > &>/dev/null
+nohup commmand >/dev/null 2>&1
+nohup commmand &>/dev/null
 
 # redirects all and disown
 nohup commmand > /dev/null 2>&1 & disown
@@ -210,9 +210,20 @@ GRUB_THEME="/boot/grub/themes/your-theme/theme.txt"
 # update grub
 sudo update-grub
 ```
-
-### TODO
-- bat
+### Change timezone
+```bash
+# lists timezones
+timedatectl list-timezones
+# set new timezone
+sudo timedatectl set-timezone <timezone>
+```
+### Sync clock with online services
+```bash
+# maintains the system time of day in synchronism with Internet standard time servers
+sudo ntpd -qg
+```
+#### TODO
+- rlwrap
 - gdu
 - dmenu
 - test setup
