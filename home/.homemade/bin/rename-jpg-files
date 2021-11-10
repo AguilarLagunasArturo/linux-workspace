@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Date:         Sun Nov  7 01:15:05 AM MST 2021
+# Description:  Rename multiple files w/ extension .jpg
+
+a=1
+for i in *.jpg; do
+  new=$(printf "%07d.jpg" "$a") #04 pad to length of 4
+  mv -i -- "$i" "$new"
+  let a=a+1
+done
