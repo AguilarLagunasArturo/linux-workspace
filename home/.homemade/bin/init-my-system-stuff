@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Description:  Initializing stuff
+
+# enable change radeon_bl0 brightness for user aal
+sudo chown aal:aal -R /sys/class/backlight/radeon_bl0/brightness
+
+# sync clock with the internet
+# sudo ntpd -qg

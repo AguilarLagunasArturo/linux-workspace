@@ -62,7 +62,21 @@ man -P "less -p 'CONFIGURATION SETTINGS'" <program-name>
 ```bash
 xrdb ~/.Xresources
 ```
-### Change default terminal emulator
+### Set default applications
+```bash
+# fetch the default mimetype from file
+xdg-mime query filetype <file.ext>
+
+# fetch the default application from mimetype
+xdg-mime query default <mimetype>
+
+# set default application for a mimetype
+xdg-mime default </usr/share/applications/app.desktop> <mimetype>
+
+# alternatively for gnome desktop enviroment edit this file
+nano ~/.config/mimeapps.list
+```
+### Set default terminal emulator
 ```bash
 sudo update-alternatives --config x-terminal-emulator
 ```
@@ -217,12 +231,16 @@ timedatectl list-timezones
 # set new timezone
 sudo timedatectl set-timezone <timezone>
 ```
+### Turn off screen saver for X Window Systems
+```bash
+xset s off
+```
 ### Sync clock with online services
 ```bash
-# maintains the system time of day in synchronism with Internet standard time servers
+# maintains the system time in synchronism with Internet standard time servers
 sudo ntpd -qg
 ```
-#### TODO
+# TODO
 - rlwrap
 - gdu
 - dmenu

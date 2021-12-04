@@ -175,6 +175,9 @@
     "pygame": {
       "description": "Game engine"
     },
+    "pure-python-adb": {
+      "description": "Android ADB with Python"
+    },
     "PyOpenGL": {
       "description": "OpenGL dependencies"
     },
