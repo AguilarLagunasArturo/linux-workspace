@@ -5,15 +5,22 @@
 # Description:  Fit image into a predefined resolution
 
 # max resolution for ig: 1080x1350
-ig_res=1080x1220
+ig_res=1080x1350
 bg="bg.png"
 overlay="overlay.png"
-out="output.png"
 bg_color="white"
 
 if [[ ! -n $1 ]]; then
     echo -e "[+] Usage: $0 <image.ext>"
 else
+    # set output file name
+    if [[ ! -n $2 ]]; then
+        out="output.png"
+    else
+        out="$2"
+    fi
+
+    # print info
     echo -e "[+] input: $1"
     echo -e "[+] output: $out"
     echo -e "[+] bg color: $bg_color"
