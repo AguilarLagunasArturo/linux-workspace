@@ -7,7 +7,7 @@
 # Dependencies:
 #               imagemagick
 #               i3lock
-#               scrot (optional but default
+#               scrot (optional but default)
 
 # Colors
 alpha='ee'

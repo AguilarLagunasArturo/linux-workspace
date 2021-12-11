@@ -1,0 +1,33 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Date:         Sat Dec 11 12:16:23 AM CST 2021
+# Description:  Fit image into a predefined resolution
+
+# max resolution for ig: 1080x1350
+ig_res=1080x1220
+bg="bg.png"
+overlay="overlay.png"
+out="output.png"
+bg_color="white"
+
+if [[ ! -n $1 ]]; then
+    echo -e "[+] Usage: $0 <image.ext>"
+else
+    echo -e "[+] input: $1"
+    echo -e "[+] output: $out"
+    echo -e "[+] bg color: $bg_color"
+    echo -e "[+] old res: $(convert $1 -print "%wx%h\n" /dev/null)"
+    echo -e "[+] new res: $ig_res"
+
+    # generate background
+    # convert -blur 0x7 -resize $ig_res\! $1 bg-$out
+    convert -size $ig_res canvas:$bg_color $bg
+    # generate overlay image
+    convert -resize $ig_res $1 $overlay
+    # generate output
+    convert -composite -gravity center $bg $overlay $out
+
+    # remove tmp files
+    rm $bg $overlay
+fi
