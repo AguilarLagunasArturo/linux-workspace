@@ -178,6 +178,9 @@
     "pure-python-adb": {
       "description": "Android ADB with Python"
     },
+    "pwntools": {
+      "description": "Python module for printing logs"
+    },
     "PyOpenGL": {
       "description": "OpenGL dependencies"
     },
