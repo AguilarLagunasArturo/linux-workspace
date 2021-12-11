@@ -5,6 +5,7 @@
 # -- EXPORTS --
 export PI=3.141592
 export PATH="$PATH:$HOME/.homemade/bin"
+export PATH="$PATH:$HOME/.homemade/bin/tools"
 # export PATH="$PATH:/opt/android-studio/bin"
 # export PATH="$PATH:/snap/bin"
 

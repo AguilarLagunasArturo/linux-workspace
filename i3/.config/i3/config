@@ -322,7 +322,7 @@ bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto
 # Refresh Single monitor
 bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off
 # Wacom
-bindsym $sup+Ctrl+Shift+w exec $HOME/.homemade/bin/map--xinput-wacom-to-xrand-output HDMI-0
+bindsym $sup+Ctrl+Shift+w exec $HOME/.homemade/bin/map-xinput-wacom-to-xrand-output HDMI-0
 # Power management
 bindsym $sup+Shift+l exec $HOME/.homemade/bin/power-management-w-i3lock lock-current
 bindsym $sup+Ctrl+Shift+l exec $HOME/.homemade/bin/power-management-w-i3lock lock
