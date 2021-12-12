@@ -1,0 +1,117 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Date:         Sat Dec 11 12:16:23 AM CST 2021
+# Description:  Fit image(s) into a predefined resolution
+
+# bash settings
+set -e
+
+# vars
+ig_res=1080x1350
+out="output.png"
+bg="bg.png"
+overlay="overlay.png"
+bg_color="white"
+dir_flag=0
+verbose=0
+all=0
+dir="."
+
+# usage
+usage="[!] Usage: $0 <options> <input>\n"
+usage+="\n\t-i\tinput image"
+usage+="\n\t-a\ttake all images in current folder as input"
+usage+="\n\t-o\toutput file name by default: $out"
+usage+="\n\t-b\tbackground color: black, white, blur"
+usage+="\n\t-r\tdefault resolution: $res"
+usage+="\n\t-d\tdestination directory"out
+usage+="\n\t-v\tverbose\n"
+
+fit_image() {
+    # print info
+    if [[ verbose -eq 1 ]]; then
+        echo -e "\n[+] input: $input"
+        echo -e "[+] output: $out"
+        echo -e "[+] background: $bg_color"
+        echo -e "[+] resolution: $ig_res"
+        echo -e "[+] destination: $dir"
+    fi
+    # generate background
+    if [ "$bg_color" = "blur" ]; then
+        convert -modulate 100,70 -blur 0x7 -resize $ig_res\! $input $bg
+    else
+        convert -size $ig_res canvas:$bg_color $bg
+    fi
+    # generate overlay image
+    convert -resize $ig_res $input $overlay
+    # generate output
+    convert -composite -gravity center $bg $overlay $out
+
+    # remove tmp files
+    rm $bg $overlay
+
+    # move files
+    if [[ dir_flag -eq 1 ]]; then
+        mkdir -p $dir
+        mv $out $dir
+    fi
+}
+
+if [[ $# -eq 0 ]]; then
+    echo -e $usage
+    exit 0
+fi
+
+# while args > 1
+while [[ $# -gt 0 ]]; do
+    key=$1
+    case $key in
+        -i)
+            input=$2
+            shift
+        ;;
+        -o)
+            out=$2
+            shift
+        ;;
+        -b)
+            bg_color=$2
+            shift
+        ;;
+        -r)
+            ig_res=$2
+            shift
+        ;;
+        -d)
+            dir=$2
+            dir_flag=1
+            shift
+        ;;
+        -v)
+            verbose=1
+        ;;
+        -a)
+            all=1
+        ;;
+    esac
+    shift
+done
+
+if [[ all -eq 1 ]]; then
+    i=0
+    aux=$out
+    for img in $(ls | sort | grep -oP ".*(jpg|jpeg|png)$"); do
+        i=$(( i + 1 ))
+        input=$img
+        out="$i-$aux"
+        fit_image
+    done
+else
+    fit_image
+fi
+
+# print info
+if [[ verbose -eq 1 ]]; then
+    echo -e "\n[!] Done"
+fi
