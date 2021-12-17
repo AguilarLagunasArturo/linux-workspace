@@ -1,62 +1,61 @@
 !! URxvt
 
 ! Text & Spacing
-! URxvt.font:xft:             RobotoMono Nerd Font:pixelsize=12:antialias=true
-! URxvt.boldFont:xft:         RobotoMono Nerd Font:bold:pixelsize=12:antialias=true
-! URxvt.font:xft:             JetBrainsMono NF:pixelsize=14:antialias=true
-! URxvt.boldFont:xft:         JetBrainsMono NF:bold:pixelsize=12:antialias=true
-URxvt.font:xft:             Hack NF:pixelsize=12:antialias=true
-! URxvt.boldFont:xft:         Hack NF:bold:pixelsize=12:antialias=true
-URxvt.letterSpace:			0
-URxvt.lineSpace:			0
-URxvt.geometry:				124x32
-URxvt.internalBorder:		24
+! URxvt.font:xft:              RobotoMono Nerd Font:pixelsize=12:antialias=true
+! URxvt.boldFont:xft:          RobotoMono Nerd Font:bold:pixelsize=12:antialias=true
+! URxvt.font:xft:              JetBrainsMono NF:pixelsize=14:antialias=true
+! URxvt.boldFont:xft:          JetBrainsMono NF:bold:pixelsize=12:antialias=true
+URxvt.font:xft:              Hack NF:pixelsize=12:antialias=true
+URxvt.letterSpace:           0
+URxvt.lineSpace:             0
+URxvt.geometry:              124x32
+URxvt.internalBorder:        24
 
 ! Scroll bar
-URxvt.scrollBar:			false
-URxvt.scrollBar_right:		false
+URxvt.scrollBar:            false
+URxvt.scrollBar_right:      false
 URxvt.cursorBlink:          true
 
 !! Config
 
 ! ISO off
-URxvt.iso14755:				off
+URxvt.iso14755:              off
 
 ! Scrolling
-URxvt*scrollTtyOutput:		false
-URxvt*scrollWithBuffer:		true
-URxvt*scrollTtyKeypress:	true
+URxvt*scrollTtyOutput:       false
+URxvt*scrollWithBuffer:      true
+URxvt*scrollTtyKeypress:     true
 
 ! Open & Highlight URL
-URxvt*perl-ext-common:		default,matcher
-URxvt*urlLauncher:			/usr/bin/xdg-open
-URxvt*matcher.button:		1
-URxvt*colorUL:				white
-URxvt*underlineColor:		white
+URxvt*perl-ext-common:       default,matcher
+URxvt*urlLauncher:           /usr/bin/xdg-open
+URxvt*matcher.button:        1
+URxvt*colorUL:               white
+URxvt*underlineColor:        white
 
 !! Keybindings
 
 ! Shift
 ! Selecting conflict
-URxvt*keysym.S-Up:			\033[1;2A
-URxvt*keysym.S-Down:		\033[1;2B
-URxvt*keysym.S-Right:		\033[1;2C
-URxvt*keysym.S-Left:		\033[1;2D
+URxvt*keysym.S-Up:           \033[1;2A
+URxvt*keysym.S-Down:         \033[1;2B
+URxvt*keysym.S-Right:        \033[1;2C
+URxvt*keysym.S-Left:         \033[1;2D
 
 ! Shift+Control
 ! Selecting conflict
-URxvt*keysym.S-C-Up:		\033[1;6A
-URxvt*keysym.S-C-Down:		\033[1;6B
-URxvt*keysym.S-C-Right:		\033[1;6C
-URxvt*keysym.S-C-Left:		\033[1;6D
+URxvt*keysym.S-C-Up:         \033[1;6A
+URxvt*keysym.S-C-Down:       \033[1;6B
+URxvt*keysym.S-C-Right:      \033[1;6C
+URxvt*keysym.S-C-Left:       \033[1;6D
 
 !! Transparency
 
 ! depth
-urxvt*.depth:		32
-urxvt*.transparent:	false
-urxvt*.background: [90]#121214
-! urxvt*.background: [90]#080a0b
+urxvt*.depth:                32
+urxvt*.transparent:          false
+urxvt*.background:           [90]#121214
+! urxvt*.background:         [90]#080a0b
 
 !! Color Scheme
 

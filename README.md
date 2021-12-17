@@ -5,6 +5,7 @@ This is the greatest management of all time.
 |:-|
 |![Desktop](home/.homemade/assets/screenshots/preview.png)|
 |![Desktop](home/.homemade/assets/screenshots/preview.gif)|
+
 ## Setup
 ```bash
 # Update and install dependencies
@@ -50,6 +51,7 @@ systemctl reboot
 |Launcher|`rofi`|
 |Terminal|`kitty`, `urxvt`|
 |Notifications|`dunst`, `notify-send`|
+
 ## Notes
 _home/.homemade_ is a directory for my custom resources, scrips, etc.
 ## Stuff I have to do manually
@@ -60,6 +62,7 @@ _home/.homemade_ is a directory for my custom resources, scrips, etc.
 - Set up lightdm/sddm theme
 - Set up crontab
     - Twitter bot
+
 ## Tutorials
 ### Usefull stow commands
 ```bash
@@ -267,4 +270,3 @@ sudo ntpd -qg
 - rlwrap
 - gdu
 - dmenu
-- test setup
