@@ -29,9 +29,12 @@ bash home/.homemade/bin/management/install-main-apt-packages
 stow --adopt -Svt ~ *
 git checkout .
 
-# Add settings to bashrc or zshrc
-echo "source ~/.rc_config" >> ~/.bashrc
-echo "source ~/.rc_config" >> ~/.zshrc
+# Add settings to zshrc (optional)
+echo "source ~/.rc_config &>/dev/null" >> ~/.zshrc
+
+# Set default shell and terminal emulator (optional)
+sudo update-alternatives --config x-terminal-emulator
+chsh
 
 # Reboot into an i3 session
 systemctl reboot
