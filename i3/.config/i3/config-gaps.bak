@@ -1,0 +1,355 @@
+# i3 config file (v4)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+#
+# This config file uses keycodes (bindsym) and was written for the QWERTY
+# layout.
+#
+# To get a config file with the same key positions, but for your current
+# layout, use the i3-config-wizard
+#
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:Hack Nerd Font 10
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+#font pango:DejaVu Sans Mono 8
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# Setting variables
+set $sup Mod4
+# set $up Up
+# set $down Down
+# set $left Left
+# set $right Right
+
+# use Mouse+$sup to drag floating windows to their wanted position
+floating_modifier $sup
+
+# start a terminal
+bindsym $sup+Return exec kitty
+
+# kill focused window
+bindsym $sup+Shift+q kill
+
+# start program launcher (rofi, dmenu)
+bindsym $sup+d exec --no-startup-id dmenu_run
+# A more modern dmenu replacement is rofi:
+# There also is i3-dmenu-desktop which only displays applications shipping a
+# .desktop file. It is a wrapper around dmenu, so you need that installed.
+# bindsym $sup+d exec --no-startup-id i3-dmenu-desktop
+
+# change focus
+# alternatively, you can use the cursor keys:
+bindsym $sup+Left focus left
+bindsym $sup+Down focus down
+bindsym $sup+Up focus up
+bindsym $sup+Right focus right
+
+# move focused window
+bindsym $sup+Shift+Left move left
+bindsym $sup+Shift+Down move down
+bindsym $sup+Shift+Up move up
+bindsym $sup+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $sup+h split h
+
+# split in vertical orientation
+bindsym $sup+v split v
+
+# split toggle (horizontal / vertical)
+bindsym $sup+t layout toggle tabbed split
+
+# enter fullscreen mode for the focused container
+bindsym $sup+f fullscreen toggle
+
+# toggle tiling / floating
+bindsym $sup+space floating toggle
+
+# change focus between tiling / floating windows
+# bindsym $sup+space focus mode_toggle
+
+# focus the parent container
+# bindsym $sup+a focus parent
+
+# focus the child container
+# bindsym $sup+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $sup+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $sup+minus scratchpad show
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1  "
+set $ws2 "2  "
+set $ws3 "3  "
+set $ws4 "4  "
+set $ws5 "5  "
+set $ws6 "6  "
+set $ws7 "7  "
+set $ws8 "8  "
+set $ws9 "9  "
+set $ws10 "10  "
+
+# switch to workspace
+bindsym $sup+1 workspace number $ws1
+bindsym $sup+2 workspace number $ws2
+bindsym $sup+3 workspace number $ws3
+bindsym $sup+4 workspace number $ws4
+bindsym $sup+5 workspace number $ws5
+bindsym $sup+6 workspace number $ws6
+bindsym $sup+7 workspace number $ws7
+bindsym $sup+8 workspace number $ws8
+bindsym $sup+9 workspace number $ws9
+bindsym $sup+0 workspace number $ws10
+
+# move focused container to workspace
+bindsym $sup+Shift+1 move container to workspace number $ws1
+bindsym $sup+Shift+2 move container to workspace number $ws2
+bindsym $sup+Shift+3 move container to workspace number $ws3
+bindsym $sup+Shift+4 move container to workspace number $ws4
+bindsym $sup+Shift+5 move container to workspace number $ws5
+bindsym $sup+Shift+6 move container to workspace number $ws6
+bindsym $sup+Shift+7 move container to workspace number $ws7
+bindsym $sup+Shift+8 move container to workspace number $ws8
+bindsym $sup+Shift+9 move container to workspace number $ws9
+bindsym $sup+Shift+0 move container to workspace number $ws10
+
+# move focused container to workspace
+bindsym $sup+Shift+Ctrl+1 move container to workspace number $ws1; workspace number $ws1
+bindsym $sup+Shift+Ctrl+2 move container to workspace number $ws2; workspace number $ws2
+bindsym $sup+Shift+Ctrl+3 move container to workspace number $ws3; workspace number $ws3
+bindsym $sup+Shift+Ctrl+4 move container to workspace number $ws4; workspace number $ws4
+bindsym $sup+Shift+Ctrl+5 move container to workspace number $ws5; workspace number $ws5
+bindsym $sup+Shift+Ctrl+6 move container to workspace number $ws6; workspace number $ws6
+bindsym $sup+Shift+Ctrl+7 move container to workspace number $ws7; workspace number $ws7
+bindsym $sup+Shift+Ctrl+8 move container to workspace number $ws8; workspace number $ws8
+bindsym $sup+Shift+Ctrl+9 move container to workspace number $ws9; workspace number $ws9
+bindsym $sup+Shift+Ctrl+0 move container to workspace number $ws10; workspace number $ws10
+
+# reload the configuration file
+bindsym $sup+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $sup+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $sup+Shift+Escape exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+
+        # same bindings, but for the arrow keys
+        bindsym Left        resize shrink width 10 px or 1 ppt
+        bindsym Down        resize grow height 10 px or 1 ppt
+        bindsym Up          resize shrink height 10 px or 1 ppt
+        bindsym Right       resize grow width 10 px or 1 ppt
+
+        # back to normal: Enter or Escape or $sup+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $sup+r mode "default"
+}
+
+bindsym $sup+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        # workspace_buttons yes
+        mode hide
+        strip_workspace_name no
+        strip_workspace_numbers no
+        modifier none
+        status_command i3status
+        position bottom
+        separator_symbol "  "
+        # i3bar_command i3bar --transparency
+        colors {
+            background  $bg
+            statusline  $fg
+            separator   $fg
+            # separator   $color7
+
+            # <colorclass> <border> <background> <text>
+            focused_workspace  $color12 $bg      $color12
+            # focused_workspace  $bg      $color10 $bg
+            active_workspace   $color4  $bg      $color4
+            inactive_workspace $bg      $bg      $fg
+            urgent_workspace   $color1  $bg      $color1
+            # binding_mode       #2f343a #900000 #ffffff
+    }
+}
+
+# Custom settings: {{{
+
+# Moving workspaces to different screen
+bindsym $sup+Shift+Ctrl+Right move workspace to output right
+bindsym $sup+Shift+Ctrl+Left move workspace to output left
+bindsym $sup+Shift+Ctrl+Up move workspace to output up
+bindsym $sup+Shift+Ctrl+Down move workspace to output down
+
+# Focus windows
+focus_follows_mouse yes
+no_focus [ window_role="normal" ]
+
+# Window titles (title_align left|center|right)
+title_align center
+
+# Borders (normal|none|pixel)
+smart_borders on
+for_window [class=".*"] border pixel 2
+# default_border pixel 2
+# default_floating_border pixel 2
+
+# gaps
+smart_gaps on
+gaps inner 8
+gaps outer 4
+# bindsym $sup+Ctrl+Shift exec gaps inner 0
+
+# floating max size
+floating_maximum_size 1320 x 700
+
+# default layout (default|tabbed|stacking)
+workspace_layout default
+
+# workspaces settings
+# assign [class="Google-chrome"] $ws1
+# for_window [ workspace="1" ] layout tabbed
+
+# window settings
+for_window [ instance=Conky ] sticky enable
+for_window [ instance="gnome-terminal-server" ] floating enable
+for_window [ instance="matplotlib" ] floating enable
+for_window [ instance="python" ] floating enable
+
+# for_window [ floating ] move position center
+# for_window [ floating ] move absolute position center
+
+# }}}
+
+# Color: {{{
+
+# set xresources colors
+set_from_resource $color0 color0 #323232
+set_from_resource $color1 color1 #323232
+set_from_resource $color2 color2 #323232
+set_from_resource $color3 color3 #323232
+set_from_resource $color4 color4 #323232
+set_from_resource $color5 color5 #323232
+set_from_resource $color6 color6 #323232
+set_from_resource $color7 color7 #323232
+set_from_resource $color8 color8 #323232
+set_from_resource $color9 color9 #323232
+set_from_resource $color10 color10 #323232
+set_from_resource $color11 color11 #323232
+set_from_resource $color12 color12 #323232
+set_from_resource $color13 color13 #323232
+set_from_resource $color14 color14 #323232
+set_from_resource $color15 color15 #323232
+
+set_from_resource $bg background #ffffff
+set_from_resource $fg foreground #000000
+
+# class                 border  bg      text    indicator child_border
+client.focused          #323232 #323232 #ffffff $color2   $color4
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #000000
+
+# }}}
+
+# Custom keybindings: {{{
+
+# Toggle bar state
+bindsym $sup+b bar mode toggle
+# Use pactl to adjust volume in PulseAudio
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -u && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -d && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -m && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -M && $refresh_i3status
+# Rofi
+bindsym $sup+Tab exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show window
+bindsym $sup+a exec rofi -theme $HOME/.config/rofi/themes/main.rasi -show drun
+# Reset conky
+bindsym $sup+Ctrl+Shift+c exec $HOME/.config/conky/launch.sh
+bindsym $sup+Ctrl+c exec killall conky
+# Keyboard layout
+bindsym $sup+Ctrl+u exec setxkbmap us
+bindsym $sup+Ctrl+e exec setxkbmap es
+# Force kill process
+bindsym --release $sup+Ctrl+x exec --no-startup-id xkill
+# Brightness down
+bindsym $sup+k exec $HOME/.homemade/bin/system/radeon-bl0-backlight-brightness-control -d
+bindsym --release XF86MonBrightnessDown exec $HOME/.homemade/bin/system/radeon-bl0-backlight-brightness-control -d
+# Brightness up
+bindsym $sup+l exec $HOME/.homemade/bin/system/radeon-bl0-backlight-brightness-control -u
+bindsym --release XF86MonBrightnessUp exec $HOME/.homemade/bin/system/radeon-bl0-backlight-brightness-control -u
+# Screenshot
+bindsym --release $sup+Print exec $HOME/.homemade/bin/system/take-screenshot-w-imagemagick-import
+bindsym --release $sup+Shift+Print exec sleep 5 && $HOME/.homemade/bin/system/imagemagick-import-screenshot
+bindsym $sup+Ctrl+Print exec kazam
+# Reset wallpaper
+bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/.homemade/assets/wallpaper/m0.png
+# Refresh Dual monitor
+bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto
+# Refresh Single monitor
+bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off
+# Wacom
+bindsym $sup+Ctrl+Shift+w exec $HOME/.homemade/bin/system/map-xinput-wacom-to-xrand-output HDMI-0
+# Power management
+bindsym $sup+Shift+l exec $HOME/.homemade/bin/system/power-management-w-i3lock lock-current
+bindsym $sup+Ctrl+Shift+l exec $HOME/.homemade/bin/system/power-management-w-i3lock lock
+bindsym $sup+Ctrl+Shift+r exec $HOME/.homemade/bin/system/power-management-w-i3lock reboot
+bindsym $sup+Ctrl+Shift+p exec $HOME/.homemade/bin/system/power-management-w-i3lock shutdown
+
+# }}}
+
+# Custom autorun: {{{
+
+# Hardware
+# Touchpad tap to click
+exec --no-startup-id $HOME/.homemade/bin/system/set-custom-hardware-settings
+
+# Software
+# Dual monitor
+exec xrandr --output HDMI-0 --left-of eDP --auto
+# Wallpaper
+exec feh --bg-fill $HOME/.homemade/assets/wallpaper/m0.png
+# Compositor
+exec --no-startup-id picom
+# exec --no-startup-id picom -experimental-backends
+# Battery popup
+exec --no-startup-id $HOME/.homemade/bin/system/daemons/acpi-battery-popup-alert
+# Lock on lid closed
+exec --no-startup-id $HOME/.homemade/bin/system/daemons/lock-on-lid-closed
+# Conky
+# exec --no-startup-id $HOME/.config/conky/launch.sh
+
+# }}}

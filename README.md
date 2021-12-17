@@ -23,7 +23,7 @@ git clone https://github.com/AguilarLagunasArturo/linux-workspace.git
 cd linux-workspace
 rm README.md .gitignore
 
-# Install packages
+# Install main packages (basic dependencies)
 bash home/.homemade/bin/management/install-main-apt-packages
 
 # Create symlinks in the system and restore deleted files
@@ -40,6 +40,17 @@ sudo update-alternatives --config x-terminal-emulator
 # Reboot into an i3 session
 systemctl reboot
 ```
+## Troubleshooting
+If your distribution does not packages `i3-gaps` you can either:
+1. Install (i3-gaps)[https://github.com/Airblader/i3] from source
+2. Install `i3-wm` (without gaps) and remove the gaps settings from the config file
+    - `sudo apt install i3 i3-wm i3status`
+    - `cat ~/.config/i3/config-no-gaps.bak > ~/.config/i3/config`
+
+## Notes
+1. _home/.homemade_ is a directory for my custom resources, scrips, etc.
+2. Some scrips from _home/.homemade/bin_ might not work properly.
+
 # System configuration
 |Utility|Name|
 |:-|:-|
@@ -52,8 +63,6 @@ systemctl reboot
 |Terminal|`kitty`, `urxvt`|
 |Notifications|`dunst`, `notify-send`|
 
-## Notes
-_home/.homemade_ is a directory for my custom resources, scrips, etc.
 ## Stuff I have to do manually
 - Install third party software
 - Set up grub2 theme
