@@ -8,7 +8,7 @@
 set -e
 
 # vars
-ig_res=1080x1350
+ig_res=1080x1215
 out="output.png"
 bg="bg.png"
 overlay="overlay.png"
