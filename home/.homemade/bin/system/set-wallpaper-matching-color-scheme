@@ -5,7 +5,7 @@
 # Description:	Set wallpaper matching a selected color scheme
 
 schemes_path=$HOME/.config/xresources/color-schemes/
-schemes_json=$HOME/.homemade/assets/themes.json
+schemes_json=$HOME/.homemade/assets/data/themes.json
 
 set -e
 
@@ -30,9 +30,9 @@ else
     done
 
     echo -e "wallpaper: "${wallpapers[0]}
-    set-wallpaper-w-feh $HOME/${wallpapers[0]}
+    $HOME/.homemade/bin/system/set-wallpaper-w-feh $HOME/${wallpapers[0]}
 
     echo -e "thumbnail: "${thumbnails[0]}
-    set-neofetch-thumbnail $HOME/${thumbnails[0]}
+    $HOME/.homemade/bin/system/set-neofetch-thumbnail $HOME/${thumbnails[0]}
 
 fi

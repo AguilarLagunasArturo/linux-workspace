@@ -5,9 +5,9 @@
 # Description:	Set xresources color scheme to i3status
 
 config=$HOME/.config/i3status/config
-c10=$($HOME/.homemade/bin/get-xresources-color color10)
-c13=$($HOME/.homemade/bin/get-xresources-color color13)
-c9=$($HOME/.homemade/bin/get-xresources-color color9)
+c10=$($HOME/.homemade/bin/system/get-xresources-color color10)
+c13=$($HOME/.homemade/bin/system/get-xresources-color color13)
+c9=$($HOME/.homemade/bin/system/get-xresources-color color9)
 
 sed --follow-symlinks -i 's/^.*color_good.*#[a-fA-F0-9]\{6\}"/        color_good = "'$c10'"/' $config
 sed --follow-symlinks -i 's/^.*color_degraded.*#[a-fA-F0-9]\{6\}"/        color_degraded = "'$c13'"/' $config

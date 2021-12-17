@@ -23,7 +23,7 @@ else
     # i3status
     $HOME/.config/i3status/set-i3status-color-scheme.sh &
     # wallpapers
-    $HOME/.homemade/bin/set-wallpaper-matching-color-scheme $1 &
+    $HOME/.homemade/bin/system/set-wallpaper-matching-color-scheme $1 &
     # i3-gaps-wm
     sleep 1
     i3-msg reload

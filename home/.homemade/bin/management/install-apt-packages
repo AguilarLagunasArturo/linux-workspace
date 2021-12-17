@@ -1,0 +1,36 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Date:         Thu Dec 16 10:16:33 PM CST 2021
+# Description:  Auto install apt packages
+
+# Variables
+management_path=$HOME/.homemade/assets/data/software.json
+packages=$( cat $management_path | jq ".apt.category.terminal" | grep -iPo "\".*\"" | tr -d "\""; \
+            cat $management_path | jq ".apt.category.gui" | grep -iPo "\".*\"" | tr -d "\"")
+
+declare -a installed
+declare -a not_installed
+
+# Info
+echo -e "[+] Installing packages from $management_path file\n"
+
+# Check which packages are installed
+for package in $packages; do
+    status=$((dpkg -s $package 2>&1) | grep \^Status:\ install\ ok\ installed\$)
+    if [[ $status ==  "Status: install ok installed" ]]
+    then
+        # Add to installed packages
+        installed+=($package)
+        echo "[!] Already installed: $package"
+    else
+        # Add to not installed packages
+        not_installed+=($package)
+    fi
+done
+
+# Installing packages
+echo; for package in ${not_installed[@]}; do
+    echo -e "[+] Attempting to install: $package"
+    sudo apt install $package -y
+done

@@ -12,11 +12,10 @@
     "category": {
       "terminal": [
         "git",
+        "zsh",
         "stow",
         "python3-pip",
-        "rxvt",
         "kitty",
-        "tmux",
         "tree",
         "fortune-mod",
         "cowsay",
@@ -55,7 +54,6 @@
         "kcolorchooser",
         "skanlite",
         "libreoffice",
-        "texmaker",
         "krita",
         "gimp",
         "inkscape",

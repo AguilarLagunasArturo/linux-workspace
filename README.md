@@ -10,10 +10,11 @@ This is the greatest management of all time.
 # Update and install dependencies
 sudo apt update
 sudo apt upgrade -y
-sudo apt install git stow
+sudo apt install git stow jq
 
 # Clone repo
-mkdir Github
+cd ~
+mkdir -p Github
 cd Github
 git clone https://github.com/AguilarLagunasArturo/linux-workspace.git
 
@@ -24,6 +25,10 @@ rm -r krita README.md
 # Create symlinks in the system and restore deleted files
 stow -Svt ~ *
 git pull
+
+# Add settings to bashrc or zshrc
+echo "source ~/.rc_config" >> ~/.bashrc
+echo "source ~/.rc_config" >> ~/.zshrc
 ```
 # System configuration
 |Utility|Name|
@@ -37,7 +42,7 @@ git pull
 |Terminal|`kitty`, `urxvt`|
 |Notifications|`dunst`, `notify-send`|
 ## Notes
-_home/.homemade_ is a directory for my custom resources, scrips and projects.
+_home/.homemade_ is a directory for my custom resources, scrips, etc.
 ## Stuff I have to do manually
 - Install third party software
 - Set up grub theme
@@ -146,6 +151,13 @@ feh --bg-fill <img>
 
 # using hydrapaper
 hydrapaper -c <img>
+```
+### Change default shell
+```bash
+# Manual
+chsh -s /bin/shell <user>
+# Interactive
+chsh
 ```
 ### Video conversion
 ```bash
