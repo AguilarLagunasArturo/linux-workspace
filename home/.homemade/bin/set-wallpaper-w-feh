@@ -6,8 +6,8 @@
 
 set -e
 
-wallpaper=$HOME/.homemade/rice/current-wallpaper/m0.png
-wallpaper_blur=$HOME/.homemade/rice/current-wallpaper/m0-blur.png
+wallpaper=$HOME/.homemade/assets/wallpaper/m0.png
+wallpaper_blur=$HOME/.homemade/assets/wallpaper/m0-blur.png
 BLUR="0x7"
 
 if [[ ! -n $1 ]]; then

@@ -2,10 +2,10 @@
 
 # Author:		Arturo Aguilar Lagunas
 # Date:			Fri 10 Sep 2021 12:47:24 PM CDT
-# Description:	Set wallpaper matching the current color scheme
+# Description:	Set wallpaper matching a selected color scheme
 
 schemes_path=$HOME/.config/xresources/color-schemes/
-schemes_json=$HOME/.homemade/rice/themes.json
+schemes_json=$HOME/.homemade/assets/themes.json
 
 set -e
 

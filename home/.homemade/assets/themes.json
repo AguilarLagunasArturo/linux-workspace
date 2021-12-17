@@ -1,5 +1,13 @@
 {
     "themes": {
+        "x-default": {
+            "wallpapers": [
+                ".homemade/assets/wallpaper/m0.png"
+            ],
+            "thumbnails": [
+                ".config/neofetch/thumbnail/thumbnail.png"
+            ]
+        },
         "rengoku-text-orange": {
             "wallpapers": [
                 "Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-00.jpg"

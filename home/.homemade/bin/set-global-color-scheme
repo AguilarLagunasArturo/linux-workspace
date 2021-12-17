@@ -16,10 +16,10 @@ if [[ ! -n $1 ]]; then
         echo -e "\t"$f
     done
 else
-    # kitty
-    $HOME/.config/kitty/set-kitty-color-scheme.py $1 &
     # xresources
     $HOME/.config/xresources/set-xresources-color-scheme.sh $1
+    # kitty
+    $HOME/.config/kitty/set-kitty-color-scheme.py $1 &
     # i3status
     $HOME/.config/i3status/set-i3status-color-scheme.sh &
     # wallpapers
