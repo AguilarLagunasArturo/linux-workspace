@@ -20,7 +20,7 @@ git clone https://github.com/AguilarLagunasArturo/linux-workspace.git
 
 # Change directory and remove unneeded files
 cd linux-workspace
-rm README.md
+rm README.md .gitignore
 
 # Install packages
 bash home/.homemade/bin/management/install-main-apt-packages
