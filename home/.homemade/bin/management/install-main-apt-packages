@@ -5,9 +5,8 @@
 # Description:  Auto install apt packages
 
 # Variables
-management_path=$HOME/.homemade/assets/data/software.json
-packages=$( cat $management_path | jq ".apt.category.terminal" | grep -iPo "\".*\"" | tr -d "\""; \
-            cat $management_path | jq ".apt.category.gui" | grep -iPo "\".*\"" | tr -d "\"")
+management_path=$HOME/Github/linux-workspace/home/.homemade/assets/data/software.json
+packages=$( cat $management_path | jq ".apt.category.terminal" | grep -iPo "\".*\"" | tr -d "\"" )
 
 declare -a installed
 declare -a not_installed

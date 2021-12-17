@@ -33,11 +33,11 @@
         "adb",
         "ranger",
         "dconf-editor",
-        "texlive-full",
-        "latexmk",
         "colortest",
         "xinput",
+        "i3-wm",
         "i3-gaps",
+        "i3status",
         "libnotify-bin",
         "dunst",
         "acpi",
@@ -48,6 +48,8 @@
         "bat"
       ],
       "gui": [
+        "texlive-full",
+        "latexmk",
         "papirus-icon-theme",
         "kazam",
         "kdenlive",

@@ -20,21 +20,21 @@ git clone https://github.com/AguilarLagunasArturo/linux-workspace.git
 
 # Change directory and remove unneeded files
 cd linux-workspace
-rm -r README.md
+rm README.md
 
 # Install packages
-bash home/.homemade/bin/management/install-apt-packages
+bash home/.homemade/bin/management/install-main-apt-packages
 
 # Create symlinks in the system and restore deleted files
-stow -Svt ~ *
-git pull
+stow --adopt -Svt ~ *
+git checkout .
 
 # Add settings to bashrc or zshrc
 echo "source ~/.rc_config" >> ~/.bashrc
 echo "source ~/.rc_config" >> ~/.zshrc
 
-# Reboot
-reboot
+# Reboot into an i3 session
+systemctl reboot
 ```
 # System configuration
 |Utility|Name|
