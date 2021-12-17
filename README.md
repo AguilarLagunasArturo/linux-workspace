@@ -33,8 +33,8 @@ git checkout .
 echo "source ~/.rc_config &>/dev/null" >> ~/.zshrc
 
 # Set default shell and terminal emulator (optional)
-sudo update-alternatives --config x-terminal-emulator
 chsh
+sudo update-alternatives --config x-terminal-emulator
 
 # Reboot into an i3 session
 systemctl reboot
