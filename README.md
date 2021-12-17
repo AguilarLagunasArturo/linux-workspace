@@ -20,7 +20,10 @@ git clone https://github.com/AguilarLagunasArturo/linux-workspace.git
 
 # Change directory and remove unneeded files
 cd linux-workspace
-rm -r krita README.md
+rm -r README.md
+
+# Install packages
+bash home/.homemade/bin/management/install-apt-packages
 
 # Create symlinks in the system and restore deleted files
 stow -Svt ~ *
@@ -29,6 +32,9 @@ git pull
 # Add settings to bashrc or zshrc
 echo "source ~/.rc_config" >> ~/.bashrc
 echo "source ~/.rc_config" >> ~/.zshrc
+
+# Reboot
+reboot
 ```
 # System configuration
 |Utility|Name|
@@ -45,7 +51,8 @@ echo "source ~/.rc_config" >> ~/.zshrc
 _home/.homemade_ is a directory for my custom resources, scrips, etc.
 ## Stuff I have to do manually
 - Install third party software
-- Set up grub theme
+- Set up grub2 theme
+- Set up powerlevel10k for zsh
 - Set up lightdm/sddm theme
 - Set up crontab
     - Twitter bot

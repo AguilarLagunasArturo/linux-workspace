@@ -30,7 +30,7 @@ for package in $packages; do
 done
 
 # Installing packages
-echo; for package in ${not_installed[@]}; do
-    echo -e "[+] Attempting to install: $package"
+for package in ${not_installed[@]}; do
+    echo -e "\n [+] Attempting to install: $package"
     sudo apt install $package -y
 done
