@@ -68,7 +68,7 @@ If your distribution does not packages `i3-gaps` you can either:
 - Set up grub2 theme
 - Set default terminal and shell
     - Set up powerlevel10k for zsh
-- Set up lightdm/sddm theme
+- Set up sddm theme
 - Set up crontab
     - Twitter bot
 
