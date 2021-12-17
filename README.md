@@ -42,14 +42,14 @@ systemctl reboot
 ```
 ## Troubleshooting
 If your distribution does not packages `i3-gaps` you can either:
-1. Install [i3-gaps](https://github.com/Airblader/i3) from source
-2. Install `i3-wm` (without gaps) and remove the gaps settings from the config file
-    - `sudo apt install i3 i3-wm i3status`
+1. Install [i3-gaps](https://github.com/Airblader/i3) from source.
+2. Install [i3](https://i3wm.org/) (without gaps) and remove the gaps settings from the config file.
+    - `sudo apt install i3-wm i3status`
     - `cat ~/.config/i3/config-no-gaps.bak > ~/.config/i3/config`
 
 ## Notes
-1. home/.homemade is a directory for my custom resources, scrips, etc.
-2. Some scrips from home/.homemade/bin might not work properly.
+1. [home/.homemade](home/.homemade) is a directory for my custom resources, scrips, etc.
+2. Some scrips from [home/.homemade/bin](home/.homemade/bin) might not work properly.
 
 # System configuration
 |Utility|Name|
