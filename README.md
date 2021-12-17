@@ -52,7 +52,8 @@ _home/.homemade_ is a directory for my custom resources, scrips, etc.
 ## Stuff I have to do manually
 - Install third party software
 - Set up grub2 theme
-- Set up powerlevel10k for zsh
+- Set default terminal and shell
+    - Set up powerlevel10k for zsh
 - Set up lightdm/sddm theme
 - Set up crontab
     - Twitter bot
@@ -91,6 +92,13 @@ nano ~/.config/mimeapps.list
 ### Set default terminal emulator
 ```bash
 sudo update-alternatives --config x-terminal-emulator
+```
+### Set default shell
+```bash
+# Manual
+chsh -s /bin/shell <user>
+# Interactive
+chsh
 ```
 ### Get application name
 ```bash
@@ -158,13 +166,6 @@ feh --bg-fill <img>
 
 # using hydrapaper
 hydrapaper -c <img>
-```
-### Change default shell
-```bash
-# Manual
-chsh -s /bin/shell <user>
-# Interactive
-chsh
 ```
 ### Video conversion
 ```bash
