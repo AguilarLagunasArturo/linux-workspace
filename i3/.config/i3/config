@@ -346,9 +346,9 @@ exec feh --bg-fill $HOME/.homemade/assets/wallpaper/m0.png
 exec --no-startup-id picom
 # exec --no-startup-id picom -experimental-backends
 # Battery popup
-exec --no-startup-id $HOME/.homemade/bin/system/daemons/acpi-battery-popup-alert
+exec --no-startup-id $HOME/.homemade/bin/daemons/acpi-battery-popup-alert
 # Lock on lid closed
-exec --no-startup-id $HOME/.homemade/bin/system/daemons/lock-on-lid-closed
+exec --no-startup-id $HOME/.homemade/bin/daemons/lock-on-lid-closed
 # Conky
 # exec --no-startup-id $HOME/.config/conky/launch.sh
 
