@@ -22,7 +22,6 @@
         "ffmpeg",
         "libavcodec-extra",
         "xclip",
-        "unrar",
         "neofetch",
         "rofi",
         "conky",
@@ -32,7 +31,6 @@
         "scrcpy",
         "adb",
         "ranger",
-        "dconf-editor",
         "colortest",
         "xinput",
         "i3-gaps",
@@ -42,7 +40,6 @@
         "acpi",
         "picom",
         "feh",
-        "lsd",
         "jq",
         "bat"
       ],
@@ -50,6 +47,7 @@
         "texlive-full",
         "latexmk",
         "papirus-icon-theme",
+        "dconf-editor",
         "kazam",
         "kdenlive",
         "kcolorchooser",
@@ -135,6 +133,9 @@
     },
     "i3": {
       "source": "https://github.com/i3/i3"
+    },
+    "lsd": {
+      "source": "https://github.com/Peltoche/lsd"
     },
     "powerlevel10k": {
       "source": "https://github.com/romkatv/powerlevel10k"
