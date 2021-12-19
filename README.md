@@ -70,14 +70,14 @@ Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboa
 |super+enter|Open terminal|
 |super+a|Application launcher|
 |super+b|Show i3-bar|
-|super+0, super+<0,1,2,...,9>|Move to workspace|
-|super+Shift+<0,1,2,...,9>|Move current window to workspace|
-|super+Ctrl+Shift+<0,1,2,...,9>|Move all windows in current workspace to a new one|
-|super+Shift+w|kill current window|
+|super+0-9|Move to workspace|
+|super+shift+0-9|Move current window to workspace|
+|super+ctrl+shift+0-9|Move all windows in current workspace to a new one|
+|super+shift+w|kill current window|
 |super+l|Brightness up|
 |super+k|Brightness down|
-|super+Alt+l|Volume up|
-|super+Alt+k|Volume down|
+|super+alt+l|Volume up|
+|super+alt+k|Volume down|
 |super+v|Next window opens below|
 |super+h|Next window opens to the right|
 
