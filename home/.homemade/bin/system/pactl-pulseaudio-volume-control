@@ -3,34 +3,34 @@
 # Author:       Arturo Aguilar Lagunas
 # Description:  Control PulseAudio with pactl
 
+usage="Usage:\t$0 [OPTION]\nOptions:\t\n\t-u\tVolume up\n\t-d\tVolume down\n\t-m\tVolume mute\n\t-M\tMicrophone mute"
+
 step=2
 toff=580
 toff_l=800
+soundpath=/home/aal/.homemade/assets/sounds/audio-volume-change.oga
 
 set -e
-
-usage="Usage:\t$0 [OPTION]\nOptions:\t\n\t-u\tVolume up\n\t-d\tVolume down\n\t-m\tVolume mute\n\t-M\tMicrophone mute"
 
 if [[ ! -n $1 ]]; then
     echo -e $usage
 else
     # $(pactl list sinks | head -$( expr $(pactl list sinks | grep -iPn "state: running" | grep -ioP "\d*")  + 8 ) | tail -1)
-    volume=$( pactl list sinks | head -$( expr $(pactl list sinks | grep -iPn "state: running" | grep -ioP "\d*")  + 8 ) | tail -1 | grep -o '[0-9]*%' | tail -n 1 | grep -o '[0-9]*')
+    paplay $soundpath & \
+    volume=$( pactl list sinks | \
+        head -$( expr $(pactl list sinks | grep -iPn "state: running" | grep -ioP "\d*")  + 8 ) | \
+        tail -1 | grep -o '[0-9]*%' | tail -n 1 | grep -o '[0-9]*' )
     if [[ $1 == -u ]]; then
         volume=$( expr $volume + 2 )
         pactl set-sink-volume @DEFAULT_SINK@ +2% && pactl set-sink-mute @DEFAULT_SINK@ off
         notify-send "Volume +" "$volume%" -t $toff
-        paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
     elif [[ $1 == -d ]]; then
         volume=$( expr $volume - 2 )
         pactl set-sink-volume @DEFAULT_SINK@ -2% && pactl set-sink-mute @DEFAULT_SINK@ off
         notify-send "Volume -" "$volume%" -t $toff
-        paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
     elif [[ $1 == -m ]]; then
-        paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
         pactl set-sink-mute @DEFAULT_SINK@ toggle
         notify-send "Volume" "Toggle mute" -t $toff_l
-        paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
     elif [[ $1 == -M ]]; then
         pactl set-source-mute @DEFAULT_SOURCE@ toggle
         notify-send "Microphone" "Toggle mute" -t $toff_l

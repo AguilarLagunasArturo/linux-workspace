@@ -19,7 +19,7 @@
 
     icon_position = left
     max_icon_size = 24
-    # icon_path = ""
+    icon_path = ""
     indicate_hidden = yes
     shrink = no
     idle_threshold = 0

@@ -149,5 +149,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source ~/.rc_apisx &> /dev/null
+source ~/.rc_apis &> /dev/null
 source ~/.rc_config

@@ -290,6 +290,9 @@ client.background       #000000
 bindsym $sup+b bar mode toggle
 # Use pactl to adjust volume in PulseAudio
 set $refresh_i3status killall -SIGUSR1 i3status
+bindsym $sup+Mod1+l exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -u && $refresh_i3status
+bindsym $sup+Mod1+k exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -d && $refresh_i3status
+bindsym $sup+Mod1+m exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -m && $refresh_i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -u && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -d && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id $HOME/.homemade/bin/system/pactl-pulseaudio-volume-control -m && $refresh_i3status
@@ -344,6 +347,8 @@ exec xrandr --output HDMI-0 --left-of eDP --auto
 exec feh --bg-fill $HOME/.homemade/assets/wallpaper/m0.png
 # Compositor
 exec --no-startup-id picom
+# Notifications
+exec --no-startup-id dunst
 # exec --no-startup-id picom -experimental-backends
 # Battery popup
 exec --no-startup-id $HOME/.homemade/bin/daemons/acpi-battery-popup-alert
