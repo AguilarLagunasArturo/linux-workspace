@@ -4,7 +4,8 @@
 # Description:  Initializing stuff
 
 # enable change radeon_bl0 brightness for user aal
-sudo chown aal:aal -R /sys/class/backlight/radeon_bl0/brightness
+current_user=$(whoami)
+sudo chown $current_user:$current_user -R /sys/class/backlight/radeon_bl0/brightness
 
 # sync clock with the internet
 # sudo ntpd -qg
