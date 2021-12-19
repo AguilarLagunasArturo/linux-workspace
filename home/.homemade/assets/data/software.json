@@ -35,6 +35,7 @@
         "xinput",
         "i3-gaps",
         "i3status",
+        "i3lock",
         "libnotify-bin",
         "dunst",
         "acpi",

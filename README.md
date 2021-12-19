@@ -47,7 +47,7 @@ If your distribution does not packages `i3-gaps` (check by running `sudo apt pol
     - `sudo apt install i3-wm i3status`
     - `cat ~/.config/i3/config-no-gaps.bak > ~/.config/i3/config`
 
-Once in an i3 `super+enter` to open a terminal, see the shortcuts in [~/.config/i3/config](i3/.config/i3/config) config file.
+Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboard-shortcuts).
 ## Notes
 1. [home/.homemade](home/.homemade) is a directory for my custom resources, scrips, etc.
 2. Some scrips from [home/.homemade/bin](home/.homemade/bin) might not work properly.
@@ -64,6 +64,24 @@ Once in an i3 `super+enter` to open a terminal, see the shortcuts in [~/.config/
 |Terminal|`kitty`, `urxvt`|
 |Notifications|`dunst`, `notify-send`|
 
+## Keyboard shortcuts
+|Combination|Description|
+|:-|:-|
+|super+enter|Open terminal|
+|super+a|Application launcher|
+|super+b|Show i3-bar|
+|super+0, super+<0,1,2,...,9>|Move to workspace|
+|super+Shift+<0,1,2,...,9>|Move current window to workspace|
+|super+Ctrl+Shift+<0,1,2,...,9>|Move all windows in current workspace to a new one|
+|super+Shift+w|kill current window|
+|super+l|Brightness up|
+|super+k|Brightness down|
+|super+Alt+l|Volume up|
+|super+Alt+k|Volume down|
+|super+v|Next window opens below|
+|super+h|Next window opens to the right|
+
+See the other shortcuts in [~/.config/i3/config](i3/.config/i3/config) config file.
 ## Stuff I have to do manually
 - Install third party software
 - Set up grub2 theme

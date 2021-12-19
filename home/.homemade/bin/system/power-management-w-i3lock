@@ -38,6 +38,10 @@ BLURTYPE="0x7" # ~ 7.52s
 #BLURTYPE="2x3" # ~ 2.92s
 
 custom-i3lock() {
+    ## For older versions of i3lock
+    # i3lock -u -i "$1" "$2"
+
+    ## For newer versions of i3lock
     i3lock -i "$1" "$2" \
         --ignore-empty-password \
         --indicator \
