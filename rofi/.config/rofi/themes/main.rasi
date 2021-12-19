@@ -21,14 +21,14 @@ configuration {
 
 * {
   w: 660px;                     // Window width
-  wp: 32px;                     // Window padding
+  wp: 24px;                     // Window padding
   swp: 16px;                    // Sub windows padding
-  bm: 0 0 32px 0;               // Button margin (input bar)
+  bm: 0 0 16px 0;               // Button margin (input bar)
   tm: 0 0  4px 0;               // Button margin (elements)
 
   bg1: #121214;                 // Window bg
   bg2: #1c1c1f;                 // Input bg
-  bg3: @bg1;                    // Selected item bg
+  bg3: #121214;                 // Selected item bg
   
   fg1: #ecebe8;                 // Text
   fg2: #323232;                 // Unselected text
@@ -42,6 +42,8 @@ configuration {
   margin: 0;
   padding: 0px;
   spacing: 0;
+
+  alternate-active-foreground: #323232;
 }
 
 /* Item & Item selected*/
@@ -55,9 +57,14 @@ element {
   text-color: @fg2;
 }
 
-element selected {
-  background-color: @bg3;
-  text-color: @fg1;
+element selected.normal {
+	background-color: @bg1;
+	text-color: @fg1;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
 }
 
 /* Parents */

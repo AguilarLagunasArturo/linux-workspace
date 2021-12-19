@@ -54,9 +54,14 @@ element {
   text-color: @fg2;
 }
 
-element selected {
-  background-color: @bg3;
-  text-color: @fg1;
+element selected.normal {
+    background-color: @bg1;
+    text-color: @fg1;
+}
+
+element-text, element-icon {
+    background-color: inherit;
+    text-color:       inherit;
 }
 
 /* Parents */
