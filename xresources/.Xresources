@@ -54,44 +54,43 @@ URxvt*keysym.S-C-Left:       \033[1;6D
 ! depth
 urxvt*.depth:                32
 urxvt*.transparent:          false
-urxvt*.background:           [90]#121214
-! urxvt*.background:         [90]#080a0b
+urxvt*.background:           [90]#040406
 
 !! Color Scheme
 
 ! special
-*.foreground:   #bcbcc8
-*.background:   #080a0b
-*.cursorColor:  #bcbcc8
+*.foreground:   #c5c8c6
+*.background:   #080908
+*.cursorColor:  #c5c8c6
 
 ! black
-*.color0:       #531227
-*.color8:       #65162f
+*.color0:       #4d3b4f
+*.color8:       #644e62
 
 ! red
-*.color1:       #a73457
-*.color9:       #b93a61
+*.color1:       #a23440
+*.color9:       #aa3542
 
 ! green
-*.color2:       #c34e3b
-*.color10:      #e05944
+*.color2:       #73b0a0
+*.color10:      #7fc9b1
 
 ! yellow
-*.color3:       #c13333
-*.color11:      #db3a3a
+*.color3:       #d4aa6a
+*.color11:      #f0c674
 
 ! blue
-*.color4:       #a32438
-*.color12:      #bb2940
+*.color4:       #3c6352
+*.color12:      #457f67
 
 ! magenta
-*.color5:       #6a3964
-*.color13:      #733d6c
+*.color5:       #45a684
+*.color13:      #43c094
 
 ! cyan
-*.color6:       #4c8298
-*.color14:      #538ea6
+*.color6:       #b694bb
+*.color14:      #de9ce2
 
 ! white
-*.color7:       #dbaab4
-*.color15:      #e6c4cb
+*.color7:       #bdc5b8
+*.color15:      #bdcfb2

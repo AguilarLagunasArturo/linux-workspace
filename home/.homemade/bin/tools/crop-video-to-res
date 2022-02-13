@@ -1,0 +1,122 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Date:         Sun Jan 30 02:13:36 AM CST 2022
+# Description:  Crop .mp4 video to a set resolution or aspect ratio
+
+# vars
+ig_res=1080x1215
+vi_res=0x0
+crop_mode=m
+
+# exit script when an error occurs
+set -e
+
+# usage
+usage="[!] Usage: $0 <options> <input>\n"
+usage+="\n\t-t\tcrop video from the top/left"
+usage+="\n\t-m\tcrop video from the middle"
+usage+="\n\t-b\tcrop video from the bottom/right"
+usage+="\n\t-s\tset desired aspect ratio: 1080x1215"
+
+# functions
+get_w() {
+    echo -e "$1" | grep -ioP "\d*" | head -n 1
+}
+
+get_h() {
+    echo -e "$1" | grep -ioP "\d*" | tail -n 1
+}
+
+get_ar() {
+    w=$( get_w $1 )
+    h=$( get_h $1 )
+    echo -e "$w/$h" | bc -l
+}
+
+# print usage
+if [[ $# -eq 0 ]]; then
+    echo -e $usage
+    exit 0
+fi
+
+# TODO: logic
+#ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 input.mp4
+
+# while args > 1
+while [[ $# -gt 0 ]]; do
+    key=$1
+    case $key in
+        -t)
+            crop_mode=t
+        ;;
+        -m)
+            crop_mode=m
+        ;;
+        -b)
+            crop_mode=b
+        ;;
+        -s)
+            ig_res=$2
+            shift
+        ;;
+        -*)
+            echo -e "Wrong argument: $1"
+            exit 1
+        ;;
+        *)
+            input=$input$key
+            echo -e "Input: $input"
+    esac
+    shift
+done
+
+# video resolution
+vi_res=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$input")
+# get desired ratio
+ig_ratio=$(get_ar $ig_res)
+# get current dimentions
+old_w=$( get_w $vi_res )
+old_h=$( get_h $vi_res )
+
+# NOTE: if not working
+#    change-line: 88
+#        if [[ $(bc -l <<< "$ig_ratio > $(get_ar $vi_res)")  == 1 ]]; then
+#    to:
+#        if [[ $(bc -l <<< "$ig_ratio < 1")  == 1 ]]; then
+
+if [[ $(bc -l <<< "$ig_ratio > $(get_ar $vi_res)")  == 1 ]]; then
+    # much height
+    new_h=$(echo -e "$(get_w $vi_res)/$ig_ratio" | bc)
+    diff=$(echo -e "$old_h-$new_h" | bc)
+    half=$( echo -e "$diff/2" | bc )
+    echo -e "crop=$old_w:$new_h:0:0"
+    if [[ $crop_mode == "t" ]]; then
+        # top
+        ffmpeg -i $input -filter:v "crop=$old_w:$new_h:0:0" output-top.mp4
+    elif [[ $crop_mode == "m" ]]; then
+        # middle
+        ffmpeg -i $input -filter:v "crop=$old_w:$new_h:0:$half" output-middle.mp4
+    elif [[ $crop_mode == "b" ]]; then
+        # bottom
+        ffmpeg -i $input -filter:v "crop=$old_w:$new_h:0:$diff" output-buttom.mp4
+    fi
+else
+    echo -e "$ig_ratio"
+    echo -e "$( get_ar $vi_res )"
+    # much width
+    new_w=$(echo -e "$(get_w $vi_res)*$ig_ratio" | bc)
+    diff=$(echo -e "$old_w-$new_w" | bc)
+    half=$( echo -e "$diff/2" | bc )
+    if [[ $crop_mode == "t" ]]; then
+        # top
+        ffmpeg -i $input -filter:v "crop=$new_w:$old_h:0:0" output-left.mp4
+    elif [[ $crop_mode == "m" ]]; then
+        # middle
+        ffmpeg -i $input -filter:v "crop=$new_w:$old_h:$half:0" output-middle.mp4
+    elif [[ $crop_mode == "b" ]]; then
+        # bottom
+        ffmpeg -i $input -filter:v "crop=$new_w:$old_h:$diff:0" output-right.mp4
+    fi
+fi
+

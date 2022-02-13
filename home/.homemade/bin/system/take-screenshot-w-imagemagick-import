@@ -23,7 +23,7 @@ ss_path=$HOME/Pictures/screenshots/
 # create save directory
 mkdir -p $ss_path
 # get screenshot name
-ss_name=$ss_path$(date +ss-%m-%d-%y-at-%H-%M-%S).png
+ss_name=$ss_path$(date +%y-%m-%d-at-%H-%M-%S).png
 # take screenshot
 import $ss_name
 # copy to clipboard

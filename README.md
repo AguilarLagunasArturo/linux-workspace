@@ -44,7 +44,7 @@ systemctl reboot
 If your distribution does not packages `i3-gaps` (check by running `sudo apt policy i3-gaps`) you can either:
 1. Install [i3-gaps](https://github.com/Airblader/i3) from source.
 2. Install [i3](https://i3wm.org/) (without gaps) and remove the gaps settings from the config file.
-    - `sudo apt install i3-wm i3status`
+    - `sudo apt install i3-wm i3status i3lock`
     - `cat ~/.config/i3/config-no-gaps.bak > ~/.config/i3/config`
 
 Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboard-shortcuts).
@@ -69,11 +69,13 @@ Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboa
 |:-|:-|
 |super+enter|Open terminal|
 |super+a|Application launcher|
-|super+b|Show i3-bar|
+|super+b|Show or hide i3-bar|
 |super+0-9|Move to workspace|
 |super+shift+0-9|Move current window to workspace|
 |super+ctrl+shift+0-9|Move all windows in current workspace to a new one|
-|super+shift+w|kill current window|
+|super+shift+w|Kill current window|
+|super+ctrl+shift|Open conky|
+|super+ctrl|Close conky|
 |super+l|Brightness up|
 |super+k|Brightness down|
 |super+alt+l|Volume up|
@@ -156,12 +158,6 @@ sudo nano /etc/ImageMagick-6/policy.xml
 ```bash
 sudo nano /etc/locale.gen  # Uncomment lines
 sudo locale-gen            # Install uncommented languages
-```
-### Install snap
-```bash
-sudo apt update
-sudo apt install -y snapd
-sudo systemctl enable --now snapd apparmor
 ```
 ### Cache Github credentials
 ```bash

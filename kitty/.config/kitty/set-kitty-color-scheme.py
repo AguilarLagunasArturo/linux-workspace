@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import sys
 import re
 import os
@@ -14,7 +13,7 @@ TODO: ADD IF NECESSARY
         mark3_background #f274bc
 '''
 
-assossiations = {
+associations = {
     '*.foreground': [
         'foreground',
         'cursor',
@@ -69,13 +68,13 @@ with open(sys.argv[1], 'r') as f:
 with open(conf_file, 'r') as f:
     kitty_conf = f.read()
 
-''' assossiations '''
-for item in assossiations.items():
+''' associations '''
+for item in associations.items():
     for l in xresources.split('\n'): # xresourses lines
         crg = '^\{}\{}{}:'.format(item[0][0], item[0][1], item[0][2:])
         if re.compile(crg).match(l):
             new = l[-7:]
-            for destiny in assossiations[item[0]]:
+            for destiny in associations[item[0]]:
                 for ll in kitty_conf.split('\n'): # kitty lines
                     crg1 = '^{}'.format(destiny)
                     crg2 = '#......$'

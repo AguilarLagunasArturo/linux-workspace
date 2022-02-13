@@ -225,9 +225,10 @@ for_window [class=".*"] border pixel 2
 
 # gaps
 smart_gaps on
-gaps inner 8
-gaps outer 4
-# bindsym $sup+Ctrl+Shift exec gaps inner 0
+# gaps inner 8
+# gaps outer 4
+# bindsym $sup+Ctrl+Shift n exec gaps inner 0 && gaps outer 0
+# bindsym $sup+Ctrl+Shift g exec gaps inner 8 && gaps outer 4
 
 # floating max size
 floating_maximum_size 1320 x 700
@@ -316,7 +317,7 @@ bindsym $sup+l exec $HOME/.homemade/bin/system/radeon-bl0-backlight-brightness-c
 bindsym --release XF86MonBrightnessUp exec $HOME/.homemade/bin/system/radeon-bl0-backlight-brightness-control -u
 # Screenshot
 bindsym --release $sup+Print exec $HOME/.homemade/bin/system/take-screenshot-w-imagemagick-import
-bindsym --release $sup+Shift+Print exec sleep 5 && $HOME/.homemade/bin/system/imagemagick-import-screenshot
+bindsym --release $sup+Shift+Print exec flameshot gui
 bindsym $sup+Ctrl+Print exec kazam
 # Reset wallpaper
 bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/.homemade/assets/wallpaper/m0.png

@@ -316,7 +316,7 @@ bindsym $sup+l exec $HOME/.homemade/bin/system/radeon-bl0-backlight-brightness-c
 bindsym --release XF86MonBrightnessUp exec $HOME/.homemade/bin/system/radeon-bl0-backlight-brightness-control -u
 # Screenshot
 bindsym --release $sup+Print exec $HOME/.homemade/bin/system/take-screenshot-w-imagemagick-import
-bindsym --release $sup+Shift+Print exec sleep 5 && $HOME/.homemade/bin/system/imagemagick-import-screenshot
+bindsym --release $sup+Shift+Print exec flameshot gui
 bindsym $sup+Ctrl+Print exec kazam
 # Reset wallpaper
 bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/.homemade/assets/wallpaper/m0.png

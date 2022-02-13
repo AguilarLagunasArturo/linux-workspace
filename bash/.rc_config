@@ -37,29 +37,36 @@ alias lt='lsd --tree'
 # .mp4 -> .avi
 # ffmpeg -i "input.mp4" -bsf:v h264_mp4toannexb -vcodec copy -acodec copy "output.avi"
 
-# Reduce size
+# reduce size
 # ffmpeg -i $infile -vf "scale=iw/2:ih/2" $outfile
 
-# Extract audio
+# extract audio
 # ffmpeg -i "input-video" -q:a 0 -map a sample.mp3
 
-# Remove audio
+# remove audio
 # ffmpeg -i "input.mp4" -c copy -an "no-audio.mp4"
 
-# Merge audio
+# merge audio
 # ffmpeg -y -i "input-video" -i "input-audio" -map 0:0 -map 1:0 -c:v copy -preset ultrafast -async 1 "out.mp4"
+
+# concat video
+# ffmpeg -f concat -safe 0 -i videos.txt -c copy out.mp4
+# file 'path/filename1.mp4'
+# file 'path/filename2.mp4'
+
+
+# flip video
+# ffmpeg -i "input" -vf hflip -c:a copy "output"
+# ffmpeg -i "input" -vf vflip -c:a copy "output"
 
 # speed change
 # ffmpeg -i input.mp4 -filter:v "setpts=0.005*PTS" output.mp4
 
 # crop video
-# ffmpeg -i input.mp4 -filter:v "crop:1920:1080:100:50" output.mp4
+# ffmpeg -i input.mp4 -filter:v "crop=w:h:x:y" output.mp4
 
 # reset audio
 # pulseaudio -k && sudo alsa force-reload
-
-# convert images (imagemagick)
-# convert <img.format1> <img.format2>
 
 # load xresources
 # xrdb ~/.Xresources

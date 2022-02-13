@@ -34,10 +34,26 @@
         },
         "tomioka-text-blue": {
             "wallpapers": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-01.jpeg"
+                "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-01.jpg"
             ],
             "thumbnails": [
+                "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-03.jpg",
                 "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-00.jpg"
+            ]
+        },
+        "tengen-uzui-text-green": {
+            "wallpapers": [
+                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-04.jpg",
+                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-03.jpg",
+                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-01.jpg",
+                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-05.jpg",
+                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-00.jpg"
+            ],
+            "thumbnails": [
+                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-02.jpg",
+                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-05.jpg",
+                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-04.jpg",
+                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-00.jpg"
             ]
         },
         "asuka-red-ominous": {

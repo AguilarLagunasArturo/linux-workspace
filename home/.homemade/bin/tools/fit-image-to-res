@@ -24,8 +24,8 @@ usage+="\n\t-i\tinput image"
 usage+="\n\t-a\ttake all images in current folder as input"
 usage+="\n\t-o\toutput file name by default: $out"
 usage+="\n\t-b\tbackground color: black, white, blur"
-usage+="\n\t-r\tdefault resolution: $res"
-usage+="\n\t-d\tdestination directory"out
+usage+="\n\t-r\tdefault resolution: $ig_res"
+usage+="\n\t-d\tdestination directory"
 usage+="\n\t-v\tverbose\n"
 
 fit_image() {
