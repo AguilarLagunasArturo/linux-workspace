@@ -51,6 +51,7 @@ Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboa
 ## Notes
 1. [home/.homemade](home/.homemade) is a directory for my custom resources, scrips, etc.
 2. Some scrips from [home/.homemade/bin](home/.homemade/bin) might not work properly.
+3. To set up the latest color scheme run `nohup set-global-color-scheme $HOME/.config/xresources/color-schemes/x-default &>/dev/null && exit`.
 
 # System configuration
 |Utility|Name|
@@ -68,6 +69,7 @@ Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboa
 |Combination|Description|
 |:-|:-|
 |super+enter|Open terminal|
+|super+ctrl+enter|Open file manager|
 |super+a|Application launcher|
 |super+b|Show or hide i3-bar|
 |super+0-9|Move to workspace|
