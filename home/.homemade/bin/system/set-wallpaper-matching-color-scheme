@@ -30,9 +30,8 @@ else
     done
 
     echo -e "wallpaper: "${wallpapers[0]}
-    $HOME/.homemade/bin/system/set-wallpaper-w-feh $HOME/${wallpapers[0]}
+    $HOME/.homemade/bin/system/set-wallpaper-w-feh $HOME$( echo -e ${wallpapers[0]} | tr -d "~" )
 
     echo -e "thumbnail: "${thumbnails[0]}
-    $HOME/.homemade/bin/system/set-neofetch-thumbnail $HOME/${thumbnails[0]}
-
+    $HOME/.homemade/bin/system/set-neofetch-thumbnail $HOME$( echo -e ${thumbnails[0]} | tr -d "~" )
 fi
