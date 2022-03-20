@@ -2,76 +2,87 @@
     "themes": {
         "x-default": {
             "wallpapers": [
-                ".homemade/assets/wallpaper/m0.png"
+                "~/.homemade/assets/wallpaper/m0.png"
             ],
             "thumbnails": [
-                ".config/neofetch/thumbnail/thumbnail.png"
+                "~/.config/neofetch/thumbnail/thumbnail.png"
             ]
         },
         "rengoku-text-orange": {
             "wallpapers": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-00.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-00.jpg"
             ],
             "thumbnails": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-01.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/kyojuro-rengoku-flame-pillar-01.jpg"
             ]
         },
         "kocho-text-blue": {
             "wallpapers": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-05.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-05.jpg"
             ],
             "thumbnails": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-03.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-03.jpg"
             ]
         },
         "kocho-text-purple": {
             "wallpapers": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-02.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-02.jpg"
             ],
             "thumbnails": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-04.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/shinobu-kocho-04.jpg"
             ]
         },
         "tomioka-text-blue": {
             "wallpapers": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-01.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-01.jpg"
             ],
             "thumbnails": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-03.jpg",
-                "Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-00.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-03.jpg",
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/giyu-tomioka-water-pillar-00.jpg"
             ]
         },
         "tengen-uzui-text-green": {
             "wallpapers": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-04.jpg",
-                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-03.jpg",
-                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-01.jpg",
-                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-05.jpg",
-                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-00.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-04.jpg",
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-03.jpg",
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-01.jpg",
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-05.jpg",
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-00.jpg"
             ],
             "thumbnails": [
-                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-02.jpg",
-                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-05.jpg",
-                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-04.jpg",
-                "Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-00.jpg"
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-05.jpg",
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-04.jpg",
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-00.jpg",
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-02.jpg"
             ]
         },
         "asuka-red-ominous": {
             "wallpapers": [
-                "Pictures/wallpapers/desktop/anime/evangelion/evangelion-eva-red-city.jpg",
-                "Pictures/wallpapers/desktop/anime/evangelion/evangelion-red-eva.jpg"
+                "~/Pictures/wallpapers/desktop/anime/evangelion/evangelion-eva-red-city.jpg",
+                "~/Pictures/wallpapers/desktop/anime/evangelion/evangelion-red-eva.jpg"
             ],
             "thumbnails": [
-                "Pictures/wallpapers/desktop/anime/evangelion/asuka-00.png"
+                "~/Pictures/wallpapers/desktop/anime/evangelion/asuka-00.png"
             ]
         },
         "nobara-light-blue-text": {
             "wallpapers": [
-                "Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-02.jpg",
-                "Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-00.jpg"
+                "~/Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-02.jpg",
+                "~/Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-01.jpg",
+                "~/Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-00.jpg",
+                "~/Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-03.jpg"
             ],
             "thumbnails": [
-                "Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-01.jpg"
+                "~/Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-01.jpg",
+                "~/Pictures/wallpapers/desktop/anime/jujutsu-kaisen/nobara-03.jpg"
+            ]
+        },
+        "yuta-okkotsu-white-text": {
+            "wallpapers": [
+                "~/Pictures/wallpapers/desktop/anime/jujutsu-kaisen/yuta-okkotsu-00.jpg"
+            ],
+            "thumbnails": [
+                "~/Pictures/wallpapers/desktop/anime/jujutsu-kaisen/yuta-okkotsu-01.jpg"
             ]
         }
     }

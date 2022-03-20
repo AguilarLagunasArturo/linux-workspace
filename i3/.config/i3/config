@@ -41,6 +41,9 @@ floating_modifier $sup
 # start a terminal
 bindsym $sup+Return exec kitty
 
+# start the file manager
+bindsym $sup+Ctrl+Return exec nautilus
+
 # kill focused window
 bindsym $sup+Shift+q kill
 
@@ -225,8 +228,8 @@ for_window [class=".*"] border pixel 2
 
 # gaps
 smart_gaps on
-# gaps inner 8
-# gaps outer 4
+gaps inner 8
+gaps outer 4
 # bindsym $sup+Ctrl+Shift n exec gaps inner 0 && gaps outer 0
 # bindsym $sup+Ctrl+Shift g exec gaps inner 8 && gaps outer 4
 

@@ -4,7 +4,7 @@
 # Date:         Sun Mar 20 09:25:55 AM CST 2022
 # Description:  Display an image using icat a kitten provided by kitty
 
-# check fro args
+# check for args
 if [[ ! -n $1 ]]; then
     # usage
     echo -e "usage $0 <path-to-image>"
@@ -27,6 +27,11 @@ row=$( echo -e $pos | grep -Po "\d*" | head -1 )
 top=$( echo -e "$row + 3" | bc )
 ih=$( echo -e "$h - $top" | bc )
 
-# print image at center of the screen
-kitty +kitten icat --clear
-kitty +kitten icat --silent --place $w\x$ih\@0x$top $1
+# check for enough height
+if (( $ih > 5 )); then
+    # print image at center of the screen
+    kitty +kitten icat --clear
+    kitty +kitten icat --silent --place $w\x$ih\@0x$top $1
+else
+    echo "Not enough space to display the image"
+fi

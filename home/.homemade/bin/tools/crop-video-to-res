@@ -5,7 +5,7 @@
 # Description:  Crop .mp4 video to a set resolution or aspect ratio
 
 # vars
-ig_res=1080x1215
+ig_res=1080x1350
 vi_res=0x0
 crop_mode=m
 
@@ -66,7 +66,6 @@ while [[ $# -gt 0 ]]; do
         ;;
         *)
             input=$input$key
-            echo -e "Input: $input"
     esac
     shift
 done
@@ -102,8 +101,6 @@ if [[ $(bc -l <<< "$ig_ratio > $(get_ar $vi_res)")  == 1 ]]; then
         ffmpeg -i $input -filter:v "crop=$old_w:$new_h:0:$diff" output-buttom.mp4
     fi
 else
-    echo -e "$ig_ratio"
-    echo -e "$( get_ar $vi_res )"
     # much width
     new_w=$(echo -e "$(get_w $vi_res)*$ig_ratio" | bc)
     diff=$(echo -e "$old_w-$new_w" | bc)
