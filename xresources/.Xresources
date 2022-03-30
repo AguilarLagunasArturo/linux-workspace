@@ -64,16 +64,16 @@ urxvt*.background:           [90]#040406
 *.cursorColor:  #dddfe1
 
 ! black
-*.color0:       #c7ccd1
-*.color8:       #bec1c7
+*.color0:       #656972
+*.color8:       #656972
 
 ! red
 *.color1:       #d077a3
 *.color9:       #d077a3
 
 ! green
-*.color2:       #9ea5ac
-*.color10:      #9ea5ac
+*.color2:       #b3bbc3
+*.color10:      #b3bbc3
 
 ! yellow
 *.color3:       #aec795
@@ -92,6 +92,5 @@ urxvt*.background:           [90]#040406
 *.color14:      #95aec7
 
 ! white
-*.color7:       #1b2227
+*.color7:       #2a2f36
 *.color15:      #2c333a
-
