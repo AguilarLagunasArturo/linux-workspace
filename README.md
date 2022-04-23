@@ -98,7 +98,7 @@ See the other shortcuts in [~/.config/i3/config](i3/.config/i3/config) config fi
 ## Tutorials
 ### Usefull stow commands
 ```bash
-stow --adopt --nvt ~ <stow-folder> # Adds new config files to stow directory
+stow --adopt -nvt ~ <stow-folder> # Adds new config files to stow directory
 stow --nSvt ~ <stow-folder>        # Symlink config files to $HOME directory
 stow --nDvt ~ <stow-folder>        # Removes symlinks from $HOME directory
 ```
