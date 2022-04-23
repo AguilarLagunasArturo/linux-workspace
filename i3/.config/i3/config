@@ -44,6 +44,12 @@ bindsym $sup+Return exec kitty
 # start the file manager
 bindsym $sup+Ctrl+Return exec nautilus
 
+# start firefox-esr
+bindsym $sup+Ctrl+f exec firefox-esr
+
+# start the file manager
+bindsym $sup+Ctrl+g exec chromium
+
 # kill focused window
 bindsym $sup+Shift+q kill
 
@@ -358,6 +364,8 @@ exec --no-startup-id dunst
 exec --no-startup-id $HOME/.homemade/bin/daemons/acpi-battery-popup-alert
 # Lock on lid closed
 exec --no-startup-id $HOME/.homemade/bin/daemons/lock-on-lid-closed
+# System stuff
+exec --no-startup-id sudo $HOME/.homemade/bin/system/init-my-system-stuff
 # Conky
 # exec --no-startup-id $HOME/.config/conky/launch.sh
 
