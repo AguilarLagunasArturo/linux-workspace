@@ -7,6 +7,7 @@
 - Hide top bar
 - Add icons per workspace
 - Add script for dynamic themes
+- Ony one daemon per scrip must be runnig
 
 ## Links
 - https://awesomewm.org/apidoc/documentation/07-my-first-awesome.md.html

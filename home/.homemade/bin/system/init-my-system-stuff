@@ -3,7 +3,7 @@
 # Author:       Arturo Aguilar Lagunas
 # Description:  Initializing stuff
 
-# enable change radeon_bl0 brightness for user aal
+# enable change radeon_bl0 brightness for current
 current_user=$(ls /home | head -n 1)
 sudo chown $current_user:$current_user -R /sys/class/backlight/radeon_bl0/brightness
 

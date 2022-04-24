@@ -8,7 +8,7 @@ usage="Usage:\t$0 [OPTION]\nOptions:\t\n\t-u\tVolume up\n\t-d\tVolume down\n\t-m
 step=2
 toff=580
 toff_l=800
-soundpath=/home/aal/.homemade/assets/sounds/audio-volume-change.oga
+soundpath=$HOME/.homemade/assets/sounds/audio-volume-change.oga
 
 set -e
 
