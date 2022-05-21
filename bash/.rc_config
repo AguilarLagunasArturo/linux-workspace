@@ -8,25 +8,25 @@ export PATH="$PATH:$HOME/.homemade/bin/system"
 export PATH="$PATH:$HOME/.homemade/bin/tools"
 
 ## -- ALIASES --
-# clipboard
+## clipboard
 alias copy='xclip -selection clipboard &> /dev/null'
-# cat alternative
+## cat alternative
 alias bat='batcat'
-# listing with (lsd)
-alias lbin='lsd --tree ~/.homemade/bin/'
+## listing with (lsd)
+# alias lbin='lsd --tree ~/.homemade/bin/'
 alias ll='lsd -la'
 alias lld='lsd -la --date=relative'
 alias la='lsd -a'
 alias l='lsd -l'
 alias lt='lsd --tree'
-# # listing with (tree, ls)
-# alias lbin='tree ~/.homemade/bin/'
+## listing with (tree, ls)
+alias lbin='tree -a ~/.homemade/bin/'
 # alias ll='ls --color -la'
 # alias la='ls --color -a'
 # alias l='ls --color -l'
-# # homemade scripts
+## homemade scripts
 # alias pexels='python ~/Github/pexels-image-downloader/download.py'
-# # others
+## others
 # alias freeCAD='LIBGL_DRI3_DISABLE=true freecad'
 
 ## -- COMMANDS --
