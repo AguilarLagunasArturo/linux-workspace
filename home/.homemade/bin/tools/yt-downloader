@@ -1,0 +1,54 @@
+#! /usr/bin/env bash
+
+# Date:         May 29 2022 at 10:43:19 AM
+# Description:  Get content from yt
+
+set -e
+
+if [[ $# -eq 0 ]]; then
+    echo -e "Usage: $0 <video-url>"
+    exit 0
+else
+    url=$1
+fi
+
+if [ '$(uname -o | grep -io "Android")' = '$(echo -n "Android")' ]; then
+    aoutput=$HOME/storage/Music
+    voutput=$HOME/storage/Movies
+    mkdir -p $aoutput
+    mkdir -p $voutput
+else
+    aoutput=$HOME/Music
+    voutput=$HOME/Videos
+fi
+
+echo -e "Options"
+echo -e "\t1) Audio"
+echo -e "\t2) Audio playlist"
+echo -e "\t3) Video"
+echo -e "\t4) Video playlist"
+echo -e "\nOutput\n\tAudio: $aoutput\n\tVideo: $voutput"
+
+# youtube-dl --audio-format mp3 --extract-audio --quiet --no-playlist $url -o $aoutput
+# youtube-dl --audio-format mp3 --extract-audio --quiet --yes-playlist $url -o $aoutput
+# youtube-dl --quiet --no-playlist $url -o $aoutput
+# youtube-dl --quiet --yes-playlist $url -o $aoutput
+
+echo -ne "\nChoice: "
+read CHOICE
+case $CHOICE in
+    1)
+        youtube-dl --audio-format mp3 --extract-audio --no-playlist $url -o "$aoutput/%(title)s %(id)s.%(ext)s" # --quiet
+        ;;
+    2)
+        youtube-dl --audio-format mp3 --extract-audio --yes-playlist $url -o "$aoutput/%(title)s %(id)s.%(ext)s" # --quiet
+        ;;
+    3)
+        youtube-dl --no-playlist --format mp4 $url -o "$voutput/%(title)s %(id)s.%(ext)s" # --quiet
+        ;;
+    4)
+        youtube-dl --yes-playlist --format mp4 $url -o "$voutput/%(title)s %(id)s.%(ext)s" # --quiet
+        ;;
+esac
+
+echo -e "\n[!] Done!"
