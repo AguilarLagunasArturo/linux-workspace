@@ -13,8 +13,8 @@ else
 fi
 
 if [ $(uname -o | grep -io "Android") ]; then
-    aoutput=$HOME/storage/Music
-    voutput=$HOME/storage/Movies
+    aoutput=$HOME/storage/music
+    voutput=$HOME/storage/movies
     mkdir -p $aoutput
     mkdir -p $voutput
 else
