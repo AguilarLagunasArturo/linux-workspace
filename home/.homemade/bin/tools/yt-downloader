@@ -12,7 +12,7 @@ else
     url=$1
 fi
 
-if [ '$(uname -o | grep -io "Android")' = '$(echo -n "Android")' ]; then
+if [ $(uname -o | grep -io "Android") ]; then
     aoutput=$HOME/storage/Music
     voutput=$HOME/storage/Movies
     mkdir -p $aoutput
