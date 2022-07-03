@@ -4,12 +4,16 @@
     font = Nerd Font 9
     format = "<span><b>%s %p</b></span>\n%b"
     transparency = 2
-    geometry = "260x6-32+32"
+    # Width: (Min, Max)
+    width = (160, 240)
+    # Height: Max
+    height = 200
+    # Offset: (Right, Left)
+    offset = 32x32 
     corner_radius = 8
     alignment = left
     word_wrap = yes
     line_height = 0
-    notification_height = 15
     separator_height = 1
     padding = 12
     horizontal_padding = 12
