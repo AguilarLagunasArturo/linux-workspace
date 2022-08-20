@@ -54,7 +54,6 @@ alias lbin='tree -a ~/.homemade/bin/'
 # file 'path/filename1.mp4'
 # file 'path/filename2.mp4'
 
-
 # flip video
 # ffmpeg -i "input" -vf hflip -c:a copy "output"
 # ffmpeg -i "input" -vf vflip -c:a copy "output"

@@ -76,6 +76,9 @@
     "Atom": {
       "source": "https://atom.io/"
     },
+    "Balena Etcher": {
+      "source": "https://www.balena.io/etcher/"
+    },
     "LightDM": {
       "source": "sudo apt install lightdm"
     },
