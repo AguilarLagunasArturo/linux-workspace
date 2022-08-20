@@ -48,37 +48,37 @@ custom-i3lock() {
         --pass-volume-keys \
         --pass-media-keys \
         --pass-screen-keys \
-        --insidecolor=$bg$alpha \
-        --insidevercolor=$bg_b$alpha \
-        --insidewrongcolor=$bg_r$alpha \
-        --ringcolor=$bg$none \
-        --ringvercolor=$blue$none \
-        --ringwrongcolor=$red$none \
+        --inside-color=$bg$alpha \
+        --insidever-color=$bg_b$alpha \
+        --insidewrong-color=$bg_r$alpha \
+        --ring-color=$bg$none \
+        --ringver-color=$blue$none \
+        --ringwrong-color=$red$none \
         --line-uses-inside \
-        --keyhlcolor=$type$none \
-        --bshlcolor=$delete$none \
-        --separatorcolor=$bg$full \
+        --keyhl-color=$type$none \
+        --bshl-color=$delete$none \
+        --separator-color=$bg$full \
         --clock \
-        --timestr="%H:%M:%S" \
-        --datestr="%A, %b %d %Y" \
+        --time-str="%H:%M:%S" \
+        --date-str="%A, %b %d %Y" \
         --time-font="Hack Nerd Font" \
         --date-font="Hack Nerd Font" \
         --layout-font="Hack Nerd Font" \
         --verif-font="Hack Nerd Font" \
         --wrong-font="Hack Nerd Font" \
         --greeter-font="Hack Nerd Font" \
-        --verifcolor=ffffffff \
-        --wrongcolor=ffffffff \
-        --greetercolor=ffffffff \
-        --layoutcolor=ffffffff \
-        --datecolor=ffffffff \
-        --timecolor=ffffffff \
+        --verif-color=ffffffff \
+        --wrong-color=ffffffff \
+        --greeter-color=ffffffff \
+        --layout-color=ffffffff \
+        --date-color=ffffffff \
+        --time-color=ffffffff \
         --radius=164 \
-        --ring-width=16 \
-        --veriftext=" Unlocking" \
-        --wrongtext=" Wrong" \
+        --ring-width=12 \
+        --verif-text=" Unlocking" \
+        --wrong-text=" Wrong" \
         --noinput=" Empty" \
-        --locktext=" Locking" \
+        --lock-text=" Locking" \
         --lockfailed=" Lock Failed"
 }
 
