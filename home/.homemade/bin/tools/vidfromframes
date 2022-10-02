@@ -1,0 +1,55 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Date:         October 02 2022 at 09:24:35 AM
+# Description:  Video from images
+
+# VARIABLES
+OUTFILE="out.mp4"
+RATE=60
+HOLD=3
+
+# ARGS
+if [[ $# -eq 0 ]]; then
+    echo "Usage: $0 <folder> <args>"
+    echo -e "\nOptions:"
+    echo -e "\t-r: Frame rate (Default: 60)"
+    echo -e "\t-h: Hold last frame (Default: 3)"
+    echo -e "\t-o: Output filename (Default: out.mp4)"
+    exit
+fi
+
+# while args > 1
+while [[ $# -gt 0 ]]; do
+    key=$1
+    case $key in
+        -r)
+            RATE=$2
+            shift
+        ;;
+        -h)
+            HOLD=$2
+            shift
+        ;;
+        -o)
+            OUTFILE=$2
+            shift
+        ;;
+        -*)
+            echo -e "Wrong argument: $1"
+            exit 1
+        ;;
+        *)
+            FOLDER=$FOLDER$key
+    esac
+    shift
+done
+
+# Print info
+IMGS=$(ls $FOLDER | wc -l)
+echo -e "FPS: "$RATE", Lenght ~ "$((IMGS/RATE+HOLD))"s"
+sleep 5
+
+# Render video
+ffmpeg -framerate $RATE -i $FOLDER'/%07d.jpg' -c:v libx265 -preset fast -vf format=yuv420p,tpad=stop_mode=clone:stop_duration=$HOLD $OUTFILE
+# ffmpeg -framerate $RATE -pattern_type glob -i $FOLDER'/*.jpg' -c:v libx264 -pix_fmt yuv420p -vf tpad=stop_mode=clone:stop_duration=$HOLD $OUTFILE
