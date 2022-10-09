@@ -331,14 +331,14 @@ bindsym $sup+Ctrl+Print exec kazam
 # Reset wallpaper
 bindsym $sup+Ctrl+w exec feh --bg-fill $HOME/.homemade/assets/wallpaper/m0.png
 # Refresh Dual monitor
-bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto
+bindsym $sup+Ctrl+m exec xrandr --output HDMI-0 --left-of eDP --auto && feh --bg-fill $HOME/.homemade/assets/wallpaper/m0.png
 # Refresh Single monitor
-bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off
+bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off && feh --bg-fill $HOME/.homemade/assets/wallpaper/m0.png
 # Wacom
 bindsym $sup+Ctrl+Shift+w exec $HOME/.homemade/bin/system/map-xinput-wacom-to-xrand-output HDMI-0
 # Power management
 bindsym $sup+Shift+l exec $HOME/.homemade/bin/system/power-management-w-i3lock lock-current
-bindsym $sup+Ctrl+Shift+l exec $HOME/.homemade/bin/system/power-management-w-i3lock lock
+bindsym $sup+Ctrl+Shift+l exec $HOME/.homemade/bin/system/power-management-w-i3lock suspend
 bindsym $sup+Ctrl+Shift+r exec $HOME/.homemade/bin/system/power-management-w-i3lock reboot
 bindsym $sup+Ctrl+Shift+p exec $HOME/.homemade/bin/system/power-management-w-i3lock shutdown
 
@@ -366,6 +366,8 @@ exec --no-startup-id $HOME/.homemade/bin/daemons/acpi-battery-popup-alert
 exec --no-startup-id $HOME/.homemade/bin/daemons/lock-on-lid-closed
 # System stuff
 exec --no-startup-id sudo $HOME/.homemade/bin/system/init-my-system-stuff
+# Pulseaudio
+exec --no-startup-id systemctl --user start pulseaudio
 # Conky
 # exec --no-startup-id $HOME/.config/conky/launch.sh
 
