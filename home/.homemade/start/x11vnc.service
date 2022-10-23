@@ -1,0 +1,21 @@
+# Setup
+# x11vnc -storepasswd some-passwd /etc/x11vnc.pwd
+# ln -s x11vnc.service /etc/systemd/system/
+# systemctl enable x11vnc
+
+[Unit]
+Description=VNC Server for X11
+Requires=display-manager.service
+After=syslog.target network-online.target # optional for better performance
+Wants=syslog.target network-online.target # optional for better performance
+
+[Service]
+User=your-user
+Group=your-user-group
+ExecStart=/usr/bin/x11vnc -display :0 -rfbauth /etc/x11vnc.pwd -shared -forever
+ExecStop=/usr/bin/x11vnc -R stop
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target
