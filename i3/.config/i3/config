@@ -239,9 +239,6 @@ gaps outer 4
 # bindsym $sup+Ctrl+Shift n exec gaps inner 0 && gaps outer 0
 # bindsym $sup+Ctrl+Shift g exec gaps inner 8 && gaps outer 4
 
-# floating max size
-floating_maximum_size 1120 x 600
-
 # default layout (default|tabbed|stacking)
 workspace_layout default
 
@@ -249,11 +246,15 @@ workspace_layout default
 # assign [class="Google-chrome"] $ws1
 # for_window [ workspace="1" ] layout tabbed
 
+# floating max size
+floating_maximum_size 1280 x 720 # 1120 x 600
+
 # window settings
 for_window [ instance=Conky ] sticky enable
 for_window [ instance="gnome-terminal-server" ] floating enable
 for_window [ instance="matplotlib" ] floating enable
 for_window [ instance="python" ] floating enable
+for_window [ class="Vncviewer" ] floating enable
 
 # for_window [ floating ] move position center
 # for_window [ floating ] move absolute position center
