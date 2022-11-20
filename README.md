@@ -292,6 +292,15 @@ xset s off
 # maintains the system time in synchronism with Internet standard time servers
 sudo ntpd -qg
 ```
+## Fix dummy output
+```
+# Replace:
+#   GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+# With:
+#   GRUB_CMDLINE_LINUX_DEFAULT="quiet snd_hda_intel.dmic_detect=0"
+
+sudo nano /etc/default/grub
+```
 ## Firefox settings
 |Propertie|Value|
 |:-|:-|
