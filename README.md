@@ -95,25 +95,25 @@ See the other shortcuts in [~/.config/i3/config](i3/.config/i3/config) config fi
 - Set up crontab
     - Twitter bot
 
-## Tutorials
-### Usefull stow commands
+# Miscellaneous
+## Useful stow commands
 ```bash
 stow --adopt -nvt ~ <stow-folder> # Adds new config files to stow directory
 stow -nSvt ~ <stow-folder>        # Symlink config files to $HOME directory
 stow -nDvt ~ <stow-folder>        # Removes symlinks from $HOME directory
 ```
-### Read manpages
+## Read manpages
 ```bash
 # Case: 0
 man <program-name>
 # Case: 1
 man -P "less -p 'CONFIGURATION SETTINGS'" <program-name>
 ```
-### Load Xresources
+## Load Xresources
 ```bash
 xrdb ~/.Xresources
 ```
-### Set default applications
+## Set default applications
 ```bash
 # fetch the default mimetype from file
 xdg-mime query filetype <file.ext>
@@ -127,22 +127,22 @@ xdg-mime default </usr/share/applications/app.desktop> <mimetype>
 # alternatively for gnome desktop enviroment edit this file
 nano ~/.config/mimeapps.list
 ```
-### Set default terminal emulator
+## Set default terminal emulator
 ```bash
 sudo update-alternatives --config x-terminal-emulator
 ```
-### Set default shell
+## Set default shell
 ```bash
 # Manual
 chsh -s /bin/shell <user>
 # Interactive
 chsh
 ```
-### Get application name
+## Get application name
 ```bash
 xprop WM_CLASS
 ```
-### ImageMagick allow Image to PDF
+## ImageMagick allow Image to PDF
 ```bash
 sudo nano /etc/ImageMagick-6/policy.xml
 ```
@@ -156,20 +156,20 @@ sudo nano /etc/ImageMagick-6/policy.xml
 ```xml
   <policy domain="coder" rights="read | write" pattern="PDF" /> <!-- TO THIS -->
 ```
-### Install language support
+## Install language support
 ```bash
 sudo nano /etc/locale.gen  # Uncomment lines
 sudo locale-gen            # Install uncommented languages
 ```
-### Cache Github credentials
+## Cache Github credentials
 ```bash
 git config --global credential.helper 'cache --timeout 1200'
 ```
-### Reset PulseAudio
+## Reset PulseAudio
 ```bash
 pulseaudio -k && sudo alsa force-reload
 ```
-### Manage monitors
+## Manage monitors
 ```bash
 # List monitors
 xrandr
@@ -177,7 +177,7 @@ xrandr
 # Configure position
 xrandr --output HDMI-0 --left-of eDP --auto
 ```
-### Change hardware properties
+## Change hardware properties
 ```bash
 # Install xinput
 sudo apt install xinput
@@ -191,7 +191,7 @@ xinput list-props <device id>
 # Set property
 xinput set-prop <device id> <property id> <state 1/0>
 ```
-### Set wallpapers
+## Set wallpapers
 ```bash
 # using feh
 feh --bg-fill <img>
@@ -199,7 +199,7 @@ feh --bg-fill <img>
 # using hydrapaper
 hydrapaper -c <img>
 ```
-### Video conversion
+## Video conversion
 ```bash
 # .mkv -> .avi
 ffmpeg -i "input.mkv" -f avi -c:v mpeg4 -b:v 4000k -c:a libmp3lame -b:a 320k "out.avi"
@@ -216,7 +216,7 @@ ffmpeg -i input.mp4 -filter:v "crop:1920:1080:100:50" output.mp4
 # Change container
 ffmpeg -i input.mkv -codec copy output.mp4
 ```
-### Usefull LaTex commands
+## Useful LaTex commands
 ```bash
 # interactive compiler
 latexmk -pdf -pvc <file.tex>
@@ -226,7 +226,7 @@ latexmk -lualatex -pvc <file.tex>
 latexmk -pdf <file.tex>
 latexmk -lualatex <file.tex>
 ```
-### Redirect output
+## Redirect output
 ```bash
 
 # redirects output
@@ -242,7 +242,7 @@ nohup commmand &>/dev/null
 # redirects all and disown
 nohup commmand > /dev/null 2>&1 & disown
 ```
-### Add .desktop file
+## Add .desktop file
 ```bash
 # path to user .desktop files
 cd /usr/share/applications
@@ -262,7 +262,7 @@ Terminal=false
 Categories=Development;IDE;Programming;
 Keywords=software;programming;coding;
 ```
-### Change grub screen
+## Change grub screen
 ```bash
 # open config file
 sudo nano /etc/default/grub
@@ -276,23 +276,24 @@ GRUB_THEME="/boot/grub/themes/your-theme/theme.txt"
 # update grub
 sudo update-grub
 ```
-### Change timezone
+## Change timezone
 ```bash
 # lists timezones
 timedatectl list-timezones
 # set new timezone
 sudo timedatectl set-timezone <timezone>
 ```
-### Turn off screen saver for X Window Systems
+## Turn off screen saver for X Window Systems
 ```bash
 xset s off
 ```
-### Sync clock with online services
+## Sync clock with online services
 ```bash
 # maintains the system time in synchronism with Internet standard time servers
 sudo ntpd -qg
 ```
-# TODO
-- rlwrap
-- gdu
-- dmenu
+## Firefox settings
+|Propertie|Value|
+|:-|:-|
+|geo.provider.network.url|https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%|
+|full-screen-api.warning.timeout|0|
