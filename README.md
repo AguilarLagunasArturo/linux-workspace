@@ -161,8 +161,10 @@ sudo nano /etc/ImageMagick-6/policy.xml
 sudo nano /etc/locale.gen  # Uncomment lines
 sudo locale-gen            # Install uncommented languages
 ```
-## Cache Github credentials
+## Github user settings
 ```bash
+git config --global user.name "username"
+git config --global user.email "email@domain.com"
 git config --global credential.helper 'cache --timeout 1200'
 ```
 ## Reset PulseAudio
@@ -295,9 +297,9 @@ sudo ntpd -qg
 ## Fix dummy output
 ```
 # Replace:
-#   GRUB_CMDLINE_LINUX_DEFAULT="quiet"
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet"
 # With:
-#   GRUB_CMDLINE_LINUX_DEFAULT="quiet snd_hda_intel.dmic_detect=0"
+# GRUB_CMDLINE_LINUX_DEFAULT="quiet snd_hda_intel.dmic_detect=0"
 
 sudo nano /etc/default/grub
 ```
