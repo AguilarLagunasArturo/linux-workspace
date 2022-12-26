@@ -21,13 +21,20 @@ git clone https://github.com/AguilarLagunasArturo/linux-workspace.git
 
 # Change directory and remove unneeded files
 cd linux-workspace
-rm README.md .gitignore
+rm README.md
 
 # Install main packages (basic dependencies)
 bash home/.homemade/bin/management/install-main-apt-packages
 
-# Create symlinks in the system and restore deleted files
-stow --adopt -Svt ~ *
+# Create config symlinks individually
+stow -Svt ~ bash
+stow -Svt ~ nano
+stow -Svt ~ kitty
+
+# Or create all at once
+stow -Svt ~ *
+
+# Restore deleted files
 git checkout .
 
 # Add settings to zshrc (optional)
@@ -98,9 +105,10 @@ See the other shortcuts in [~/.config/i3/config](i3/.config/i3/config) config fi
 # Miscellaneous
 ## Useful stow commands
 ```bash
-stow --adopt -nvt ~ <stow-folder> # Adds new config files to stow directory
-stow -nSvt ~ <stow-folder>        # Symlink config files to $HOME directory
-stow -nDvt ~ <stow-folder>        # Removes symlinks from $HOME directory
+stow --adopt -nvt ~ <stow-folder>  # Adopts config files to stow directory
+stow --adopt -nSvt ~ <stow-folder> # Adopts new config files to stow directory and then symlink them to $HOME directory
+stow -nSvt ~ <stow-folder>         # Symlink config files to $HOME directory
+stow -nDvt ~ <stow-folder>         # Removes symlinks from $HOME directory
 ```
 ## Read manpages
 ```bash
