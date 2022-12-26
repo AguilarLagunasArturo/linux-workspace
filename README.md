@@ -303,7 +303,7 @@ sudo ntpd -qg
 
 sudo nano /etc/default/grub
 ```
-## Usefull paths
+## Useful paths
 ```bash
 # Grub config file
 nano /etc/default/grub
