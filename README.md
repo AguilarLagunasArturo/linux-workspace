@@ -303,6 +303,15 @@ sudo ntpd -qg
 
 sudo nano /etc/default/grub
 ```
+## Usefull paths
+```bash
+# Grub config file
+nano /etc/default/grub
+# Grub themes dir
+cd /usr/share/grub/themes
+# Systemd services dir
+cd /etc/systemd/system
+```
 ## Firefox settings
 |Propertie|Value|
 |:-|:-|
