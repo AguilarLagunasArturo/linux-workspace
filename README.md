@@ -67,7 +67,7 @@ Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboa
 |Window manager|`i3-gaps`|
 |Login screen|`sddm`, `sugar-candy`|
 |Bar|`i3bar`, `i3status`|
-|Compositor|`picom`|
+|Compositor|`compton`|
 |Launcher|`rofi`|
 |Terminal|`kitty`, `urxvt`|
 |Notifications|`dunst`, `notify-send`|
@@ -313,8 +313,8 @@ sudo nano /etc/default/grub
 ```
 ## Allow user to execute scripts as root
 ```bash
-# Add line: user  ALL=(root) NOPASSWD: script-path
 sudo nano /etc/sudoers
+# Add line: user  ALL=(root) NOPASSWD: script-path
 ```
 ## Useful paths
 ```bash
