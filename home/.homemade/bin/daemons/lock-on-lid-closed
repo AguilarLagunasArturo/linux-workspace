@@ -11,7 +11,7 @@ while true; do
     echo -e "$state: $current_state"
     if [[ $state == "closed" ]] && [[ $current_state == 0 ]]; then
         echo "Lockscreen"
-        $HOME/.homemade/bin/system/power-management-w-i3lock suspend
+        $HOME/.homemade/bin/system/power-management-w-i3lock lock
         current_state=1
     elif [[ $state == "open" ]]; then
         echo "Do not lockscreen"

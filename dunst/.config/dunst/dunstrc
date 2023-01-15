@@ -4,10 +4,12 @@
     font = Nerd Font 9
     format = "<span><b>%s %p</b></span>\n%b"
     transparency = 2
-    # Width: (Min, Max)
-    width = (160, 240)
+
+    # Width: (Min, Max) (160, 240)
+    geometry = "300x5-30+20"
+    # width = 160
     # Height: Max
-    height = 200
+    # height = 200
     # Offset: (Right, Left)
     offset = 32x32 
     corner_radius = 8

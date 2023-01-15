@@ -343,9 +343,11 @@ bindsym $sup+Ctrl+s exec xrandr --output HDMI-0 --off && feh --bg-fill $HOME/.ho
 bindsym $sup+Ctrl+Shift+w exec $HOME/.homemade/bin/system/map-xinput-wacom-to-xrand-output HDMI-0
 # Power management
 bindsym $sup+Shift+l exec $HOME/.homemade/bin/system/power-management-w-i3lock lock-current
-bindsym $sup+Ctrl+Shift+l exec $HOME/.homemade/bin/system/power-management-w-i3lock suspend
-bindsym $sup+Ctrl+Shift+r exec $HOME/.homemade/bin/system/power-management-w-i3lock reboot
-bindsym $sup+Ctrl+Shift+p exec $HOME/.homemade/bin/system/power-management-w-i3lock shutdown
+# bindsym $sup+Ctrl+Shift+l exec $HOME/.homemade/bin/system/power-management-w-i3lock suspend
+# bindsym $sup+Ctrl+Shift+r exec $HOME/.homemade/bin/system/power-management-w-i3lock reboot
+bindsym $sup+Ctrl+Shift+r exec sudo reboot
+# bindsym $sup+Ctrl+Shift+p exec $HOME/.homemade/bin/system/power-management-w-i3lock shutdown
+bindsym $sup+Ctrl+Shift+p exec sudo poweroff
 
 # }}}
 
