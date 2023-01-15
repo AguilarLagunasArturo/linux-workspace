@@ -67,7 +67,7 @@ Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboa
 |Window manager|`i3-gaps`|
 |Login screen|`sddm`, `sugar-candy`|
 |Bar|`i3bar`, `i3status`|
-|Compositor|`compton`|
+|Compositor|`picom`|
 |Launcher|`rofi`|
 |Terminal|`kitty`, `urxvt`|
 |Notifications|`dunst`, `notify-send`|
