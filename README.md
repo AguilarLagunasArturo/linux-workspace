@@ -311,6 +311,11 @@ sudo ntpd -qg
 
 sudo nano /etc/default/grub
 ```
+## Allow user to execute scripts as root
+```bash
+# Add line: user  ALL=(root) NOPASSWD: script-path
+sudo nano /etc/sudoers
+```
 ## Useful paths
 ```bash
 # Grub config file
@@ -319,6 +324,10 @@ nano /etc/default/grub
 cd /usr/share/grub/themes
 # Systemd services dir
 cd /etc/systemd/system
+# Default background configuration
+cd /usr/share/desktop-base/homeworld-theme/wallpaper/contents/images/
+# Sudoers
+sudo nano /etc/sudoers
 ```
 ## Firefox settings
 |Propertie|Value|
