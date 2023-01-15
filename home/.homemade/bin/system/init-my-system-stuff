@@ -3,9 +3,10 @@
 # Author:       Arturo Aguilar Lagunas
 # Description:  Initializing stuff
 
-# enable change radeon_bl0 brightness for current
+# enable changing amdgpu_bl0 brightness for an user
 current_user=$(ls /home | head -n 1)
-sudo chown $current_user:$current_user -R $BACKLIGHT_PATH/brightness
+sudo chown $current_user:$current_user -R /sys/class/backlight/amdgpu_bl0/brightness
+# sudo chown $current_user:$current_user -R $BACKLIGHT_PATH/brightness
 
 # sync clock with the internet
 # sudo ntpd -qg

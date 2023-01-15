@@ -39,8 +39,13 @@ BLURTYPE="0x7" # ~ 7.52s
 
 custom-i3lock() {
     ## For older versions of i3lock
-    # i3lock -u -i "$1" "$2"
+    i3lock -i "$1" \
+        --ignore-empty-password \
+        -u \
+        -e \
+        # -p default
 
+    : ' MULTILINE COMMENT START
     ## For newer versions of i3lock
     i3lock -i "$1" "$2" \
         --ignore-empty-password \
@@ -80,6 +85,7 @@ custom-i3lock() {
         --noinput=" Empty" \
         --lock-text=" Locking" \
         --lockfailed=" Lock Failed"
+        MULTILINE COMMENT END '
 }
 
 lock() {
@@ -87,12 +93,16 @@ lock() {
     # custom-i3lock $HOME/.homemade/assets/wallpaper/m0.png
 
     # Current background + blur (pre-saved)
-    custom-i3lock $HOME/.homemade/assets/wallpaper/m0-blur.png "-C"
+    # custom-i3lock $HOME/.homemade/assets/wallpaper/m0-blur.png "-C"
 
     # Current background + blur
     # convert $HOME/.homemade/assets/wallpaper/m0.png -blur $BLURTYPE $IMAGE
     # custom-i3lock $IMAGE "-C"
     # rm $IMAGE
+
+    # For older versions of i3lock
+    custom-i3lock $HOME/.homemade/assets/wallpaper/m0-blur.png
+
 }
 
 lock_current() {

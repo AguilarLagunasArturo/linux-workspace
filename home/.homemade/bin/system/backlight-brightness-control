@@ -1,11 +1,12 @@
 #! /usr/bin/env bash
 
 # Author:       Arturo Aguilar Lagunas
-# Description:  Control radeon_bl0 backlight
+# Description:  Control backlight
 
 usage="Usage:\t$0 [OPTION]\nOptions:\t\n\t-u\tBrightness up\n\t-d\tBrightness down"
 
-brightness_path=$BACKLIGHT_PATH
+# brightness_path=$BACKLIGHT_PATH
+brightness_path="/sys/class/backlight/amdgpu_bl0"
 current_b=$(cat $brightness_path/actual_brightness | head -n 1)
 max_b=$(cat $brightness_path/max_brightness | head -n 1)
 min_b=0

@@ -4,13 +4,8 @@
 # Date:			Fri 24 Sep 2021 02:16:20 AM CDT
 # Description:	Enable natural scrolling and tap to click
 
-id=$(xinput | grep "SynPS/2 Synaptics TouchPad" | grep -oP "id=\d*" | grep -Po "\d*")
-scroll=$(xinput list-props "$id" | grep -i "libinput Natural Scrolling Enabled" | head -n 1 | grep -iPo "\(\d*\)" | grep -iPo "\d*")
-tap=$(xinput list-props "$id" | grep -i "libinput Tapping Enabled" | head -n 1 | grep -iPo "\(\d*\)" | grep -iPo "\d*")
-enable=1
+# Two Finger Scrolling
+xinput set-prop 12 338 -31 -31
 
-echo -e "xinput set-prop $id $scroll $enable"
-xinput set-prop $id $scroll $enable
-
-echo -e "xinput set-prop $id $tap $enable"
-xinput set-prop $id $tap $enable
+# Tap Action
+xinput set-prop 12 345 0 9 0 8 1 3

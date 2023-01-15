@@ -45,7 +45,8 @@ bindsym $sup+Return exec kitty
 bindsym $sup+Ctrl+Return exec nautilus
 
 # start firefox-esr
-bindsym $sup+Ctrl+f exec firefox-esr
+# bindsym $sup+Ctrl+f exec firefox-esr
+bindsym $sup+Ctrl+f exec firefox
 
 # start the file manager
 bindsym $sup+Ctrl+g exec chromium
@@ -213,6 +214,9 @@ bar {
 
 # Custom settings: {{{
 
+# Remove titlebars
+for_window [class="^.*"] border pixel 1
+
 # Moving workspaces to different screen
 bindsym $sup+Shift+Ctrl+Right move workspace to output right
 bindsym $sup+Shift+Ctrl+Left move workspace to output left
@@ -349,7 +353,7 @@ bindsym $sup+Ctrl+Shift+p exec $HOME/.homemade/bin/system/power-management-w-i3l
 
 # Hardware
 # Touchpad tap to click
-# exec --no-startup-id $HOME/.homemade/bin/system/set-custom-hardware-settings
+exec --no-startup-id $HOME/.homemade/bin/system/set-custom-hardware-settings
 
 # Software
 # Dual monitor
