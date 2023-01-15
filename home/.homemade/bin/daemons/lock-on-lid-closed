@@ -17,5 +17,5 @@ while true; do
         echo "Do not lockscreen"
         current_state=0
     fi
-    sleep 1
+    sleep 2
 done

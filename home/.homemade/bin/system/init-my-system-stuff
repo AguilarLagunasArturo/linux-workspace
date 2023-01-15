@@ -5,7 +5,7 @@
 
 # enable change radeon_bl0 brightness for current
 current_user=$(ls /home | head -n 1)
-sudo chown $current_user:$current_user -R /sys/class/backlight/radeon_bl0/brightness
+sudo chown $current_user:$current_user -R $BACKLIGHT_PATH/brightness
 
 # sync clock with the internet
-sudo ntpd -qg
+# sudo ntpd -qg

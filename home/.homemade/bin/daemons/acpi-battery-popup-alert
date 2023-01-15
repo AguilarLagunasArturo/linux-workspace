@@ -5,7 +5,7 @@
 # Description:	Popup low battery with acpi and notify-send
 
 function popup {
-    batt=$(acpi -b | grep -io "[0-9]*%" | grep -io "[0-9]*")
+    batt=$(acpi -b | grep -io "[0-9]*%" | grep -io "[0-9]*" | tail -n 1)
     if (( $batt <= 20 )) && [ "$(acpi | grep -o 'Discharging')" = "Discharging" ]; then
         notify-send "Low battery" "$batt%" -u critical
     else

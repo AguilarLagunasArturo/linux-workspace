@@ -4,8 +4,10 @@
 # Description:  Control radeon_bl0 backlight
 
 usage="Usage:\t$0 [OPTION]\nOptions:\t\n\t-u\tBrightness up\n\t-d\tBrightness down"
-current_b=$(cat /sys/class/backlight/radeon_bl0/actual_brightness | head -n 1)
-max_b=$(cat /sys/class/backlight/radeon_bl0/max_brightness | head -n 1)
+
+brightness_path=$BACKLIGHT_PATH
+current_b=$(cat $brightness_path/actual_brightness | head -n 1)
+max_b=$(cat $brightness_path/max_brightness | head -n 1)
 min_b=0
 step=5
 toff=580
@@ -19,22 +21,22 @@ else
         new_b=$(( $current_b + $step ))
         if (( $new_b < $max_b )); then
             echo -e '\nNew:\t'$new_b;
-            echo $new_b > /sys/class/backlight/radeon_bl0/brightness
+            echo $new_b > $brightness_path/brightness
             notify-send "Brighness up" "$new_b" -t $toff
         else
             echo -e '\nNew:\t'$max_b;
-            echo $max_b > /sys/class/backlight/radeon_bl0/brightness
+            echo $max_b > $brightness_path/brightness
             notify-send "Max brighness" "$max_b" -t $toff
         fi;
     elif [[ $1 == -d ]]; then
         new_b=$(( $current_b - $step ))
         if (( $new_b > $min_b )); then
             echo -e '\nNew:\t'$new_b;
-            echo $new_b > /sys/class/backlight/radeon_bl0/brightness
+            echo $new_b > $brightness_path/brightness
             notify-send "Brighness down" "$new_b" -t $toff
         else
             echo -e '\nNew:\t'$min_b;
-            echo $min_b > /sys/class/backlight/radeon_bl0/brightness
+            echo $min_b > $brightness_path/brightness
             notify-send "Min brighness" "$min_b" -t $toff
         fi;
     else
