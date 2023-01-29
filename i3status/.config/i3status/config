@@ -9,11 +9,11 @@
 general {
         colors = true
         # Color 10
-        color_good = "#b3bbc3"
+        color_good = "#a2d290"
         # Color 13
-        color_degraded = "#95c7ae"
+        color_degraded = "#cd8158"
         # Color 9
-        color_bad = "#d077a3"
+        color_bad = "#862b3e"
         interval = 1
 }
 
