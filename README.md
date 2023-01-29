@@ -80,8 +80,14 @@ Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboa
 |super+a|Application launcher|
 |super+b|Show or hide i3-bar|
 |super+0-9|Move to workspace|
+|super+ctrl+right|Move to next workspace|
+|super+ctrl+left|Move to previous workspace|
 |super+shift+0-9|Move current window to workspace|
 |super+ctrl+shift+0-9|Move all windows in current workspace to a new one|
+|super+ctrl+shift+right|Move current window to next active screen|
+|super+ctrl+shift+left|Move current window to previous active screen|
+|super+right|Focus next window|
+|super+left|Focus previous window|
 |super+shift+w|Kill current window|
 |super+ctrl+shift|Open conky|
 |super+ctrl|Close conky|
