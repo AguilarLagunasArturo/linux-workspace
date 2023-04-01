@@ -13,17 +13,18 @@ alias copy='xclip -selection clipboard &> /dev/null'
 ## cat alternative
 alias bat='batcat'
 ## listing with (lsd)
-# alias lbin='lsd --tree ~/.homemade/bin/'
-# alias ll='lsd -la'
-# alias lld='lsd -la --date=relative'
-# alias la='lsd -a'
-# alias l='lsd -l'
-# alias lt='lsd --tree'
+alias lbin='lsd --tree ~/.homemade/bin/'
+alias lt='lsd --tree'
+alias ll='lsd -la'
+alias la='lsd -a'
+alias l='lsd -l'
+alias lld='lsd -la --date=relative'
+alias ld='lsd -l --date=relative'
 ## listing with (tree, ls)
-alias lbin='tree -a ~/.homemade/bin/'
-alias ll='ls --color -la'
-alias la='ls --color -a'
-alias l='ls --color -l'
+# alias lbin='tree -a ~/.homemade/bin/'
+# alias ll='ls --color -la'
+# alias la='ls --color -a'
+# alias l='ls --color -l'
 ## homemade scripts
 # alias pexels='python ~/Github/pexels-image-downloader/download.py'
 ## others
@@ -64,6 +65,13 @@ alias l='ls --color -l'
 # crop video
 # ffmpeg -i input.mp4 -filter:v "crop=w:h:x:y" output.mp4
 
+# frames from vid
+# ffmpeg -i video.mp4 -vf "select=bitor(gte(t-prev_selected_t\,1)\,isnan(prev_selected_t))" -vsync 0 out/f%02d.png
+# ffmpeg -framerate 30 -pattern_type glob -i '*.png' -c:v libx264 -pix_fmt yuv420p out.mp4
+
+# video frame interpolation
+# ffmpeg -i out.mp4 -filter:v "minterpolate=mi_mode=2" output.mp4
+
 # reset audio
 # pulseaudio -k && sudo alsa force-reload
 
@@ -80,3 +88,7 @@ alias l='ls --color -l'
 # neofetch                                                      # Default
 # neofetch --backend w3m --loop yes --xoffset 24 --yoffset 2    # Kitty + w3m
 # neofetch --backend w3m                                        # Urxtv + w3m
+
+## -- ONE-LINERS --
+# Rename png file with format
+# for file in ./*_*.png; do num=$(echo "$file" | grep -o '[0-9]*' | tail -n 1); num_int=$((10#$num)); new_file=$(printf "%04d.png" "$num_int"); mv "$file" "$new_file"; done
