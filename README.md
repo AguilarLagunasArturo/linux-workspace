@@ -100,11 +100,14 @@ Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboa
 
 See the other shortcuts in [~/.config/i3/config](i3/.config/i3/config) config file.
 ## Stuff I have to do manually
-- Install third party software
 - Set up grub2 theme
+- Install third party software
+    - [lsDeluxe](https://github.com/lsd-rs/lsd)
 - Set default terminal and shell
-    - Set up powerlevel10k for zsh
-- Set up sddm theme
+    - Set up [powerlevel10k](https://github.com/romkatv/powerlevel10k) for zsh
+- Set up sddm sugar candy theme
+    - [GitHub](https://github.com/Kangie/sddm-sugar-candy)
+    - [GitLab](https://framagit.org/MarianArlt/sddm-sugar-candy)
 - Set up crontab
     - Twitter bot
 
