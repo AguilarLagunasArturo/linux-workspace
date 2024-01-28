@@ -1,0 +1,22 @@
+#! /usr/bin/env bash
+
+# Author:       Author
+# Date:         July 17 2023 at 01:47:58 AM
+# Description:  Upscale a video
+
+fps=30
+videoname=$1
+tmpfolder="tmp_"$videoname
+outvideo="up_"$videoname
+
+echo "[+] "$fps
+echo "[+] "$videoname
+echo "[+] "$out_video
+
+mkdir $tmpfolder
+ffmpeg -i $videoname -vf "fps="$fps $tmpfolder"/"%04d.png
+cd $tmpfolder
+upscaleimg
+cd ..
+
+vidfromframeswithaudio $videoname $tmpfolder"/upscaled" $outvideo

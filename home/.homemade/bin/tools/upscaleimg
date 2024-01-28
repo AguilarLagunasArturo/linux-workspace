@@ -1,0 +1,42 @@
+#! /usr/bin/env python3
+
+# Author:       Author
+# Date:         July 10 2023 at 12:15:37 AM
+# Description:  Upscale images
+
+import os
+import sys
+import torch
+from PIL import Image
+import numpy as np
+from RealESRGAN import RealESRGAN
+
+# if len(sys.argv) != 2:
+#    sys.exit(0)
+
+device = torch.device('cpu')
+
+scale = 2
+home = os.environ['HOME']
+weights_file = os.path.join(home,f'.homemade/assets/weights/RealESRGAN_x{scale}.pth')
+
+model = RealESRGAN(device, scale=scale)
+model.load_weights(weights_file, download=True)
+
+out_dir = 'upscaled'
+path = '.'
+os.makedirs(out_dir, exist_ok=True)
+
+files = os.listdir(path)
+total = len(files)
+
+for i, file in enumerate(files):
+    n = i+1
+    filename, ext = os.path.splitext(file)
+    if ext.lower() not in ['.png','.jpg','.jpeg']:
+        continue
+    image_basename = file
+    image = Image.open(image_basename).convert('RGB')
+    sr_image = model.predict(image)
+    sr_image.save(f'{out_dir}/{filename}.png')
+    print(f'[+] Progress: {n}/{total} {(n/total)*100:.1f}%')

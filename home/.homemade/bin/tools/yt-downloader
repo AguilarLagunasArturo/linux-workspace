@@ -38,16 +38,16 @@ echo -ne "\nChoice: "
 read CHOICE
 case $CHOICE in
     1)
-        youtube-dl --audio-format mp3 --extract-audio --no-playlist $url -o "$aoutput/%(title)s %(id)s.%(ext)s" # --quiet
+        yt-dlp --audio-format mp3 --extract-audio --no-playlist $url -o "$aoutput/%(title)s %(id)s.%(ext)s" # --quiet
         ;;
     2)
-        youtube-dl --audio-format mp3 --extract-audio --yes-playlist $url -o "$aoutput/%(title)s %(id)s.%(ext)s" # --quiet
+        yt-dlp --audio-format mp3 --extract-audio --yes-playlist $url -o "$aoutput/%(title)s %(id)s.%(ext)s" # --quiet
         ;;
     3)
-        youtube-dl --no-playlist --format mp4 $url -o "$voutput/%(title)s %(id)s.%(ext)s" # --quiet
+        yt-dlp --no-playlist --format mp4 $url -o "$voutput/%(title)s %(id)s.%(ext)s" # --quiet
         ;;
     4)
-        youtube-dl --yes-playlist --format mp4 $url -o "$voutput/%(title)s %(id)s.%(ext)s" # --quiet
+        yt-dlp --yes-playlist --format mp4 $url -o "$voutput/%(title)s %(id)s.%(ext)s" # --quiet
         ;;
 esac
 

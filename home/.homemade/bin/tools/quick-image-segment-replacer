@@ -1,0 +1,78 @@
+#! /usr/bin/env python3
+
+# Author:       Author
+# Date:         May 06 2023 at 10:38:22 PM
+# Description:  Image segment replacer
+
+import os
+import sys
+from PIL import Image, ImageDraw
+import matplotlib.pyplot as plt
+from matplotlib.widgets import RectangleSelector
+from collections import Counter
+
+def get_two_most_common_colors(img):
+    colors = img.getcolors(img.size[0]*img.size[1])
+    common_colors = Counter(colors).most_common(2)
+    return common_colors[0][0][1], common_colors[1][0][1]
+
+def create_grid_pattern(width, height, color1=(0, 0, 0, 255), color2=(255, 255, 255, 255), square_size=10):
+    img = Image.new("RGBA", (width, height))
+    draw = ImageDraw.Draw(img)
+    for i in range(0, width, square_size):
+        for j in range(0, height, square_size):
+            if (i // square_size) % 2 == (j // square_size) % 2:
+                draw.rectangle([i, j, i + square_size, j + square_size], fill=color1)
+            else:
+                draw.rectangle([i, j, i + square_size, j + square_size], fill=color2)
+    return img
+
+def onselect(eclick, erelease):
+    global img, image_path, img_to_paste
+    x1, y1 = int(eclick.xdata), int(eclick.ydata)
+    x2, y2 = int(erelease.xdata), int(erelease.ydata)
+
+    if img_to_paste:
+        width, height = img_to_paste.size
+        aspect_ratio = float(width) / float(height)
+        new_width = abs(x2 - x1)
+        new_height = int(new_width / aspect_ratio)
+        if new_height > abs(y2 - y1):
+            new_height = abs(y2 - y1)
+            new_width = int(new_height * aspect_ratio)
+        resized_img_to_paste = img_to_paste.resize((new_width, new_height), Image.ANTIALIAS)
+        img.alpha_composite(resized_img_to_paste, (min(x1, x2), min(y1, y2)))
+    else:
+        # Blur by section color
+        region = img.crop((min(x1, x2), min(y1, y2), max(x1, x2), max(y1, y2)))
+        color1, color2 = get_two_most_common_colors(region)
+        grid_pattern = create_grid_pattern(abs(x2 - x1), abs(y2 - y1), color1, color2, 50)
+        img.paste(grid_pattern, (min(x1, x2), min(y1, y2)))
+
+        # Blur with black and white
+        # grid_pattern = create_grid_pattern(abs(x2 - x1), abs(y2 - y1), square_size=50)
+        # img.paste(grid_pattern, (min(x1, x2), min(y1, y2)))
+
+        # Blur with a single color
+        # black_region = Image.new("RGBA", (abs(x2 - x1), abs(y2 - y1)), (0, 0, 0, 255))
+        # img.paste(black_region, (min(x1, x2), min(y1, y2)))
+
+    out_path = os.path.join(os.path.expanduser('~'), 'Pictures/tmp', image_path.split('/')[-1])
+    img.save(out_path)
+    print(f"Image saved: {out_path}")
+
+if len(sys.argv) < 2:
+    print("Usage: python image_editor.py <path_to_image> [<path_to_second_image>]")
+    sys.exit(1)
+
+image_path = sys.argv[1]
+img = Image.open(image_path).convert('RGBA')
+
+img_to_paste = None
+if len(sys.argv) > 2:
+    img_to_paste = Image.open(sys.argv[2]).convert('RGBA')
+
+fig, ax = plt.subplots()
+ax.imshow(img)
+rect_selector = RectangleSelector(ax, onselect, interactive=True)
+plt.show()

@@ -265,6 +265,7 @@ for_window [ instance="gnome-terminal-server" ] floating enable
 for_window [ instance="matplotlib" ] floating enable
 for_window [ instance="python" ] floating enable
 for_window [ class="Vncviewer" ] floating enable
+for_window [ class="Org.gnome.NautilusPreviewer" ] floating disable, resize set 600
 
 # for_window [ floating ] move position center
 # for_window [ floating ] move absolute position center

@@ -43,7 +43,10 @@
         "picom",
         "feh",
         "jq",
-        "bat"
+        "bat",
+        "libgoogle-perftools-dev",
+        "libgoogle-perftools4",
+        "libtcmalloc-minimal4"
       ],
       "gui": [
         "texlive-full",

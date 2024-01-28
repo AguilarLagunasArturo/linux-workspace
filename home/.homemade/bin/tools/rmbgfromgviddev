@@ -1,0 +1,87 @@
+#! /usr/bin/env bash
+
+# Author:       Author
+# Date:         July 08 2023 at 04:38:55 PM
+# Description:  Remove background from video
+
+# Default background color
+background_color="black"
+
+# Parse options
+while (( "$#" )); do
+  case "$1" in
+    --color)
+      if [ -n "$2" ] && [ ${2:0:1} != "-" ]; then
+        case "$2" in
+          b) background_color="black";;
+          w) background_color="white";;
+          g) background_color="green";;
+          gray) background_color="gray";;
+          lpink) background_color="#FFB6C1";;   # Light Pink color code
+          lblue) background_color="#ADD8E6";;  # Light Blue color code
+          *) echo "Error: Unknown color option $2"; exit 1;;
+        esac
+        shift 2
+      else
+        echo "Error: Argument for $1 is missing" >&2
+        exit 1
+      fi
+      ;;
+    --) # end argument parsing
+      shift
+      break
+      ;;
+    -*|--*=) # unsupported flags
+      echo "Error: Unsupported flag $1" >&2
+      exit 1
+      ;;
+    *) # preserve positional arguments
+      PARAMS="$PARAMS $1"
+      shift
+      ;;
+  esac
+done
+eval set -- "$PARAMS"
+
+# Check if the right number of arguments are passed
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <input_video> [--color {b|w|g|gray|lpink|lblue}]"
+    exit 1
+fi
+
+# Get the video input
+input_video="$1"
+
+# Extract the base name without extension
+base_name=$(basename "$input_video" | cut -d. -f1)
+
+# Set default values for output directories
+transparent_frames_output="transparent_${base_name}"
+green_frames_output="green_${base_name}"
+frames_output="frames_${base_name}"
+
+# Check and create directories if they don't exist
+mkdir -p "$transparent_frames_output"
+mkdir -p "$green_frames_output"
+mkdir -p "$frames_output"
+
+# Generate the original frames
+ffmpeg -i $input_video -r 30/1 $frames_output/%04d.png
+
+# Generate transparent frames
+rembg p $frames_output $transparent_frames_output
+
+# Replace transparency with the selected background color
+count=0
+for i in $transparent_frames_output/*.png; do
+  ffmpeg -i "$i" -f lavfi -i "color=c=$background_color:s=$(ffprobe -v error -select_streams v:0 -show_entries stream=width,height -of csv=s=x:p=0 "$i")" -filter_complex "[1:v][0:v]scale2ref[bg][fg];[bg][fg]overlay=format=auto:shortest=1,format=yuv420p" -y $green_frames_output"/$(printf "%04d" $count).png"
+  let count=count+1
+done
+
+# Render video
+vidfromframeswithaudio $input_video $green_frames_output $green_frames_output".mp4"
+
+# Remove auxiliary files
+rm -r $transparent_frames_output
+rm -r $green_frames_output
+rm -r $frames_output

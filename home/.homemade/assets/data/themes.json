@@ -50,9 +50,8 @@
                 "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-00.jpg"
             ],
             "thumbnails": [
-                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-05.jpg",
-                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-04.jpg",
                 "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-00.jpg",
+                "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-04.jpg",
                 "~/Pictures/wallpapers/desktop/anime/demon-slayer/tengen-uzui-02.jpg"
             ]
         },
@@ -83,6 +82,14 @@
             ],
             "thumbnails": [
                 "~/Pictures/wallpapers/desktop/anime/jujutsu-kaisen/yuta-okkotsu-01.jpg"
+            ]
+        },
+        "eva-01-purple": {
+            "wallpapers": [
+                "~/Pictures/wallpapers/desktop/anime/evangelion/evangelion-eva-gray-city.jpg"
+            ],
+            "thumbnails": [
+                "~/Pictures/wallpapers/desktop/anime/evangelion/evangelion-purple-eva.jpg"
             ]
         }
     }

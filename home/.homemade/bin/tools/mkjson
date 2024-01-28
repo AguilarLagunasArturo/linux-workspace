@@ -1,0 +1,25 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Date:         April 18 2023 at 11:46:39 PM
+# Description:  Writes a base json file
+
+set -e
+
+json_data=$(cat <<'EOF'
+{
+  "model": "GPT-4",
+  "description": "A powerful large-scale language model developed by OpenAI, based on the GPT-4 architecture.",
+  "tags": ["AI", "NLP", "Deep Learning", "Language Model", "OpenAI", "GPT-4"]
+}
+EOF
+)
+
+if [[ ! -n $1 ]]; then
+    # echo -e "Usage: $0 <filename>"
+    touch 'data.json'
+    echo -e "$json_data" >> 'data.json'
+else
+    touch $1
+    echo -e "$json_data" >> $1
+fi;

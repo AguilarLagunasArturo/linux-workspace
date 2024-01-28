@@ -92,3 +92,10 @@ alias ld='lsd -l --date=relative'
 ## -- ONE-LINERS --
 # Rename png file with format
 # for file in ./*_*.png; do num=$(echo "$file" | grep -o '[0-9]*' | tail -n 1); num_int=$((10#$num)); new_file=$(printf "%04d.png" "$num_int"); mv "$file" "$new_file"; done
+# moves images to folder
+# i=1; for folder in MixFishMix_v10_000000 MixFishMix_v10_000001; do for file in "${folder}"/*; do ext="${file##*.}"; mv "${file}" "out/img-$(printf '%04d' $i).${ext}"; i=$((i+1)); done; done
+# render video
+# ffmpeg -framerate 10 -pattern_type glob -i '????-?-????_?-??-??.png' -c:v libx264 -pix_fmt yuv420p ../output.mp4
+# frames from video
+# ffmpeg -i '{video_name}' -r 10 -vf scale=320:-1 '{video_src_path}/{video_name_folder}/f%04d.png'
+# ffmpeg -i file.gif -r 30/1 data/%04d.png

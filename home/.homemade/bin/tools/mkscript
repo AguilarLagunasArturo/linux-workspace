@@ -9,7 +9,7 @@ author="Author"
 header="#! /usr/bin/env bash\n\n# Author:       $author\n# Date:         $(date +'%B %d %Y at %r')\n# Description:  <>"
 
 if [[ ! -n $1 ]]; then
-    echo -e "Usage $0 <filename>"
+    echo -e "Usage: $0 <filename>"
 else
     touch $1
     echo -e "$header" >> $1

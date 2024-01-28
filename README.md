@@ -118,6 +118,10 @@ stow --adopt -nSvt ~ <stow-folder> # Adopts config files to stow directory and t
 stow -nSvt ~ <stow-folder>         # Symlink config files to $HOME directory
 stow -nDvt ~ <stow-folder>         # Removes symlinks from $HOME directory
 ```
+## Current session type
+```bash
+echo $XDG_SESSION_TYPE
+```
 ## Read manpages
 ```bash
 # Case: 0

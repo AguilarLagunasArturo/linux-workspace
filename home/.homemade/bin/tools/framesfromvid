@@ -1,0 +1,77 @@
+#! /usr/bin/env bash
+
+# Author:       Author
+# Date:         July 22 2023 at 07:50:41 PM
+# Description:  Extract frames from a video
+
+# Parse options
+while (( "$#" )); do
+  case "$1" in
+    -c|--crop)
+      if [ -n "$2" ] && [ ${2:0:1} != "-" ]; then
+        CROP="$2"
+        shift 2
+      else
+        echo "Error: Argument for $1 is missing" >&2
+        exit 1
+      fi
+      ;;
+    --) # end argument parsing
+      shift
+      break
+      ;;
+    -*|--*=) # unsupported flags
+      echo "Error: Unsupported flag $1" >&2
+      exit 1
+      ;;
+    *) # preserve positional arguments
+      PARAMS="$PARAMS $1"
+      shift
+      ;;
+  esac
+done
+eval set -- "$PARAMS"
+
+# Check if at least one argument is passed
+if [ $# -lt 1 ]; then
+    echo "Usage: $0 <input_video> [fps] [-c|--crop <width:heigh>]"
+    exit 1
+fi
+
+# Get the video input
+input_video="$1"
+
+# Extract the base name without extension
+base_name=$(basename "$input_video" .mp4)
+
+# Set default value for FPS
+fps=${2:-16}
+
+# Set default values for output directory
+output_dir="${base_name}_${fps}_frames"
+
+# Check and create directory if it doesn't exist
+mkdir -p "$output_dir"
+
+# Handle crop option
+if [ -n "$CROP" ]; then
+  if [ "$CROP" = "half" ]; then
+    # Get video dimensions
+    eval $(ffprobe -v error -of flat=s=_ -select_streams v:0 -show_entries stream=height,width "$input_video")
+    width=$(echo "$streams_stream_0_width / 2" | bc)
+    height=$(echo "$streams_stream_0_height / 2" | bc)
+    CROP="${width}:${height}"
+  fi
+  # Create a temp file for the cropped video
+  tmp_file=$(mktemp /tmp/temp_video.XXXXXX.mp4)
+  ffmpeg -i "$input_video" -vf "scale=$CROP,crop=$CROP" -y "$tmp_file"
+  input_video="$tmp_file"
+fi
+
+# Extract frames
+ffmpeg -i "$input_video" -vf "fps=$fps" "${output_dir}/%04d.png"
+
+# Delete temporary file if it exists
+if [ -n "$tmp_file" ]; then
+  rm "$tmp_file"
+fi

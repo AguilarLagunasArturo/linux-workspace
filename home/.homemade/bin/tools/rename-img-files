@@ -1,0 +1,32 @@
+#! /usr/bin/env bash
+
+# Author:       Arturo Aguilar Lagunas
+# Date:         Sun Nov  7 01:15:05 AM MST 2021
+# Description:  Rename multiple files w/ an extension
+
+# Default values
+input_ext="png"         # input file extension of the files you want to rename
+ext="png"               # file extension of the files you want to rename
+k=1                     # initial value
+format_numeration="04"  # format numeration
+
+# Process command line options
+while getopts i:e:k:f: opt
+do
+   case "$opt" in
+      i) input_ext="$OPTARG";;
+      e) ext="$OPTARG";;
+      k) k="$OPTARG";;
+      f) format_numeration="$OPTARG";;
+      ?) printf "Usage: %s: [-i input file extension] [-e file extension] [-k initial value] [-f format for numeration in output] args\n" $0
+         exit 2;;
+   esac
+done
+
+format="%"$format_numeration"d.$ext"      # output format eg. %02d.png -> 00.png
+
+for i in *.$input_ext; do
+  new=$(printf $format "$k")
+  mv -i -- "$i" "$new"
+  let k=k+1
+done
