@@ -340,7 +340,20 @@ cd /etc/systemd/system
 cd /usr/share/desktop-base/homeworld-theme/wallpaper/contents/images/
 # Sudoers
 sudo nano /etc/sudoers
+# Compiled programs
+cd $HOME/.local/share
 ```
+
+## Fix screen tearing on Gnome
+Create the following config file in `/etc/X11/xorg.conf.d/20-amd.conf`
+```bash
+Section "Device"
+        Identifier "AMD Graphics"
+        Driver "amdgpu"
+        Option "TearFree" "True"
+EndSection
+```
+
 ## Firefox settings
 |Propertie|Value|
 |:-|:-|
