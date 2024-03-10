@@ -73,7 +73,7 @@ Create the config file `sudo nano /etc/bluetooth/audio.conf` if not exists.
 [General]
 Enable=Source,Sink,Media,Socket
 ```
-Then discover available devices and pair the needed device.
+Then discover available devices and pair the one you need.
 ```
 bluetoothctl
 >> scan on
