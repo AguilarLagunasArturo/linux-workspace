@@ -48,13 +48,38 @@ sudo update-alternatives --config x-terminal-emulator
 systemctl reboot
 ```
 ## Troubleshooting
+### Installing i3wm
 If your distribution does not packages `i3-gaps` (check by running `sudo apt policy i3-gaps`) you can either:
 1. Install [i3-gaps](https://github.com/Airblader/i3) from source.
 2. Install [i3](https://i3wm.org/) (without gaps) and remove the gaps settings from the config file.
     - `sudo apt install i3-wm i3status i3lock`
     - `cat ~/.config/i3/config-no-gaps.bak > ~/.config/i3/config`
-
 Once in an i3 `super+enter` to open a terminal, see the shortcuts [here](#keyboard-shortcuts).
+
+### Bluetooth pairing
+Install dependencies.
+```bash
+sudo apt install blueman
+sudo apt install bluez*
+sudo apt install pulseaudio pulseaudio-utils pavucontrol pulseaudio-module-bluetooth
+```
+Make sure the Bluetooth service is enabled.
+```bash
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
+```
+Create the config file `sudo nano /etc/bluetooth/audio.conf` if not exists.
+```
+[General]
+Enable=Source,Sink,Media,Socket
+```
+Then discover available devices and pair the needed device.
+```
+bluetoothctl
+>> scan on
+>> trust <MACADDRESS>
+>> pair <MACADDRESS>
+```
 ## Notes
 1. [home/.homemade](home/.homemade) is a directory for my custom resources, scrips, etc.
 2. Some scrips from [home/.homemade/bin](home/.homemade/bin) might not work properly.
